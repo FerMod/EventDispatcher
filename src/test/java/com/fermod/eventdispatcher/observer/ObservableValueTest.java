@@ -1,4 +1,4 @@
-package com.fermod.EventObserver.observer;
+package com.fermod.eventdispatcher.observer;
 
 import static org.junit.Assume.assumeNoException;
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -20,7 +20,7 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import com.fermod.EventObserver.data.serializable.PersonTest;
+import com.fermod.eventdispatcher.data.serializable.PersonTest;
 
 class ObservableValueTest {
 
@@ -56,9 +56,9 @@ class ObservableValueTest {
 			observedValue.registerListener((oldVAlue, newValue) -> {
 				eventInvoked = true;
 				assertAll("EventValues",
-						() -> assertEquals(oldVAlue, (Integer)value, () -> "New value missmatch in event invocation."),
-						() -> assertEquals(newValue, (Integer)expected, () -> "Old value missmatch in event invocation.")
-						);
+					() -> assertEquals(oldVAlue, (Integer)value, () -> "New value missmatch in event invocation."),
+					() -> assertEquals(newValue, (Integer)expected, () -> "Old value missmatch in event invocation.")
+				);
 			});
 
 			observedValue.set(expected);

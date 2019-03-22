@@ -1,4 +1,4 @@
-package com.fermod.EventObserver.data.serializable;
+package com.fermod.eventdispatcher.data.serializable;
 
 import java.io.Serializable;
 

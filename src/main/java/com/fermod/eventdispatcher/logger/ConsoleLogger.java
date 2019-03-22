@@ -1,4 +1,4 @@
-package com.fermod.EventObserver.logger;
+package com.fermod.eventdispatcher.logger;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;

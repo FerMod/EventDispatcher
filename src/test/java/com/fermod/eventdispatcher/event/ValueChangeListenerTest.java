@@ -1,4 +1,4 @@
-package com.fermod.EventObserver.event;
+package com.fermod.eventdispatcher.event;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package com.fermod.EventObserver.contract;
+package com.fermod.eventdispatcher.contract;
 
 /**
  * The Testable class represents a testable type used by other classes for the

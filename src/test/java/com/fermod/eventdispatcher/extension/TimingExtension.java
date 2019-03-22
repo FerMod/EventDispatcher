@@ -1,4 +1,4 @@
-package com.fermod.EventObserver.extension;
+package com.fermod.eventdispatcher.extension;
 
 import java.lang.reflect.Method;
 
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Namespace;
 import org.junit.jupiter.api.extension.ExtensionContext.Store;
 
-import com.fermod.EventObserver.logger.ConsoleLogger;
+import com.fermod.eventdispatcher.logger.ConsoleLogger;
 
 /**
  * The TimingExtension class implements the {@link BeforeTestExecutionCallback}
