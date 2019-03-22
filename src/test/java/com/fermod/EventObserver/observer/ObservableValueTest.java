@@ -1,5 +1,6 @@
-package com.fermod.EventObserver;
+package com.fermod.EventObserver.observer;
 
+import static org.junit.Assume.assumeNoException;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -12,17 +13,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-import com.fermod.EventObserver.observer.ObservedValue;
+import com.fermod.EventObserver.data.serializable.PersonTest;
 
 class ObservableValueTest {
 
-	static Optional<File> tempFile;
+	static File tempFile;
 	boolean eventInvoked;
 
 	@BeforeEach
@@ -32,16 +34,14 @@ class ObservableValueTest {
 	}
 
 	private void initTempFile(String fileName) {
-		File file = null;
 		try {
-			file = File.createTempFile(fileName, ".tmp");
-			file.deleteOnExit();
-			tempFile = Optional.ofNullable(file);
+			tempFile = File.createTempFile(fileName, ".tmp");
+			tempFile.deleteOnExit();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			if(tempFile.isPresent()) {
-				tempFile.get().delete();
+			if(tempFile != null) {
+				tempFile.delete();
 			}
 		}
 	}
@@ -56,9 +56,9 @@ class ObservableValueTest {
 			observedValue.registerListener((oldVAlue, newValue) -> {
 				eventInvoked = true;
 				assertAll("EventValues",
-					() -> assertEquals(oldVAlue.get(), (Integer)value, () -> "New value missmatch in event invocation."),
-					() -> assertEquals(newValue.get(), (Integer)expected, () -> "Old value missmatch in event invocation.")
-				);
+						() -> assertEquals(oldVAlue, (Integer)value, () -> "New value missmatch in event invocation."),
+						() -> assertEquals(newValue, (Integer)expected, () -> "Old value missmatch in event invocation.")
+						);
 			});
 
 			observedValue.set(expected);
@@ -75,8 +75,8 @@ class ObservableValueTest {
 	@CsvSource({"true", "false"})	
 	void testSerialization(boolean expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<Boolean> observedValue = new ObservedValue<>(expected);
 
@@ -103,8 +103,8 @@ class ObservableValueTest {
 	@CsvSource({"65"})		
 	void testSerialization(byte expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<Byte> observedValue = new ObservedValue<>(expected);
 
@@ -121,7 +121,7 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertEquals(expected, (byte)value.get());
+		assertEquals(expected, value.get());
 
 	}
 
@@ -131,8 +131,8 @@ class ObservableValueTest {
 	@CsvSource({"A", "T"})		
 	void testSerialization(char expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<Character> observedValue = new ObservedValue<>(expected);
 
@@ -149,7 +149,7 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertEquals(expected, (char)value.get());
+		assertEquals(expected, value.get());
 
 	}
 
@@ -159,8 +159,8 @@ class ObservableValueTest {
 	@CsvSource({"65"})		
 	void testSerialization(short expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<Short> observedValue = new ObservedValue<>(expected);
 
@@ -177,7 +177,7 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertEquals(expected, (short)value.get());
+		assertEquals(expected, value.get());
 
 	}
 
@@ -187,8 +187,8 @@ class ObservableValueTest {
 	@CsvSource({"65"})		
 	void testSerialization(int expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<Integer> observedValue = new ObservedValue<>(expected);
 
@@ -205,7 +205,7 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertEquals(expected, (int)value.get());
+		assertEquals(expected, value.get());
 
 	}
 
@@ -215,8 +215,8 @@ class ObservableValueTest {
 	@CsvSource({"65"})		
 	void testSerialization(long expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<Long> observedValue = new ObservedValue<>(expected);
 
@@ -233,7 +233,7 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertEquals(expected, (long)value.get());
+		assertEquals(expected, value.get());
 
 	}
 
@@ -243,8 +243,8 @@ class ObservableValueTest {
 	@CsvSource({"65f"})		
 	void testSerialization(float expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<Float> observedValue = new ObservedValue<>(expected);
 
@@ -261,7 +261,7 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertEquals(expected, (float)value.get());
+		assertEquals(expected, value.get());
 
 	}
 
@@ -271,8 +271,8 @@ class ObservableValueTest {
 	@CsvSource({"65.55"})	
 	void testSerialization(double expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<Double> observedValue = new ObservedValue<>(expected);
 
@@ -289,7 +289,7 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertEquals(expected, (double)value.get());
+		assertEquals(expected, value.get());
 
 	}
 
@@ -299,8 +299,8 @@ class ObservableValueTest {
 	@CsvSource({"'Test of string', 'Another test'"})		
 	void testSerialization(String expected) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		ObservedValue<String> observedValue = new ObservedValue<>(expected);
 
@@ -327,8 +327,8 @@ class ObservableValueTest {
 	@CsvSource({"Paco, 44", "Lola, 41"})
 	void testSerialization(String name, int age) {
 
-		assumeTrue(tempFile.isPresent());
-		File file = tempFile.get();
+		assumeTrue(tempFile != null);
+		File file = tempFile;
 
 		PersonTest expectedTestClass = new PersonTest(name, age);
 		ObservedValue<PersonTest> observedValue = new ObservedValue<PersonTest>(expectedTestClass);
@@ -345,8 +345,8 @@ class ObservableValueTest {
 		} catch (Exception e) {
 			assumeNoException(e);
 		}
-		
-		assertEquals(expectedTestClass, value.get(), "" + observedValue.get().hashCode() + " " + value.get().hashCode());				
+
+		assertEquals(expectedTestClass, value.get(), "" + observedValue.get().hashCode() + " " + value.hashCode());				
 	}
 
 	private <T> void serialiceToFile(File file, T value) {
@@ -361,45 +361,4 @@ class ObservableValueTest {
 		}
 	}
 
-	//		try{
-	//
-	//
-	//			temp.deleteOnExit();
-	//			System.out.println("Temp file : " + temp.getAbsolutePath());
-	//
-	//		}catch(IOException e){
-	//
-	//			e.printStackTrace();
-	//
-	//		}
-	//		ObservedValue<String> test = new ObservedValue<String>("test cosa");
-	//		try {
-	//			FileOutputStream fileOutputStream = new FileOutputStream(tempFile.get());
-	//			try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
-	//				objectOutputStream.writeObject(test);
-	//				objectOutputStream.flush();
-	//			}
-	//			System.out.println(test.get());
-	//
-	//			FileInputStream fileInputStream = new FileInputStream("D:\\Users\\Ferran Tudela\\Desktop\\TestSerializacion.txt");
-	//			ObjectInputStream objectInputStream	= new ObjectInputStream(fileInputStream);
-	//			ObservedValue<String> test2 = (ObservedValue<String>) objectInputStream.readObject();
-	//			objectInputStream.close(); 
-	//			System.out.println(test2.get());
-	//
-	//		} catch (Exception e) {
-	//			// TODO: handle exception
-	//		}
-	//		test.addListener(new ValueChangeListener() {
-	//
-	//			@Override
-	//			public <T> void onValueChanged(T oldValue, T newValue) {
-	//				System.out.println("He cambiado" +oldValue + "ahora" + newValue);
-	//
-	//			}
-	//		});
-	//
-	//
-	//		test.set("HOLAAAAAAAAAAAAAAAAAa");
-	//	}
 }

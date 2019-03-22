@@ -1,10 +1,15 @@
 package com.fermod.EventObserver.event;
 
-import java.util.Optional;
-
 @FunctionalInterface
 public interface ValueChangeListener<T> {
 
-	void onValueChanged(Optional<T> oldValue, Optional<T> newValue);
+	/**
+	 * Called when the listened-to variable changes its value. The old value or new 
+	 * value of the variable can be <code>null</code>. 
+	 * 
+	 * @param oldValue the old value of the variable.
+	 * @param value the new value of the variable.
+	 */
+	void onValueChanged(T oldValue, T value);
 	
 }

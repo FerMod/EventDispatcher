@@ -63,15 +63,15 @@ public abstract class EventPublisher<T> {
 
 	public void notifyListeners(Consumer<? super T> action) {
 
-		// Lock the list of listeners for writing
-		this.writeLock.lock();
+		// Lock the list of listeners for reading
+		this.readLock.lock();
 
 		try {
 			// Execute some function on each of the listeners
 			this.listeners.forEach(action);
 		} finally {
-			// Unlock the writer lock
-			this.writeLock.unlock();
+			// Unlock the reader lock
+			this.readLock.unlock();
 		}
 
 	}
