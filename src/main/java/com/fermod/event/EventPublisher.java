@@ -7,6 +7,11 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Consumer;
 
+/**
+ * Class that allows to register and notify event listeners.
+ *
+ * @param <T> the listener type that will provide the notification method 
+ */
 public abstract class EventPublisher<T> {
 
 	private transient final ReadWriteLock readWriteLock = new ReentrantReadWriteLock(true);
@@ -15,6 +20,12 @@ public abstract class EventPublisher<T> {
 
 	private transient List<T> listeners = new ArrayList<>();
 
+	/**
+	 * Adds the specified listener to the list of registered listeners.
+	 * 
+	 * @param listener the listener that will be called
+	 * @return the registered listener instance
+	 */
 	public T registerListener(T listener) {
 
 		// Lock the list of listeners for writing
@@ -31,6 +42,11 @@ public abstract class EventPublisher<T> {
 		return listener;
 	}
 
+	/**
+	 * Removes the first occurrence of the specified listener from the list of the registered listeners.
+	 * 
+	 * @param listener the listener that should be removed from the list
+	 */
 	public void unregisterListener(T listener) {
 
 		// Lock the list of listeners for writing
@@ -46,6 +62,9 @@ public abstract class EventPublisher<T> {
 
 	}
 	
+	/**
+	 * Removes all the listeners from the list of the registered listeners. The list will be empty after this call returns.
+	 */
 	public void unregisterAllListeners() {
 
 		// Lock the list of listeners for writing
@@ -61,6 +80,11 @@ public abstract class EventPublisher<T> {
 
 	}
 
+	/**
+	 * Notifies and executes on each of the registered listeners the provided function.
+	 * 
+	 * @param action operation that accepts a single input argument and returns no result
+	 */
 	public void notifyListeners(Consumer<? super T> action) {
 
 		// Lock the list of listeners for reading
