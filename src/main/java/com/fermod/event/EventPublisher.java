@@ -1,4 +1,4 @@
-package com.fermod.eventdispatcher.event;
+package com.fermod.event;
 
 import java.util.ArrayList;
 import java.util.List;
