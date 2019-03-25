@@ -21,7 +21,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import com.fermod.observer.ObservedValue;
-import com.fermod.util.data.serializable.PersonTest;
+import com.fermod.data.serializable.PersonTest;
 
 class ObservableValueTest {
 

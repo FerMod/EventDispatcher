@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import com.fermod.util.extension.TimingExtension;
+import com.fermod.extension.TimingExtension;
 
 /**
  * This class defines test of equality that the objects should pass.
