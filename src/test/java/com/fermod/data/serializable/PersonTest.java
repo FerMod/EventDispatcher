@@ -1,11 +1,14 @@
-package com.fermod.util.data.serializable;
+package com.fermod.data.serializable;
 
 import java.io.Serializable;
+
+import com.fermod.observer.ObservedValue;
 
 public class PersonTest implements Serializable {
 
 	private String name;
 	private int age; 
+	private ObservedValue<String> observedName;
 
 	public PersonTest(String name, int age) {
 		this.name = name;
@@ -26,6 +29,14 @@ public class PersonTest implements Serializable {
 
 	public void setAge(int age) {
 		this.age = age;	
+	}
+	
+	public String getObservedName() {
+		return observedName.get();	
+	}
+
+	public void setObservedName(String observedName) {
+		this.observedName.set(observedName);	
 	}
 
 	@Override

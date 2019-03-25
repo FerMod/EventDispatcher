@@ -1,4 +1,4 @@
-package com.fermod.observer;
+package com.fermod;
 
 import static org.junit.Assume.assumeNoException;
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -20,6 +20,7 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import com.fermod.observer.ObservedValue;
 import com.fermod.util.data.serializable.PersonTest;
 
 class ObservableValueTest {

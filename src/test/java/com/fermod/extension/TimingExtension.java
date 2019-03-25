@@ -1,4 +1,4 @@
-package com.fermod.util.extension;
+package com.fermod.extension;
 
 import java.lang.reflect.Method;
 
