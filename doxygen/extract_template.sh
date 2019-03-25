@@ -1,0 +1,3 @@
+#!/bin/bash
+doxygen -l
+doxygen -w html header.html footer.html customdoxygen.css
