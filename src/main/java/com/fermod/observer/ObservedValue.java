@@ -1,12 +1,12 @@
-package com.fermod.eventdispatcher.observer;
+package com.fermod.observer;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-import com.fermod.eventdispatcher.event.EventPublisher;
-import com.fermod.eventdispatcher.event.ValueChangeListener;
+import com.fermod.event.EventPublisher;
+import com.fermod.event.ValueChangeListener;
 
 public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> implements Serializable {
 

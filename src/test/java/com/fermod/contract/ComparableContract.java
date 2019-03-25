@@ -1,4 +1,4 @@
-package com.fermod.eventdispatcher.contract;
+package com.fermod.contract;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

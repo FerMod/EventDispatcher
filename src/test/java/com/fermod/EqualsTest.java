@@ -1,4 +1,4 @@
-package com.fermod.eventdispatcher;
+package com.fermod;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import com.fermod.eventdispatcher.extension.TimingExtension;
+import com.fermod.util.extension.TimingExtension;
 
 /**
  * This class defines test of equality that the objects should pass.
