@@ -1,1 +1,1 @@
-# EventObserver
+# Event Dispatcher
