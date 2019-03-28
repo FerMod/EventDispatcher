@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" strict="true" name="LoggerConfig">
+
+    <Properties>
+
+        <Property name="LOG_PATTERN_ERROR">[%-5level] [%date{dd/MM/yyyy HH:mm:ss.SSS}] (%file:%line) %message%n</Property>
+        <!-- <Property name="LOG_PATTERN">[%-5level] [%date{dd/MM/yyyy HH:mm:ss.SSS}] %logger %method - %message%n</Property> -->
+        <Property name="LOG_PATTERN">[%-5level] [%date{dd/MM/yyyy HH:mm:ss.SSS}] %message%n</Property>
+        <Property name="LOG_PATTERN_TRACE">[%-5level] [%date{dd/MM/yyyy HH:mm:ss.SSS}] (%file:%line) %message%n</Property>
+       
+        <Property name="LOG_PATTERN_FILE">%date{dd/MM/yyyy HH:mm:ss.SSS} [%-5level] [%logger] (%file:%line) %method - %message%n</Property>
+
+        <Property name="LOG_DIR">target/logs/</Property>
+        <Property name="FILE_NAME">output</Property>
+
+    </Properties>
+
+    <Appenders>
+
+        <!-- FATAL, ERROR -->
+        <Console name="ConsoleErr" target="SYSTEM_ERR" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN_ERROR}"/>
+            <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+
+        <!-- WARN, INFO -->
+        <Console name="ConsoleInfo" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+
+        <!-- DEBUG, TRACE -->
+        <Console name="ConsoleDebug" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN_TRACE}"/>
+            <ThresholdFilter level="INFO" onMatch="DENY" onMismatch="ACCEPT"/>
+        </Console>
+
+        <!-- Log file -->
+        <RollingFile name="LogFile" fileName="${LOG_DIR}${FILE_NAME}.log" filePattern="${LOG_DIR}${FILE_NAME}-%date{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${LOG_PATTERN_FILE}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Logger name="com.fermod" additivity="false">
+            <AppenderRef ref="ConsoleErr" />
+            <AppenderRef ref="ConsoleInfo" />
+            <AppenderRef ref="ConsoleDebug" />
+            <AppenderRef ref="LogFile" />
+        </Logger>
+
+        <Root level="all">
+            <AppenderRef ref="ConsoleDebug"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
