@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventpublisher_2ejava',['EventPublisher.java',['../da/df6/EventPublisher_8java.html',1,'']]]
+  ['observedvalue_2ejava',['ObservedValue.java',['../dd/dda/ObservedValue_8java.html',1,'']]]
 ];
