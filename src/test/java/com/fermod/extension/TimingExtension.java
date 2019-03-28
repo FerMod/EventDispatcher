@@ -2,14 +2,13 @@ package com.fermod.extension;
 
 import java.lang.reflect.Method;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ExtensionContext.Namespace;
 import org.junit.jupiter.api.extension.ExtensionContext.Store;
-
-import com.fermod.logger.ConsoleLogger;
 
 /**
  * The TimingExtension class implements the {@link BeforeTestExecutionCallback}
@@ -24,9 +23,8 @@ import com.fermod.logger.ConsoleLogger;
  * @see #afterTestExecution(ExtensionContext)
  */
 public class TimingExtension implements BeforeTestExecutionCallback, AfterTestExecutionCallback {
-	
-	// FIXME: Fix logger implementation
-	// private static final Logger LOGGER = ConsoleLogger.createLogger(TimingExtension.class);
+
+	private static final Logger LOGGER = LogManager.getLogger(TimingExtension.class);
 
 	private static final String START_TIME = "start time";
 
@@ -65,8 +63,7 @@ public class TimingExtension implements BeforeTestExecutionCallback, AfterTestEx
 		long startTime = getStore(context).remove(START_TIME, long.class);
 		long duration = System.currentTimeMillis() - startTime;
 
-		// FIXME: Fix logger implementation
-		// LOGGER.info(String.format("Method [%s] took %s ms.", testMethod.getName(), duration));
+		LOGGER.info(String.format("Method \"%s\" took %s ms.", testMethod.getName(), duration));
 	}
 
 	/**

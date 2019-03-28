@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['consolelogger_2ejava',['ConsoleLogger.java',['../d6/de7/ConsoleLogger_8java.html',1,'']]]
+  ['eventpublisher_2ejava',['EventPublisher.java',['../da/df6/EventPublisher_8java.html',1,'']]]
 ];
