@@ -1,0 +1,87 @@
+The project struture tree is the following\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.}
+\DoxyCodeLine{├── docs}
+\DoxyCodeLine{│   └── (...)}
+\DoxyCodeLine{├── doxygen}
+\DoxyCodeLine{│   ├── customdoxygen.css}
+\DoxyCodeLine{│   ├── Doxyfile}
+\DoxyCodeLine{│   ├── DoxygenLayout.xml}
+\DoxyCodeLine{│   ├── extract\_template.sh}
+\DoxyCodeLine{│   ├── footer.html}
+\DoxyCodeLine{│   ├── header.html}
+\DoxyCodeLine{│   ├── html -> ../docs}
+\DoxyCodeLine{│   ├── images}
+\DoxyCodeLine{│   └── latex}
+\DoxyCodeLine{│       └── (...)}
+\DoxyCodeLine{├── LICENSE}
+\DoxyCodeLine{├── pom.xml}
+\DoxyCodeLine{├── README.md}
+\DoxyCodeLine{├── src}
+\DoxyCodeLine{│   ├── main}
+\DoxyCodeLine{│   │   ├── java}
+\DoxyCodeLine{│   │   │   └── com}
+\DoxyCodeLine{│   │   │       └── fermod}
+\DoxyCodeLine{│   │   │           ├── event}
+\DoxyCodeLine{│   │   │           │   ├── EventPublisher.java}
+\DoxyCodeLine{│   │   │           │   └── ValueChangeListener.java}
+\DoxyCodeLine{│   │   │           └── observer}
+\DoxyCodeLine{│   │   │               └── ObservedValue.java}
+\DoxyCodeLine{│   │   └── resources}
+\DoxyCodeLine{│   │       └── log4j2.xml}
+\DoxyCodeLine{│   └── test}
+\DoxyCodeLine{│       ├── java}
+\DoxyCodeLine{│       │   └── com}
+\DoxyCodeLine{│       │       └── fermod}
+\DoxyCodeLine{│       │           ├── contract}
+\DoxyCodeLine{│       │           │   ├── ComparableContract.java}
+\DoxyCodeLine{│       │           │   ├── EqualsContract.java}
+\DoxyCodeLine{│       │           │   └── Testable.java}
+\DoxyCodeLine{│       │           ├── data}
+\DoxyCodeLine{│       │           │   └── serializable}
+\DoxyCodeLine{│       │           │       └── PersonTest.java}
+\DoxyCodeLine{│       │           ├── EqualsTest.java}
+\DoxyCodeLine{│       │           ├── extension}
+\DoxyCodeLine{│       │           │   └── TimingExtension.java}
+\DoxyCodeLine{│       │           ├── Log4jTest.java}
+\DoxyCodeLine{│       │           ├── ObservableValueTest.java}
+\DoxyCodeLine{│       │           └── util}
+\DoxyCodeLine{│       │               └── TestUtilities.java}
+\DoxyCodeLine{│       └── resources}
+\DoxyCodeLine{└── target}
+\DoxyCodeLine{    ├── classes}
+\DoxyCodeLine{    │   ├── com}
+\DoxyCodeLine{    │   │   └── fermod}
+\DoxyCodeLine{    │   │       ├── event}
+\DoxyCodeLine{    │   │       │   ├── EventPublisher.class}
+\DoxyCodeLine{    │   │       │   └── ValueChangeListener.class}
+\DoxyCodeLine{    │   │       └── observer}
+\DoxyCodeLine{    │   │           └── ObservedValue.class}
+\DoxyCodeLine{    │   ├── log4j2.xml}
+\DoxyCodeLine{    │   └── META-INF}
+\DoxyCodeLine{    │       ├── MANIFEST.MF}
+\DoxyCodeLine{    │       └── maven}
+\DoxyCodeLine{    │           └── com.fermod}
+\DoxyCodeLine{    │               └── event-dispatcher}
+\DoxyCodeLine{    │                   ├── pom.properties}
+\DoxyCodeLine{    │                   └── pom.xml}
+\DoxyCodeLine{    ├── logs}
+\DoxyCodeLine{    └── test-classes}
+\DoxyCodeLine{        └── com}
+\DoxyCodeLine{            └── fermod}
+\DoxyCodeLine{                ├── contract}
+\DoxyCodeLine{                │   ├── ComparableContract.class}
+\DoxyCodeLine{                │   ├── EqualsContract.class}
+\DoxyCodeLine{                │   └── Testable.class}
+\DoxyCodeLine{                ├── data}
+\DoxyCodeLine{                │   └── serializable}
+\DoxyCodeLine{                │       └── PersonTest.class}
+\DoxyCodeLine{                ├── EqualsTest.class}
+\DoxyCodeLine{                ├── extension}
+\DoxyCodeLine{                │   └── TimingExtension.class}
+\DoxyCodeLine{                ├── Log4jTest.class}
+\DoxyCodeLine{                ├── ObservableValueTest.class}
+\DoxyCodeLine{                └── util}
+\DoxyCodeLine{                    └── TestUtilities.class}
+\end{DoxyCode}
+ 

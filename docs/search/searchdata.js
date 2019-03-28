@@ -3,9 +3,10 @@ var indexSectionsWithContent =
   0: "ceglnorsuvw",
   1: "eov",
   2: "c",
-  3: "eov",
+  3: "eorv",
   4: "gnorsuw",
-  5: "lrsvw"
+  5: "lrsvw",
+  6: "e"
 };
 
 var indexSectionNames =
@@ -15,7 +16,8 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "variables"
+  5: "variables",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -25,6 +27,7 @@ var indexSectionLabels =
   2: "Namespaces",
   3: "Files",
   4: "Functions",
-  5: "Variables"
+  5: "Variables",
+  6: "Pages"
 };
 
