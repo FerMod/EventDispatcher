@@ -1,6 +1,6 @@
 # Event Dispatcher
 
-The project struture tree is the following:
+The project structure tree is the following:
 ```
 .
 ├── docs

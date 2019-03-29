@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<name>EventDispatcher</name>
+	<url>https://github.com/FerMod/EventDispatcher</url>
+	
 	<groupId>com.fermod</groupId>
 	<artifactId>event-dispatcher</artifactId>
 	<version>0.1.1-beta</version>
 	<packaging>jar</packaging>
-
-	<name>EventObserver</name>
-	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,13 +22,13 @@
 
 	<dependencies>
 
+		<!-- Junit 5 -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>${junit.jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
@@ -43,7 +43,6 @@
 			<version>${junit.jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
@@ -51,6 +50,7 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Log4j2 -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
@@ -77,7 +77,6 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.1</version>
 			</plugin>
-
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>2.22.1</version>
