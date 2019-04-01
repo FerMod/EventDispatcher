@@ -3,6 +3,7 @@ package com.fermod;
 import static org.junit.Assume.assumeNoException;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
@@ -14,6 +15,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.TestInfo;
@@ -21,20 +24,22 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import com.fermod.observer.ObservedValue;
 import com.fermod.data.serializable.PersonTest;
 import com.fermod.extension.TimingExtension;
+import com.fermod.observer.ObservedValue;
 
 @ExtendWith({TimingExtension.class})
 class ObservableValueTest {
 
+	private static final Logger LOGGER = LogManager.getLogger(ObservableValueTest.class);
+	
 	static File tempFile;
-	boolean eventInvoked;
+	static boolean eventMethodInvoked;
 
 	@BeforeEach
 	void beforeEach() {
 		initTempFile("SerializedObjectTest");
-		eventInvoked = false;
+		eventMethodInvoked = false;
 	}
 
 	private void initTempFile(String fileName) {
@@ -58,7 +63,7 @@ class ObservableValueTest {
 		try {
 			ObservedValue<Integer> observedValue = new ObservedValue<>(10);
 			observedValue.registerListener((oldVAlue, newValue) -> {
-				eventInvoked = true;
+				eventMethodInvoked = true;
 				assertAll("EventValues",
 					() -> assertEquals(oldVAlue, (Integer)value, () -> "New value missmatch in event invocation."),
 					() -> assertEquals(newValue, (Integer)expected, () -> "Old value missmatch in event invocation.")
@@ -67,10 +72,36 @@ class ObservableValueTest {
 
 			observedValue.set(expected);
 
-			assertTrue(eventInvoked, () -> "Event method not invoked.");
+			assertTrue(eventMethodInvoked, () -> "Event method not invoked.");
 		} catch (Exception e) {
 			fail("Unexpected exception thrown in " + testInfo.getClass().getSimpleName() + "\n\tCase: " + testInfo.getDisplayName(), e);
 		}
+	}
+	
+	@DisplayName("Test Event - Object Metod Invocation")
+	@ParameterizedTest
+	@CsvSource({"Paco, NewPaco,44", "Lola, NewLola, 41"})
+	void testEventMethodInvocation(String name, String newName, int age) {
+
+		PersonTest personTest = new PersonTest(name, age);
+
+		try {
+			personTest.onNameChanged(ObservableValueTest::valueChangedTest);
+		} catch (Exception e) {
+			assumeNoException(e);
+		}
+
+		assertFalse(eventMethodInvoked, () -> "Expected event method uninvoked, but is already invoked.");
+		
+		personTest.setName(name);
+		assertTrue(eventMethodInvoked, () -> "Expected event method to be invoked, but was not invoked.");
+		assertTrue(personTest.getName() == newName, () -> "Expected event method to be invoked, but was not invoked.");
+		
+	}
+	
+	private static <T> void valueChangedTest(T oldValue, T newValue) {
+		eventMethodInvoked = true;
+		LOGGER.debug("Value changed event metod called. [oldValue: " + oldValue + ", newValue: " + newValue + "]");
 	}
 
 	@SuppressWarnings("unchecked")

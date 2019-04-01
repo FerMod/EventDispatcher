@@ -1,26 +1,32 @@
 package com.fermod.data.serializable;
 
 import java.io.Serializable;
+import java.util.function.BiConsumer;
 
+import com.fermod.event.ValueChangeListener;
 import com.fermod.observer.ObservedValue;
 
 public class PersonTest implements Serializable {
 
-	private String name;
+	private ObservedValue<String> observedName = new ObservedValue<String>();
 	private int age; 
-	private ObservedValue<String> observedName;
-
+	
 	public PersonTest(String name, int age) {
-		this.name = name;
+		this.observedName.set(name);
 		this.age = age;
 	}
 
 	public String getName() {
-		return name;	
+		return observedName.get();	
 	}
 
 	public void setName(String name) {
-		this.name = name;	
+		observedName.set(name);
+	}
+	
+	public void onNameChanged(BiConsumer<String, String> consumer) {
+		ValueChangeListener<String> listener = observedName.registerListener((oldValue, newValue) -> consumer.accept(oldValue, newValue));
+		observedName.registerListener(listener);
 	}
 
 	public int getAge() {
@@ -30,17 +36,10 @@ public class PersonTest implements Serializable {
 	public void setAge(int age) {
 		this.age = age;	
 	}
-	
-	public String getObservedName() {
-		return observedName.get();	
-	}
-
-	public void setObservedName(String observedName) {
-		this.observedName.set(observedName);	
-	}
 
 	@Override
 	public boolean equals(Object obj) {
+		
 		if (obj == null) {
 			return false;
 		}
@@ -50,7 +49,7 @@ public class PersonTest implements Serializable {
 		}
 
 		final PersonTest other = (PersonTest) obj;
-		if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+		if ((this.observedName == null) ? (other.observedName != null) : !this.observedName.equals(other.observedName)) {
 			return false;
 		}
 
@@ -64,7 +63,7 @@ public class PersonTest implements Serializable {
 	@Override
 	public int hashCode() {
 		int hash = 3;
-		hash = 53 * hash + (this.name != null ? this.name.hashCode() : 0);
+		hash = 53 * hash + (this.observedName != null ? this.observedName.hashCode() : 0);
 		hash = 53 * hash + this.age;
 		return hash;
 	}
