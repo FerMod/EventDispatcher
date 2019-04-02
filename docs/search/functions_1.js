@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notifylisteners',['notifyListeners',['../d9/d75/classcom_1_1fermod_1_1event_1_1EventPublisher.html#ad137b92c3d655d2e6cfd3349ffc41938',1,'com::fermod::event::EventPublisher']]]
+  ['get',['get',['../d8/d55/classcom_1_1fermod_1_1observer_1_1ObservedValue.html#aba42362d9ecdba6a831a148d182b6fe6',1,'com::fermod::observer::ObservedValue']]]
 ];
