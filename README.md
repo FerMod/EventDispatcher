@@ -1,7 +1,8 @@
 # Event Dispatcher
 
-The general project structure tree is the following, for a more detalled tree go [here](tree.html):
-```
+The general project structure tree is the following, for a more detalled tree go [here](https://fermod.github.io/EventDispatcher/tree.html):
+
+```tex
 .
 ├── docs
 │   └── (...)
