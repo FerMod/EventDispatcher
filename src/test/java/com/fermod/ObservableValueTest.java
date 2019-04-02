@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import java.io.File;
@@ -80,7 +81,7 @@ class ObservableValueTest {
 	
 	@DisplayName("Test Event - Object Metod Invocation")
 	@ParameterizedTest
-	@CsvSource({"Paco, NewPaco,44", "Lola, NewLola, 41"})
+	@CsvSource({"Paco, NewPaco, 44", "Lola, NewLola, 41"})
 	void testEventMethodInvocation(String name, String newName, int age) {
 
 		PersonTest personTest = new PersonTest(name, age);
@@ -91,19 +92,33 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertFalse(eventMethodInvoked, () -> "Expected event method uninvoked, but is already invoked.");
-		
-		personTest.setName(name);
-		assertTrue(eventMethodInvoked, () -> "Expected event method to be invoked, but was not invoked.");
-		assertTrue(personTest.getName() == newName, () -> "Expected event method to be invoked, but was not invoked.");
+		assertFalse(eventMethodInvoked, () -> "Event method not invoked");
+		personTest.setName(newName);
+		assertTrue(eventMethodInvoked, () -> "Event method invoked");
 		
 	}
 	
-	private static <T> void valueChangedTest(T oldValue, T newValue) {
-		eventMethodInvoked = true;
-		LOGGER.debug("Value changed event metod called. [oldValue: " + oldValue + ", newValue: " + newValue + "]");
-	}
+	@DisplayName("Test Event - Object Metod Invocation")
+	@ParameterizedTest
+	@CsvSource({"Paco, NewPaco, 44", "Lola, NewLola, 41"})
+	void testEventMethodValueChange(String name, String newName, int age) {
 
+		PersonTest personTest = new PersonTest(name, age);
+
+		try {
+			personTest.onNameChanged(ObservableValueTest::valueChangedTest);
+		} catch (Exception e) {
+			assumeNoException(e);
+		}
+
+		assumeFalse(eventMethodInvoked, () -> "Event method not invoked");
+		personTest.setName(newName);
+		assumeTrue(eventMethodInvoked, () -> "Event method invoked");
+		
+		assertEquals(newName, personTest.getName(), () -> "Obtained value is the new value");
+		
+	}
+	
 	@SuppressWarnings("unchecked")
 	@DisplayName("Test Serialization - Boolean")
 	@ParameterizedTest
@@ -382,6 +397,11 @@ class ObservableValueTest {
 		}
 
 		assertEquals(expectedTestClass, value.get(), "" + observedValue.get().hashCode() + " " + value.hashCode());				
+	}
+
+	private static <T> void valueChangedTest(T oldValue, T newValue) {
+		eventMethodInvoked = true;
+		LOGGER.debug("Value changed event metod called. [oldValue: " + oldValue + ", newValue: " + newValue + "]");
 	}
 
 	private <T> void serialiceToFile(File file, T value) {

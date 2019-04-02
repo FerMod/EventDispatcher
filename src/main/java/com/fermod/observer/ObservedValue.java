@@ -52,17 +52,13 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 			return false;
 		}
 
-		if (this.value != other.value) {
-			return false;
-		}
-
 		return true;
 	}
 
 	@Override
 	public int hashCode() {
-		int hash = 3;
-		hash = 53 * hash + (this.value != null ? this.value.hashCode() : 0);
+		int hash = 17;
+		hash = 31 * hash + (this.value != null ? this.value.hashCode() : 0);
 		return hash;
 	}
 
