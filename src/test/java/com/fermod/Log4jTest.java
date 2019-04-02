@@ -8,10 +8,11 @@ import org.apache.logging.log4j.Logger;
 public class Log4jTest {
 
 	private static final Logger LOGGER = LogManager.getLogger(Log4jTest.class);
-
+	private static int count = 5;
+	
 	public static void main(String[] args) {
 
-		while(true) {
+		while(count > 0) {
 			LOGGER.trace("Trace log message");
 			LOGGER.debug("Debug log message");
 			LOGGER.info("Info log message");
@@ -19,6 +20,7 @@ public class Log4jTest {
 			LOGGER.error("Error log message");
 			LOGGER.fatal("Fatal log message");
 			System.out.println();
+			count--;
 			try {
 				TimeUnit.SECONDS.sleep(1);
 			} catch (InterruptedException e1) {

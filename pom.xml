@@ -5,19 +5,22 @@
 
 	<name>EventDispatcher</name>
 	<url>https://github.com/FerMod/EventDispatcher</url>
-	
+
 	<groupId>com.fermod</groupId>
 	<artifactId>event-dispatcher</artifactId>
-	<version>0.1.1-beta</version>
+	<version>0.1.2-beta</version>
 	<packaging>jar</packaging>
 
 	<properties>
+	
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+		
 		<junit.jupiter.version>5.4.1</junit.jupiter.version>
 		<junit.platform.version>1.4.1</junit.platform.version>
 		<apache.logging.log4j.version>2.11.2</apache.logging.log4j.version>
+		
 	</properties>
 
 	<dependencies>
@@ -35,18 +38,18 @@
 			<version>${junit.jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 		<!-- Junit 5 experimental feature -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-params</artifactId>
 			<version>${junit.jupiter.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-runner</artifactId>
-			<version>${junit.platform.version}</version>
 			<scope>test</scope>
 		</dependency>
 

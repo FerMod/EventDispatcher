@@ -34,6 +34,33 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	public T get() {
 		return value;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (obj == null) {
+			return false;
+		}
+
+		if (!ObservedValue.class.isAssignableFrom(obj.getClass())) {
+			return false;
+		}
+
+		@SuppressWarnings("unchecked")
+		final ObservedValue<T> other = (ObservedValue<T>) obj;
+		if ((this.value == null) ? (other.value != null) : !this.value.equals(other.value)) {
+			return false;
+		}
+
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		int hash = 17;
+		hash = 31 * hash + (this.value != null ? this.value.hashCode() : 0);
+		return hash;
+	}
 
 	/**
 	 * The <code>writeObject</code> method is responsible for writing the state of the
