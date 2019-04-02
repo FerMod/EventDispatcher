@@ -6,12 +6,12 @@ import java.util.function.BiConsumer;
 import com.fermod.event.ValueChangeListener;
 import com.fermod.observer.ObservedValue;
 
-public class PersonTest implements Serializable {
+public class PersonObject implements Serializable {
 
 	private ObservedValue<String> observedName = new ObservedValue<String>();
 	private int age; 
 	
-	public PersonTest(String name, int age) {
+	public PersonObject(String name, int age) {
 		this.observedName.set(name);
 		this.age = age;
 	}
@@ -44,11 +44,11 @@ public class PersonTest implements Serializable {
 			return false;
 		}
 
-		if (!PersonTest.class.isAssignableFrom(obj.getClass())) {
+		if (!PersonObject.class.isAssignableFrom(obj.getClass())) {
 			return false;
 		}
 
-		final PersonTest other = (PersonTest) obj;
+		final PersonObject other = (PersonObject) obj;
 		if ((this.observedName == null) ? (other.observedName != null) : !this.observedName.equals(other.observedName)) {
 			return false;
 		}

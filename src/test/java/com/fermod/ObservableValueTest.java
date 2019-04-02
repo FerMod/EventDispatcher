@@ -25,7 +25,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import com.fermod.data.serializable.PersonTest;
+import com.fermod.data.serializable.PersonObject;
 import com.fermod.extension.TimingExtension;
 import com.fermod.observer.ObservedValue;
 
@@ -84,7 +84,7 @@ class ObservableValueTest {
 	@CsvSource({"Paco, NewPaco, 44", "Lola, NewLola, 41"})
 	void testEventMethodInvocation(String name, String newName, int age) {
 
-		PersonTest personTest = new PersonTest(name, age);
+		PersonObject personTest = new PersonObject(name, age);
 
 		try {
 			personTest.onNameChanged(ObservableValueTest::valueChangedTest);
@@ -103,7 +103,7 @@ class ObservableValueTest {
 	@CsvSource({"Paco, NewPaco, 44", "Lola, NewLola, 41"})
 	void testEventMethodValueChange(String name, String newName, int age) {
 
-		PersonTest personTest = new PersonTest(name, age);
+		PersonObject personTest = new PersonObject(name, age);
 
 		try {
 			personTest.onNameChanged(ObservableValueTest::valueChangedTest);
@@ -380,17 +380,17 @@ class ObservableValueTest {
 		assumeTrue(tempFile != null);
 		File file = tempFile;
 
-		PersonTest expectedTestClass = new PersonTest(name, age);
-		ObservedValue<PersonTest> observedValue = new ObservedValue<PersonTest>(expectedTestClass);
+		PersonObject expectedTestClass = new PersonObject(name, age);
+		ObservedValue<PersonObject> observedValue = new ObservedValue<PersonObject>(expectedTestClass);
 
 		serialiceToFile(file, observedValue);
 		assumeTrue(file.length() > 0);
 
-		ObservedValue<PersonTest> value = null;
+		ObservedValue<PersonObject> value = null;
 		try {
 			FileInputStream fileInputStream = new FileInputStream(file);
 			try(ObjectInputStream objectInputStream	= new ObjectInputStream(fileInputStream)) {
-				value = (ObservedValue<PersonTest>) objectInputStream.readObject();
+				value = (ObservedValue<PersonObject>) objectInputStream.readObject();
 			}
 		} catch (Exception e) {
 			assumeNoException(e);
