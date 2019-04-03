@@ -1,21 +1,20 @@
 # Event Dispatcher
 
-The general project structure tree is the following, for a more detalled tree go [here](https://fermod.github.io/EventDispatcher/tree.html):
+The general project structure tree is the following:
 
 ```tex
 .
 ├── docs
 │   └── (...)
 ├── doxygen
-│   ├── Doxyfile
 │   ├── html -> ../docs
 │   ├── images
-│   │   └── (...)
-│   └── latex
-│       └── (...)
-├── LICENSE
-├── pom.xml
-├── README.md
+│   │   └── (...)
+│   ├── customdoxygen.css
+│   ├── Doxyfile
+│   ├── DoxygenLayout.xml
+│   ├── footer.html
+│   └── header.html
 ├── src
 │   ├── main
 │   │   ├── java
@@ -30,22 +29,46 @@ The general project structure tree is the following, for a more detalled tree go
 │       │       └── fermod
 │       │           └── (...)
 │       └── resources
-└── target
-    ├── classes
-    │   ├── com
-    │   │   └── fermod
-    │   │       └── (...)
-    │   ├── log4j2.xml
-    │   └── META-INF
-    │       ├── MANIFEST.MF
-    │       └── maven
-    │           └── com.fermod
-    │               └── event-dispatcher
-    │                   ├── pom.properties
-    │                   └── pom.xml
-    ├── logs
-    └── test-classes
-        └── com
-            └── fermod
-                └── (...)
+├── target
+│   ├── classes
+│   │   ├── com
+│   │   │   └── fermod
+│   │   │       ├── event
+│   │   │       │   └── (...)
+│   │   │       └── observer
+│   │   │           └── (...)
+│   │   ├── META-INF
+│   │   │   ├── maven
+│   │   │   │   └── com.fermod
+│   │   │   │       └── event-dispatcher
+│   │   │   │           ├── pom.properties
+│   │   │   │           └── pom.xml
+│   │   │   └── MANIFEST.MF
+│   │   └── log4j2.xml
+│   ├── generated-sources
+│   │   └── annotations
+│   ├── generated-test-sources
+│   │   └── test-annotations
+│   ├── logs
+│   │   └── (...)
+│   ├── maven-status
+│   │   └── maven-compiler-plugin
+│   │       ├── compile
+│   │       │   └── default-compile
+│   │       │       ├── createdFiles.lst
+│   │       │       └── inputFiles.lst
+│   │       └── testCompile
+│   │           └── default-testCompile
+│   │               ├── createdFiles.lst
+│   │               └── inputFiles.lst
+│   ├── surefire-reports
+│   │   ├── com.fermod.ObservableValueTest.txt
+│   │   └── TEST-com.fermod.ObservableValueTest.xml
+│   └── test-classes
+│       └── com
+│           └── fermod
+│               └── (...)
+├── LICENSE
+├── pom.xml
+└── README.md
 ```
