@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writelock',['writeLock',['../d9/d75/classcom_1_1fermod_1_1event_1_1EventPublisher.html#acde65c6b2ab5a8b71066b1fa20254cf7',1,'com::fermod::event::EventPublisher']]]
+  ['observedname',['observedName',['../classcom_1_1fermod_1_1data_1_1serializable_1_1PersonObject.html#a7f994813c8d087c5093e6c703cae6378',1,'com::fermod::data::serializable::PersonObject']]]
 ];

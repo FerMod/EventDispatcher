@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['value',['value',['../d8/d55/classcom_1_1fermod_1_1observer_1_1ObservedValue.html#a947edfec1982817155067f495b0c8cf7',1,'com::fermod::observer::ObservedValue']]]
+  ['listeners',['listeners',['../classcom_1_1fermod_1_1event_1_1EventPublisher.html#ac2fd4c556302eb7d63d0170194d79b1f',1,'com::fermod::event::EventPublisher']]],
+  ['logger',['LOGGER',['../classcom_1_1fermod_1_1EqualsTest.html#ab1d069f56091df4f6436f8c713ab2f39',1,'com.fermod.EqualsTest.LOGGER()'],['../classcom_1_1fermod_1_1extension_1_1TimingExtension.html#ab1d069f56091df4f6436f8c713ab2f39',1,'com.fermod.extension.TimingExtension.LOGGER()'],['../classcom_1_1fermod_1_1Log4jTest.html#ab1d069f56091df4f6436f8c713ab2f39',1,'com.fermod.Log4jTest.LOGGER()'],['../classcom_1_1fermod_1_1ObservableValueTest.html#ab1d069f56091df4f6436f8c713ab2f39',1,'com.fermod.ObservableValueTest.LOGGER()']]]
 ];

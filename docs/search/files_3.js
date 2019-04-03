@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['valuechangelistener_2ejava',['ValueChangeListener.java',['../df/d87/ValueChangeListener_8java.html',1,'']]]
+  ['observablevaluetest_2ejava',['ObservableValueTest.java',['../ObservableValueTest_8java.html',1,'']]],
+  ['observedvalue_2ejava',['ObservedValue.java',['../ObservedValue_8java.html',1,'']]]
 ];

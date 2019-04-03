@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventpublisher_2ejava',['EventPublisher.java',['../da/df6/EventPublisher_8java.html',1,'']]]
+  ['comparablecontract_2ejava',['ComparableContract.java',['../ComparableContract_8java.html',1,'']]]
 ];
