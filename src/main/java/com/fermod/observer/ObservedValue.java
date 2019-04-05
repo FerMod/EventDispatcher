@@ -8,36 +8,74 @@ import java.io.Serializable;
 import com.fermod.event.EventPublisher;
 import com.fermod.event.ValueChangeListener;
 
+/**
+ * Class that wraps a value and gives the utility of registering listeners that will be called
+ * after any variable value change.
+ *
+ * @param <T> the type of the observed value
+ */
 public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> implements Serializable {
 
 	private T value;
 
-	public ObservedValue() {
-		this(null);
-	}
+	/**
+	 * Default constructor of the class {@code ObservedValue<T>}. The observed value 
+	 * initialization is leaved to the compiler. This default will be {@code zero} or 
+	 * {@code null}, depending on the data type.
+	 */
+	public ObservedValue() { }
 
+	/**
+	 * Constructor of the class {@code ObservedValue<T>} that takes as parameter the value
+	 * that will be initialized the observed value.
+	 * 
+	 * @param value the value that will be initialized to 
+	 */
 	public ObservedValue(T value) {
 		this.value = value;
 	}
 
+	/**
+	 * Changes the value with the new given one, and notifies all the registered listeners of
+	 * the change.
+	 * 
+	 * @param value the new value to assign
+	 */
 	public void set(T value) {
+		set(value, true);
+	}
+	
+	/**
+	 * Changes the value with the new given one, and depending if the notification on change
+	 * is enabled or not it will notify all the registered listeners.
+	 * 
+	 * @param value the new value to assign
+	 * @param notifyChange {@code true} if the change should notify all the registered listeners, {@code false} otherwise.
+	 */
+	public void set(T value, boolean notifyChange) {
 
 		T oldValue = this.value;
 		this.value = value;
 
-		// Notify the list of registered listeners
-		this.notifyListeners((listener) -> listener.onValueChanged(oldValue, value));	
-
+		if(notifyChange) {
+			// Notify the list of registered listeners
+			this.notifyListeners((listener) -> listener.onValueChanged(oldValue, value));	
+		}
 
 	}
 
+	/**
+	 * Returns the value that is being observed
+	 * 
+	 * @return the value
+	 */
 	public T get() {
 		return value;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
-		
+
 		if (obj == null) {
 			return false;
 		}
