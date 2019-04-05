@@ -25,9 +25,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import com.fermod.data.serializable.PersonObject;
 import com.fermod.extension.TimingExtension;
 import com.fermod.observer.ObservedValue;
+import com.fermod.testdata.serializable.PersonObject;
 
 @ExtendWith({TimingExtension.class})
 class ObservableValueTest {

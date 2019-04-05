@@ -16,8 +16,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.fermod.contract.EqualsContract;
-import com.fermod.data.serializable.PersonObject;
 import com.fermod.extension.TimingExtension;
+import com.fermod.testdata.serializable.PersonObject;
 
 /**
  * This class defines test of equality that the objects should pass.
