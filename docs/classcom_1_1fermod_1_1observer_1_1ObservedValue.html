@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Event Dispatcher
-   &#160;<span id="projectnumber">v0.1.2-beta.2</span>
+   &#160;<span id="projectnumber">v0.1.3-beta</span>
    </div>
    <div id="projectbrief">Project that offers a small library that allows to subscribe and fire events.</div>
   </td>
@@ -100,8 +100,15 @@ $(document).ready(function(){initNavTree('classcom_1_1fermod_1_1observer_1_1Obse
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00011">11</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<div class="textblock"><p>Class that wraps a value and gives the utility of registering listeners that will be called after any variable value change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&lt;T&gt;</td><td>the type of the observed value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00017">17</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for ObservedValue&lt; T &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -122,6 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2b0e75211f2ac6326e1951b4e6608b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d22aaebaad2b13bea62fd9a82d2283c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1observer_1_1ObservedValue.html#a2d22aaebaad2b13bea62fd9a82d2283c">set</a> (T <a class="el" href="classcom_1_1fermod_1_1observer_1_1ObservedValue.html#a4fc7f59e3113e19697159919a5aad095">value</a>)</td></tr>
 <tr class="separator:a2d22aaebaad2b13bea62fd9a82d2283c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e68199589a29e5104dbcac24de22376"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1observer_1_1ObservedValue.html#a2e68199589a29e5104dbcac24de22376">set</a> (T <a class="el" href="classcom_1_1fermod_1_1observer_1_1ObservedValue.html#a4fc7f59e3113e19697159919a5aad095">value</a>, boolean notifyChange)</td></tr>
+<tr class="separator:a2e68199589a29e5104dbcac24de22376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6ea056c8af82f08af9fd0d857967f9b"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1observer_1_1ObservedValue.html#af6ea056c8af82f08af9fd0d857967f9b">get</a> ()</td></tr>
 <tr class="separator:af6ea056c8af82f08af9fd0d857967f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3ce8ca5a04e8966a9d2158aeeecfc16"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1observer_1_1ObservedValue.html#ae3ce8ca5a04e8966a9d2158aeeecfc16">equals</a> (Object obj)</td></tr>
@@ -179,7 +188,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00015">15</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p>Default constructor of the class. </p>
+<div class="fragment"><div class="line">ObservedValue&lt;T&gt; </div></div><!-- fragment --><p> . The observed value initialization is leaved to the compiler. This default will be</p><div class="fragment"><div class="line">zero </div></div><!-- fragment --><p> or </p><div class="fragment"><div class="line"><span class="keyword">null</span> </div></div><!-- fragment --><p> , depending on the data type. </p>
+
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00026">26</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
@@ -199,13 +211,22 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00019">19</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p>Constructor of the class. </p>
+<div class="fragment"><div class="line">ObservedValue&lt;T&gt; </div></div><!-- fragment --><p> that takes as parameter the value that will be initialized the observed value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value that will be initialized to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00034">34</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2d22aaebaad2b13bea62fd9a82d2283c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d22aaebaad2b13bea62fd9a82d2283c">&#9670;&nbsp;</a></span>set()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d22aaebaad2b13bea62fd9a82d2283c">&#9670;&nbsp;</a></span>set() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +241,54 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00023">23</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p>Changes the value with the new given one, and notifies all the registered listeners of the change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the new value to assign </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00044">44</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+
+</div>
+</div>
+<a id="a2e68199589a29e5104dbcac24de22376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e68199589a29e5104dbcac24de22376">&#9670;&nbsp;</a></span>set() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>notifyChange</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes the value with the new given one, and depending if the notification on change is enabled or not it will notify all the registered listeners. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the new value to assign </td></tr>
+    <tr><td class="paramname">notifyChange</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00055">55</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
@@ -239,7 +307,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00034">34</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p>Returns the value that is being observed. </p>
+<dl class="section return"><dt>Returns</dt><dd>the value </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00072">72</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
@@ -259,7 +330,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00039">39</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00077">77</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
@@ -278,7 +349,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00059">59</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00097">97</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
@@ -325,7 +396,7 @@ Additional Inherited Members</h2></td></tr>
 <dd>
 ObjectOutputStream </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00081">81</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00119">119</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
@@ -374,7 +445,7 @@ ObjectOutputStream </dd></dl>
 <dd>
 ObjectInputStream </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00107">107</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00145">145</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
@@ -399,7 +470,7 @@ ObjectInputStream </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00013">13</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00019">19</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>
@@ -425,7 +496,7 @@ ObjectInputStream </dd></dl>
 
 <p>Auto-generated serial version ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00114">114</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ObservedValue_8java_source.html#l00152">152</a> of file <a class="el" href="ObservedValue_8java_source.html">ObservedValue.java</a>.</p>
 
 </div>
 </div>

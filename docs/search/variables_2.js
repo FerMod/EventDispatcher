@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventmethodinvoked',['eventMethodInvoked',['../classcom_1_1fermod_1_1ObservableValueTest.html#aa75782532aeec76247d5dfaa5bef766e',1,'com::fermod::ObservableValueTest']]]
+  ['count',['count',['../classcom_1_1fermod_1_1Log4jExample.html#ad43c3812e6d13e0518d9f8b8f463ffcf',1,'com::fermod::Log4jExample']]]
 ];

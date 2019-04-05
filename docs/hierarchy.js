@@ -6,9 +6,10 @@ var hierarchy =
       [ "ObservedValue< T >", "classcom_1_1fermod_1_1observer_1_1ObservedValue.html", null ]
     ] ],
     [ "EventPublisher< ValueChangeListener< T > >", "classcom_1_1fermod_1_1event_1_1EventPublisher.html", null ],
-    [ "Log4jTest", "classcom_1_1fermod_1_1Log4jTest.html", null ],
+    [ "Log4jExample", "classcom_1_1fermod_1_1Log4jExample.html", null ],
     [ "ObservableValueTest", "classcom_1_1fermod_1_1ObservableValueTest.html", null ],
     [ "ObservedValue< String >", "classcom_1_1fermod_1_1observer_1_1ObservedValue.html", null ],
+    [ "RandomString", "classcom_1_1fermod_1_1util_1_1RandomString.html", null ],
     [ "Testable< T >", "interfacecom_1_1fermod_1_1contract_1_1Testable.html", [
       [ "ComparableContract< T extends Comparable< T >", "interfacecom_1_1fermod_1_1contract_1_1ComparableContract.html", null ],
       [ "EqualsContract< T >", "interfacecom_1_1fermod_1_1contract_1_1EqualsContract.html", [
@@ -24,7 +25,7 @@ var hierarchy =
       [ "TimingExtension", "classcom_1_1fermod_1_1extension_1_1TimingExtension.html", null ]
     ] ],
     [ "Serializable", null, [
-      [ "PersonObject", "classcom_1_1fermod_1_1data_1_1serializable_1_1PersonObject.html", null ],
-      [ "ObservedValue< T >", "classcom_1_1fermod_1_1observer_1_1ObservedValue.html", null ]
+      [ "ObservedValue< T >", "classcom_1_1fermod_1_1observer_1_1ObservedValue.html", null ],
+      [ "PersonObject", "classcom_1_1fermod_1_1testdata_1_1serializable_1_1PersonObject.html", null ]
     ] ]
 ];
