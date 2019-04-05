@@ -2,7 +2,6 @@ package com.fermod;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
-import java.nio.charset.Charset;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -16,8 +15,9 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.fermod.contract.EqualsContract;
-import com.fermod.data.serializable.PersonObject;
 import com.fermod.extension.TimingExtension;
+import com.fermod.testdata.serializable.PersonObject;
+import com.fermod.util.RandomString;
 
 /**
  * This class defines test of equality that the objects should pass.
@@ -26,10 +26,13 @@ import com.fermod.extension.TimingExtension;
 @ExtendWith({TimingExtension.class})
 class EqualsTest {
 
-	private static final Logger LOGGER = LogManager.getLogger(ObservableValueTest.class);
+	private static final Logger LOGGER = LogManager.getLogger(EqualsTest.class);
+	
+	static RandomString randString;
 	
 	@BeforeAll
 	static void beforeAll() {
+		randString = new RandomString(10, ThreadLocalRandom.current());
 	}
 
 	@AfterAll
@@ -71,14 +74,11 @@ class EqualsTest {
 		}
 
 		private PersonObject createRandomPersonObject() {
-
+			
+			String randomString = randString.nextString();
+			
 			Random random = ThreadLocalRandom.current();
-			byte[] array = new byte[7];
-
-			random.nextBytes(array);
-
-			String randomString = new String(array, Charset.forName("UTF-8"));
-			int randomInt = random.nextInt();
+			int randomInt = random.nextInt(200);
 
 			LOGGER.debug("Created PersonObject[name: " + randomString + ", age: " + randomInt + "]");
 			

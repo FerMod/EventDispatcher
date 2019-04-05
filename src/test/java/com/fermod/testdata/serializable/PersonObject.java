@@ -1,4 +1,4 @@
-package com.fermod.data.serializable;
+package com.fermod.testdata.serializable;
 
 import java.io.Serializable;
 import java.util.function.BiConsumer;
