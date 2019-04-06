@@ -3,6 +3,7 @@
   <!-- Navigation index tabs for HTML output -->
   <navindex>
     <tab type="mainpage" visible="yes" title=""/>
+    <tab type="user" url="site/index.html" title="Project Maven Site"/>
     <tab type="user" url="tree.html" title="Project Tree"/>
     <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="modules" visible="yes" title="" intro=""/>
