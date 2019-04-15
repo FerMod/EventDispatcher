@@ -23,6 +23,7 @@ for the JavaScript code in this file
 */
 var menudata={children:[
 {text:"Main Page",url:"index.html"},
+{text:"Project Maven Site",url:"site/index.html"},
 {text:"Project Tree",url:"tree.html"},
 {text:"Packages",url:"namespaces.html",children:[
 {text:"Packages",url:"namespaces.html"}]},
