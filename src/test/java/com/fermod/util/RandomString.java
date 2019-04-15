@@ -40,8 +40,8 @@ public class RandomString {
 
 
 	/**
-	 * Constructs a new random string generator instance.<br />
-	 * The random string will be formed of alphanumeric characters.
+	 * Constructs a new random string generator instance.
+	 * The random string will be formed with alphanumeric characters.
 	 * 
 	 * @param length the random generated string size
 	 * @param random the class instance to generate pseudorandom strings 
@@ -49,9 +49,9 @@ public class RandomString {
 	public RandomString(int length, Random random) {
 		this(length, random, ALPHANUM);
 	}
-	
+
 	/**
-	 * Constructs a new random string generator instance used to create pseudorandom strings from a secure generator.<br />
+	 * Constructs a new random string generator instance used to create pseudorandom strings from a secure generator.
 	 * 
 	 * @param length the random generated string size
 	 * @param symbols the string containing all the symbols, that the random strings will be composed of
@@ -61,8 +61,8 @@ public class RandomString {
 	}
 
 	/**
-	 * Constructs a new random string generator instance used to create pseudorandom strings from a secure generator.<br />
-	 * The random string will be formed of alphanumeric characters.
+	 * Constructs a new random string generator instance used to create pseudorandom strings from a secure generator.
+	 * The random string will be formed with alphanumeric characters.
 	 * 
 	 * @param length the random generated string size
 	 * 
@@ -78,11 +78,14 @@ public class RandomString {
 	 * available symbols is pseudorandomly generated and returned. All possible {@code String} values  are produced
 	 * with (approximately) equal probability. The method {@code nextString} is implemented using the provided
 	 * {@code Random} class's methods.
-	 * </p>
+	 * <p>
 	 * The probability of a collision, {@code p}, is approximately n<sup>2</sup>/(2q<sup>x</sup>), where 
 	 * {@code n} is the number of identifiers actually generated, {@code q} is the number of distinct symbols in
 	 * the alphabet, and {@code x} is the length of the generated string. The longer the {@code String} is, the lower
 	 * the probability of a collision taking place is.
+	 * 
+	 * @return the next pseudorandom, uniformly distributed {@code String} value formed with the provided symbols and
+	 *         from this random generator's sequence
 	 * 
 	 * @see Random
 	 */

@@ -50,7 +50,8 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	 * is enabled or not it will notify all the registered listeners.
 	 * 
 	 * @param value the new value to assign
-	 * @param notifyChange {@code true} if the change should notify all the registered listeners, {@code false} otherwise.
+	 * @param notifyChange {@code true} if the change should notify all the registered 
+	 *        listeners, {@code false} otherwise
 	 */
 	public void set(T value, boolean notifyChange) {
 
@@ -65,7 +66,7 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	}
 
 	/**
-	 * Returns the value that is being observed
+	 * Returns the value that is being observed.
 	 * 
 	 * @return the value
 	 */
@@ -112,7 +113,9 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	 * using the methods for primitive data types supported by<code> DataOutput</code>.
 	 *
 	 * @param out writes primitive data types and graphs of Java objects to an OutputStream
+	 * 
 	 * @throws IOException thrown when an I/O exception of some sort has occurred
+	 * 
 	 * @see Serializable
 	 * @see ObjectOutputStream
 	 */
@@ -135,9 +138,13 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	 * <code>ObjectOutputStream</code> using the <code>writeObject</code> method or by 
 	 * using the methods for primitive data types supported by <code>DataOutput</code>.
 	 * 
-	 * @param in the ObjectInputStream that deserializes primitive data and objects previously written using an ObjectOutputStream
+	 * @param in the ObjectInputStream that deserializes primitive data and objects previously
+	 *        written using an ObjectOutputStream
+	 *        
 	 * @throws IOException thrown when an I/O exception of some sort has occurred
-	 * @throws ClassNotFoundException thrown when an application does not found a definition for the class with the specified name. 
+	 * @throws ClassNotFoundException thrown when an application does not found a definition 
+	 *         for the class with the specified name
+	 *         
 	 * @see Serializable
 	 * @see ObjectInputStream
 	 */
