@@ -2,8 +2,8 @@ package com.fermod.event;
 
 /**
  * The listener interface for receiving value change events.
- * <p>
- * This is a {@link FunctionalInterface functional interface} whose functional method is {@link #onValueChanged}.
+ * 
+ * <p>This is a {@link FunctionalInterface functional interface} whose functional method is {@link #onValueChanged}.
  *
  * @param <T> the type of the variable that is being listened to
  */
@@ -17,5 +17,5 @@ public interface ValueChangeListener<T> {
 	 * @param value the new value of the variable
 	 */
 	void onValueChanged(T oldValue, T value);
-	
+
 }

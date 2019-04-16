@@ -61,7 +61,7 @@ public abstract class EventPublisher<T> {
 		}
 
 	}
-	
+
 	/**
 	 * Removes all the listeners from the list of the registered listeners. The list will be empty after this call returns.
 	 */
