@@ -4,9 +4,14 @@
 
 These changes have not been released yet.
 
-- Added `CHANGELOG.md` file
-- Added `CONTRIBUTING.md` file
-- Added `CODE_OF_CONDUCT.md` file
+- Added issue templates:
+  - `bug_report.md`
+  - `feature_request.md`
+  - `pull_request_template.md`
+- Added documentation files:
+  - `CHANGELOG.md`
+  - `CONTRIBUTING.md`
+  - `CODE_OF_CONDUCT.md`
 - Improved `README.md` file
 
 ## [0.1.4-beta.1] (2019-04-16)
