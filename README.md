@@ -1,6 +1,6 @@
 # Event Dispatcher
 
-Event Dispatcher is simple library that offers basic event managament.
+Event Dispatcher is simple library that offers basic event management.
 
 ## Getting Started
 
@@ -8,34 +8,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-This project uses **java 1.8**, and **Maven** to manage all the remaining dependencies. **Doxygen** is used to generate documentation from the annotated sources.
+This project requires to have **JDK 1.8**, and **Maven** which will manage all the remaining dependencies. **Doxygen** is required when generating documentation from the annotated sources.
 
 ### Installing
 
-
 ## Running the tests
 
-This project have automated test configured and runs the tests 
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+This project have *JUnit5* tests that are configured to run with maven, and can generate a report using the maven `mvn site` command.
 
 ## Built With
 
@@ -44,7 +23,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -54,15 +33,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * [FerMod](https://github.com/FerMod) **(Ferran Tudela)** - *Initial work*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/FerMod/EventDispatcher/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## Changelog
 
-* 
+To know more about the changes between versions, you can go to the [CHANGELOG](CHANGELOG.md) file.
 
 The general project structure tree is the following:
 
