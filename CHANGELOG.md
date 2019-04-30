@@ -5,6 +5,8 @@
 These changes have not been released yet.
 
 - Added `CHANGELOG.md` file
+- Added `CONTRIBUTING.md` file
+- Added `CODE_OF_CONDUCT.md` file
 - Improved `README.md` file
 
 ## [0.1.4-beta.1] (2019-04-16)
