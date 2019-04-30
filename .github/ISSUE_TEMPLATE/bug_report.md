@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 ## Describe the bug
-A clear and concise description of what the bug is. 
+<!-- A clear and concise description of what the bug is -->
 
 ## Steps to Reproduce the Problem
 1.
@@ -21,7 +21,7 @@ A clear and concise description of what the bug is.
 - Subsystem:
 
 ## Screenshots (optional)
-If applicable, add screenshots to help explain your problem.
+<!-- If applicable, add screenshots to help explain your problem -->
 
 ## Additional information (optional)
-Add any other information about the problem here.
+<!-- Add any other information about the problem here -->
