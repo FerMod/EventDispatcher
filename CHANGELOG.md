@@ -1,59 +1,45 @@
-# Release Notes
+# Changelog
 
 ## [Unreleased]
 
 These changes have not been released yet.
 
-- Added `release-notes.md` file
+- Added `CHANGELOG.md` file
 - Improved `README.md` file
 
-## [0.1.4-beta.1]
-
-Date: 2019-04-16
+## [0.1.4-beta.1] (2019-04-16)
 
 - Automatized docs generation
 - Improved bash scripts
 - Cleaned up `pom.xml`
 
-## [0.1.4-beta]
-
-Date: 2019-04-15
+## [0.1.4-beta] (2019-04-15)
 
 - Changed Maven site output folder
 - Fixed typos
 
-## [0.1.3-beta]
-
-Date: 2019-04-05
+## [0.1.3-beta] (2019-04-05)
 
 - Added script to update Maven version
 - Added missing documentation
 - Added random string generator class
 - Renamed package
 
-## [0.1.2-beta.2]
-
-Date: 2019-04-03
+## [0.1.2-beta.2] (2019-04-03)
 
 - Improved docs generation
 - Cleaned up generated directory tree in `README.md` file
 
-## [0.1.2-beta]
-
-Date: 019-04-02
+## [0.1.2-beta] (019-04-02)
 
 - Added equality tests
 - Fixed typos
 
-## [0.1.1-beta]
-
-Date: 2019-03-28
+## [0.1.1-beta] (2019-03-28)
 
 - Migrated from Log4j to Log4j2
 
-## [0.1.0-beta]
-
-Date: 2019-03-26
+## [0.1.0-beta] (2019-03-26)
 
 - First release
 
