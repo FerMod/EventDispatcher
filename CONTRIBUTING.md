@@ -157,7 +157,7 @@ Example:
 Add feature
 
 Description in more detail of the commit if needed.
-With synxtax like '#3' references issues and pull request and with `close #3`, can autoclose them.
+With synxtax like '#3' references issues and pull request and with 'close #3', can autoclose them.
 ```
 
 ### Use of labels in issues and pull request
