@@ -44,7 +44,7 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	public void set(T value) {
 		set(value, true);
 	}
-	
+
 	/**
 	 * Changes the value with the new given one, and depending if the notification on change
 	 * is enabled or not it will notify all the registered listeners.
@@ -106,8 +106,8 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	 * object for its particular class so that the corresponding <code>readObject</code>
 	 * method can restore it. It may call the default mechanism for saving the Object's 
 	 * fields calling <code>out.defaultWriteObject</code>.
-	 * <p>
-	 * The method does not need to concern itself with the state belonging to its 
+	 * 
+	 * <p>The method does not need to concern itself with the state belonging to its 
 	 * superclasses or subclasses. State is saved by writing the individual fields to the
 	 * <code>ObjectOutputStream</code> using the <code>writeObject</code> method or by
 	 * using the methods for primitive data types supported by<code> DataOutput</code>.
@@ -127,12 +127,12 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	 * The <code>readObject</code> method is responsible for reading from the stream and
 	 * restoring the classes fields. It may call <code>in.defaultReadObject</code> to invoke
 	 * the default mechanism for restoring the object's non-static and non-transient fields
-	 * <p>
-	 * The <code>defaultReadObject</code> method uses information in the stream to assign
+	 * 
+	 * <p>The <code>defaultReadObject</code> method uses information in the stream to assign
 	 * the fields of the object saved in the stream with the correspondingly named fields
 	 * in the current object.
-	 * <p>
-	 * This method handles the cast when the class has evolved to add new fields. The 
+	 * 
+	 * <p>This method handles the cast when the class has evolved to add new fields. The 
 	 * method does not need to concern itself with the state belonging to its superclasses
 	 * or subclasses. State is saved by writing the individual fields to the
 	 * <code>ObjectOutputStream</code> using the <code>writeObject</code> method or by 
@@ -140,11 +140,11 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	 * 
 	 * @param in the ObjectInputStream that deserializes primitive data and objects previously
 	 *        written using an ObjectOutputStream
-	 *        
+	 * 
 	 * @throws IOException thrown when an I/O exception of some sort has occurred
 	 * @throws ClassNotFoundException thrown when an application does not found a definition 
 	 *         for the class with the specified name
-	 *         
+	 * 
 	 * @see Serializable
 	 * @see ObjectInputStream
 	 */
@@ -154,7 +154,7 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	}
 
 	/**
-	 * Auto-generated serial version ID
+	 * Auto-generated serial version ID.
 	 */
 	private static final long serialVersionUID = 8159940159964193507L;
 

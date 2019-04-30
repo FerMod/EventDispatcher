@@ -1,5 +1,48 @@
 # Event Dispatcher
 
+Event Dispatcher is simple library that offers basic event management.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+This project requires to have **JDK 1.8**, and **Maven** which will manage all the remaining dependencies. **Doxygen** is required when generating documentation from the annotated sources.
+
+### Installing
+
+## Running the tests
+
+This project have *JUnit5* tests that are configured to run with maven, and can generate a report using the maven `mvn site` command.
+
+## Built With
+
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [Doxygen](http://www.doxygen.nl/) - The documentation generation from annotated sources tool
+
+## Contributing
+
+Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/FerMod/EventDispatcher/tags).
+
+## Authors
+
+* [FerMod](https://github.com/FerMod) **(Ferran Tudela)** - *Initial work*
+
+See also the list of [contributors](https://github.com/FerMod/EventDispatcher/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Changelog
+
+To know more about the changes between versions, you can go to the [CHANGELOG](CHANGELOG.md) file.
+
 The general project structure tree is the following:
 
 ```tex
