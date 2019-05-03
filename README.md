@@ -12,9 +12,10 @@ This project requires to have **JDK 1.8**, and **Maven** which will manage all t
 
 ### Installing
 
+
 ## Running the tests
 
-This project have *JUnit5* tests that are configured to run with maven, and can generate a report using the maven `mvn site` command.
+This project have *JUnit5* tests that are configured to run with maven with the command `mvn test`, the tests can also be run and at the same time can generate a report using the maven `mvn site` command.
 
 ## Built With
 
