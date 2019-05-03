@@ -12,6 +12,7 @@ These changes have not been released yet.
   - `CHANGELOG.md`
   - `CONTRIBUTING.md`
   - `CODE_OF_CONDUCT.md`
+- Added [Travis CI](https://travis-ci.org/FerMod/EventDispatcher) support
 - Improved `README.md` file
 
 ## [0.1.4-beta.1] (2019-04-16)
