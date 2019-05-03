@@ -1,5 +1,7 @@
 # Event Dispatcher
 
+[![Build Status](https://travis-ci.org/FerMod/EventDispatcher.svg?branch=master)](https://travis-ci.org/FerMod/EventDispatcher)
+
 Event Dispatcher is simple library that offers basic event management.
 
 ## Getting Started
