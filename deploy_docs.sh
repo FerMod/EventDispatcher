@@ -7,5 +7,6 @@ mvn versions:set -DnewVersion=${PROJECT_NUMBER#"v"}
 mvn clean site
 
 # Generate doxygen docs
-cd doxygen
+cd $TRAVIS_BUILD_DIR/doxygen
 $DOXYGEN_PATH/bin/doxygen Doxyfile
+cd $TRAVIS_BUILD_DIR
