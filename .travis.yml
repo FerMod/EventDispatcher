@@ -7,9 +7,7 @@ cache:
   - $HOME/.m2
 
 before_deploy:
-  - sudo apt-get install doxygen
-  - cd doxygen
-  - bash ./generate_docs.sh
+  - bash ./deploy_docs.sh
 deploy:
   provider: pages
   skip_cleanup: true
