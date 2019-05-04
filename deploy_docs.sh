@@ -8,5 +8,5 @@ mvn clean site
 
 # Generate doxygen docs
 cd $TRAVIS_BUILD_DIR/doxygen
-$DOXYGEN_PATH/bin/doxygen Doxyfile
+$DOXYGEN_PATH/build/bin/doxygen Doxyfile
 cd $TRAVIS_BUILD_DIR
