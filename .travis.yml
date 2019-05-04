@@ -5,7 +5,7 @@ cache: packages
 
 before_deploy:
   - cd doxygen
-  - ./generate_docs.sh
+  - bash ./generate_docs.sh
 deploy:
   provider: pages
   skip_cleanup: true
