@@ -2,8 +2,8 @@
 set -e # Exit with nonzero exit code if anything fails
 
 echo "Cloning doxygen repository..."
-git clone https://github.com/doxygen/doxygen.git doxygen
-cd doxygen
+git clone https://github.com/doxygen/doxygen.git $DOXYGEN_PATH
+cd $DOXYGEN_PATH
 
 echo "Create build folder..."
 mkdir build
