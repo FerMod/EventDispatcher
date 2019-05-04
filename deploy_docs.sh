@@ -6,7 +6,7 @@ export PROJECT_NUMBER="$(git describe --tags --abbrev=0)"
 mvn versions:set -DnewVersion=${PROJECT_NUMBER#"v"}
 mvn clean site
 
-exec ./generate_tree.sh
+sudo exec ./generate_tree.sh
 
 # Generate doxygen docs
 cd $TRAVIS_BUILD_DIR/doxygen
