@@ -1,8 +1,5 @@
 #!/bin/bash
-
-sudo apt-get dist-upgrade
-sudo apt-get update
-sudo apt-get install build-essential
-sudo apt-get install doxygen
+apt-get -y install graphviz
+apt-get -y install doxygen-gui
 cd doxygen
 bash ./generate_docs.sh
