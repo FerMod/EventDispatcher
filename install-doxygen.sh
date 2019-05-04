@@ -13,8 +13,7 @@ echo "Build doxygen..."
 cmake -G "Unix Makefiles" ..
 make
 
-#export PATH=$PATH:$DOXYGEN_PATH/bin
-make install
+export PATH="$PATH:$DOXYGEN_PATH/bin"
 
 cd $TRAVIS_BUILD_DIR
 echo "Finished installing doxygen."
