@@ -13,7 +13,5 @@ echo "Build doxygen..."
 cmake -G "Unix Makefiles" ..
 make
 
-ls -la
-
 cd $TRAVIS_BUILD_DIR
 echo "Finished installing doxygen."
