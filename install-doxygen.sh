@@ -14,6 +14,8 @@ cmake -G "Unix Makefiles" ..
 make
 
 echo "Installing doxygen..."
+ls -la
+ls ./bin -la
 cp ./bin/* $TRAVIS_BUILD_DIR
 
 cd $TRAVIS_BUILD_DIR
