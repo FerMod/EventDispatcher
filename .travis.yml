@@ -5,19 +5,15 @@ cache:
   directories:
     - .autoconf
     - $HOME/.m2
-    - $HOME/doxygen
   
-before_install:
-  - export DOXY_BINPATH=$HOME/doxygen/doxygen-1.8.15/bin
-  - if [ ! -e "$DOXY_BINPATH/doxygen" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then mkdir -p $HOME/doxygen && cd $HOME/doxygen; fi
-  - if [ ! -e "$DOXY_BINPATH/doxygen" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then wget http://doxygen.nl/files/doxygen-1.8.15.linux.bin.tar.gz; fi
-  - if [ ! -e "$DOXY_BINPATH/doxygen" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then tar xzf doxygen-1.8.15.linux.bin.tar.gz; fi
-  - export PATH=$PATH:$DOXY_BINPATH
-
 addons:
   apt:
     packages:
       - graphviz
+      - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
     update: true
     
 before_deploy:
