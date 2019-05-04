@@ -11,7 +11,8 @@ before_install:
   - sudo apt-get install doxygen
     
 before_deploy:
-  - bash ./deploy_docs.sh
+  - cd doxygen
+  - bash ./generate_docs.sh
 deploy:
   provider: pages
   skip_cleanup: true
