@@ -1,13 +1,15 @@
 language: java
 jdk:
   - oraclejdk8
+cache: packages
+
 before_deploy:
-  - cd docs
+  - cd doxygen
+  - ./generate_docs.sh
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep_history: true
-  target_branch: master
   on:
     branch: master
