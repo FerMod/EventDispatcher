@@ -3,13 +3,18 @@ jdk:
   - oraclejdk8
 cache:
   directories:
-  - .autoconf
-  - $HOME/.m2
-
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install graphviz
-  - sudo apt-get install doxygen
+    - .autoconf
+    - $HOME/.m2
+  
+addons:
+  apt:
+    packages:
+      - graphviz
+      - doxygen
+      - doxygen-doc
+      - doxygen-latex
+      - doxygen-gui
+    update: true
     
 before_deploy:
   - cd doxygen
