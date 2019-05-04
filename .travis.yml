@@ -13,10 +13,10 @@ env:
     # - DOXYGEN_BINPATH=${DOXYGEN_PATH}/${DOXYGEN_VERSION}/bin
 
 before_install:
-  - bash ./install-doxygen.sh
-  # Install doxygen from binary, because older versions throw errors on markdown code with
+  # Manually install doxygen, because older versions throw errors on markdown code with
   # images inside links (like the build status in the README) and it's the only way to get a newer
   # doxygen in Ubuntu
+  - bash ./install-doxygen.sh
   # - if [ ! -e "${DOXYGEN_BINPATH}/doxygen" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
   #     mkdir -p ${DOXYGEN_PATH};
   #     wget http://doxygen.nl/files/${DOXYGEN_VERSION}.linux.bin.tar.gz;
