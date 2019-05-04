@@ -8,16 +8,17 @@ cache:
 env:
   global:
     - DOXYGEN_VERSION=doxygen-1.8.15
+    - DOXYGEN_BINPATH=$HOME/doxygen/${DOXYGEN_VERSION}/bin
     
 before_install:
   # Install doxygen from binary, because older versions throw errors on markdown code with
   # images inside links (like the build status in the README) and it's the only way to get a newer
   # doxygen in Ubuntu
-  - if [ ! -e "$DOXY_BINPATH/doxygen" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+  - if [ ! -e "$DOXYGEN_BINPATH/doxygen" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
       mkdir -p $HOME/doxygen;
       wget -qO- http://doxygen.nl/files/${DOXYGEN_VERSION}.linux.bin.tar.gz | tar xvz - -C $HOME/doxygen;
     fi
-  - export PATH=$PATH:$HOME/doxygen/${DOXYGEN_VERSION}/bin  
+  - export PATH=$PATH:{$DOXYGEN_BINPATH}  
 addons:
   apt:
     packages:
