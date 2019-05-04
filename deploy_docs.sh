@@ -8,4 +8,4 @@ mvn clean site
 
 # Generate doxygen docs
 cd doxygen
-doxygen Doxyfile
+$DOXYGEN_PATH/bin/doxygen Doxyfile
