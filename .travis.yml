@@ -6,6 +6,10 @@ cache:
   - .autoconf
   - $HOME/.m2
 
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install doxygen
+    
 before_deploy:
   - bash ./deploy_docs.sh
 deploy:
