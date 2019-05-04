@@ -5,6 +5,8 @@ cache:
   directories:
     - .autoconf
     - $HOME/.m2
+git:
+  depth: false
 
 env:
   global:
