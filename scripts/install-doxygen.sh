@@ -7,13 +7,13 @@ wget https://github.com/doxygen/doxygen/archive/Release_${DOXYGEN_VERSION//./_}.
 echo "Uncompresing file ..."
 tar -xvf /tmp/doxygen-$DOXYGEN_VERSION.tar.gz
 
-# echo "Cloning Doxygen repository ..."
-# git clone https://github.com/doxygen/doxygen.git doxygen-$DOXYGEN_VERSION
-# pushd $DOXYGEN_PATH
-
 echo "Installing Doxygen $DOXYGEN_VERSION ..."
 pushd doxygen-$DOXYGEN_VERSION && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
 
+# echo "Cloning Doxygen repository ..."
+# git clone https://github.com/doxygen/doxygen.git doxygen-$DOXYGEN_VERSION
+# pushd doxygen-$DOXYGEN_VERSION
+#
 # echo "Building Doxygen ..."
 # mkdir build
 # cd build && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
