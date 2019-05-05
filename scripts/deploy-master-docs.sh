@@ -32,7 +32,7 @@ commit_website_files() {
 }
 
 upload_files() {
-    #git push --quiet --set-upstream origin master
+    git push --quiet --set-upstream origin master
 }
 
 setup_git
