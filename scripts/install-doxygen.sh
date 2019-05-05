@@ -9,6 +9,9 @@ wget https://github.com/doxygen/doxygen/archive/$DOXYGEN_FOLDER_NAME.tar.gz -O /
 echo "Uncompresing file ..."
 tar -xvf /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
 
+ls -la
+ls -la tmp
+
 echo "Installing Doxygen $DOXYGEN_VERSION ..."
 pushd /tmp/doxygen-$DOXYGEN_FOLDER_NAME && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
 
