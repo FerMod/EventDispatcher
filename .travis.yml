@@ -7,24 +7,15 @@ cache:
     - $HOME/.m2
 git:
   depth: false
-
 env:
   global:
-    - DOXYGEN_PATH=$HOME/doxygen
-    # - DOXYGEN_VERSION=doxygen-1.8.15
-    # - DOXYGEN_BINPATH=${DOXYGEN_PATH}/${DOXYGEN_VERSION}/bin
+    - DOXYGEN_VERSION=1.8.15
 
-before_install:
-  # Manually install doxygen, because older versions throw errors on markdown code with
-  # images inside links (like the build status in the README) and it's the only way to get a newer
-  # doxygen in Ubuntu
-  - bash ./install-doxygen.sh
-  # - if [ ! -e "${DOXYGEN_BINPATH}/doxygen" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-  #     mkdir -p ${DOXYGEN_PATH};
-  #     wget http://doxygen.nl/files/${DOXYGEN_VERSION}.linux.bin.tar.gz;
-  #     tar xvz ${DOXYGEN_VERSION}.linux.bin.tar.gz;
-  #   fi
-  # - export PATH=$PATH:${DOXYGEN_BINPATH}  
+before_script:
+  # Manually install doxygen, because older versions throw errors on markdown code with images inside 
+  # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
+  - ./scripts/install-doxygen.sh
+
 addons:
   apt:
     packages:
@@ -36,7 +27,7 @@ addons:
     update: true
 
 before_deploy:
-  - bash ./deploy_docs.sh
+  - ./scripts/deploy-docs.sh
 deploy:
   provider: pages
   skip_cleanup: true
