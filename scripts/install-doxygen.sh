@@ -4,10 +4,10 @@ set -ex # Exit with nonzero exit code if anything fails and show script content
 DOXYGEN_VERSION=1.8.15
 
 echo "Downloading Doxygen $DOXYGEN_VERSION ..."
-wget https://github.com/doxygen/doxygen/archive/Release_${DOXYGEN_VERSION//./_}.tar.gz -O /tmp/doxygen.tar.gz
+wget https://github.com/doxygen/doxygen/archive/Release_${DOXYGEN_VERSION//./_}.tar.gz -O /tmp/doxygen-$DOXYGEN_VERSION.tar.gz
 
 echo "Uncompresing file ..."
-tar -xvf /tmp/doxygen.tar.gz
+tar -xvf /tmp/doxygen-$DOXYGEN_VERSION.tar.gz
 
 # echo "Cloning Doxygen repository ..."
 # git clone https://github.com/doxygen/doxygen.git doxygen-$DOXYGEN_VERSION
