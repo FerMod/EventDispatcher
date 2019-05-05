@@ -20,10 +20,5 @@ pushd doxygen-$DOXYGEN_FOLDER_NAME && cmake -G "Unix Makefiles" && make && sudo 
 # mkdir build
 # cd build && cmake -G "Unix Makefiles" && make && sudo make install
 
-echo "Removing instalation files ..."
-cd ..
-rm /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
-rm -r doxygen-$DOXYGEN_FOLDER_NAME
-
 popd
 echo "Finished installing doxygen."
