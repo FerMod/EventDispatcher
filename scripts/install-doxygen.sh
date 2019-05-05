@@ -1,8 +1,6 @@
 #!/bin/bash
 set -ex # Exit with nonzero exit code if anything fails and show script content
 
-DOXYGEN_VERSION=1.8.15
-
 echo "Downloading Doxygen $DOXYGEN_VERSION ..."
 wget https://github.com/doxygen/doxygen/archive/Release_${DOXYGEN_VERSION//./_}.tar.gz -O /tmp/doxygen-$DOXYGEN_VERSION.tar.gz
 
