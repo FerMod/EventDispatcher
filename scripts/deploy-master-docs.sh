@@ -24,7 +24,7 @@ commit_website_files() {
     echo "Generating Doxygen docs ..."
     cd doxygen
     doxygen
-    cd..
+    cd ..
 
     git add pom.xml docs/*
     git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
