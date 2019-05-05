@@ -22,9 +22,9 @@
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> EventPublisher&lt;T&gt; {
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">transient</strong> <strong class="jxr_keyword">final</strong> ReadWriteLock readWriteLock = <strong class="jxr_keyword">new</strong> ReentrantReadWriteLock(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L18" href="#L18">18</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">transient</strong> <strong class="jxr_keyword">final</strong> Lock readLock = readWriteLock.readLock();
-<a class="jxr_linenumber" name="L19" href="#L19">19</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">transient</strong> <strong class="jxr_keyword">final</strong> Lock writeLock = readWriteLock.writeLock();
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> ReadWriteLock readWriteLock = <strong class="jxr_keyword">new</strong> ReentrantReadWriteLock(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> Lock readLock = readWriteLock.readLock();
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>  	<strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">transient</strong> Lock writeLock = readWriteLock.writeLock();
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  	<strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">transient</strong> List&lt;T&gt; listeners = <strong class="jxr_keyword">new</strong> ArrayList&lt;&gt;();
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>  
@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  		}
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>  
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>  	}
-<a class="jxr_linenumber" name="L64" href="#L64">64</a>  	
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>  	<em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>  <em class="jxr_javadoccomment">	 * Removes all the listeners from the list of the registered listeners. The list will be empty after this call returns.</em>
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>  <em class="jxr_javadoccomment">	 */</em>

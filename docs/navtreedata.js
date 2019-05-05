@@ -27,6 +27,17 @@ var NAVTREE =
     [ "Project Maven Site", "site/index.html", null ],
     [ "Project Tree", "tree.html", null ],
     [ "Packages", "namespaces.html", [
+      [ "Getting Started", "index.html#autotoc_md1", [
+        [ "Prerequisites", "index.html#autotoc_md2", null ],
+        [ "Installing", "index.html#autotoc_md3", null ]
+      ] ],
+      [ "Running the tests", "index.html#autotoc_md4", null ],
+      [ "Built With", "index.html#autotoc_md5", null ],
+      [ "Contributing", "index.html#autotoc_md6", null ],
+      [ "Versioning", "index.html#autotoc_md7", null ],
+      [ "Authors", "index.html#autotoc_md8", null ],
+      [ "License", "index.html#autotoc_md9", null ],
+      [ "Changelog", "index.html#autotoc_md10", null ],
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],
     [ "Classes", "annotated.html", [
