@@ -2,17 +2,18 @@
 set -ex # Exit with nonzero exit code if anything fails and show script content
 
 echo "Downloading Doxygen $DOXYGEN_VERSION ..."
-wget https://github.com/doxygen/doxygen/archive/Release_${DOXYGEN_VERSION//./_}.tar.gz -O /tmp/doxygen-$DOXYGEN_VERSION.tar.gz
+DOXYGEN_FOLDER_NAME=Release_${DOXYGEN_VERSION//./_}
+wget https://github.com/doxygen/doxygen/archive/Release_${DOXYGEN_VERSION//./_}.tar.gz -O /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
 
 echo "Uncompresing file ..."
-tar -xvf /tmp/doxygen-$DOXYGEN_VERSION.tar.gz
+tar -xvf /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
 
 echo "Installing Doxygen $DOXYGEN_VERSION ..."
-pushd /tmp/doxygen-$DOXYGEN_VERSION && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
+pushd /tmp/doxygen-$DOXYGEN_FOLDER_NAME && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
 
 # echo "Cloning Doxygen repository ..."
-# git clone https://github.com/doxygen/doxygen.git doxygen-$DOXYGEN_VERSION
-# pushd doxygen-$DOXYGEN_VERSION
+# git clone https://github.com/doxygen/doxygen.git doxygen-$DOXYGEN_FOLDER_NAME
+# pushd doxygen-$DOXYGEN_FOLDER_NAME
 #
 # echo "Building Doxygen ..."
 # mkdir build
