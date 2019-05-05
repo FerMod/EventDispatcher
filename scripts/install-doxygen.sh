@@ -9,19 +9,21 @@ wget https://github.com/doxygen/doxygen/archive/$DOXYGEN_FOLDER_NAME.tar.gz -O /
 echo "Uncompresing file ..."
 tar -xvf /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
 
-ls -la
-ls -la tmp
-
 echo "Installing Doxygen $DOXYGEN_VERSION ..."
-pushd /tmp/doxygen-$DOXYGEN_FOLDER_NAME && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
+pushd doxygen-$DOXYGEN_FOLDER_NAME && cmake -G "Unix Makefiles" && make && sudo make install
 
-# echo "Cloning Doxygen repository ..."
+# echo "Cloning Doxygen $DOXYGEN_VERSION repository ..."
 # git clone https://github.com/doxygen/doxygen.git doxygen-$DOXYGEN_FOLDER_NAME
 # pushd doxygen-$DOXYGEN_FOLDER_NAME
-#
-# echo "Building Doxygen ..."
+
+# echo "Installing Doxygen $DOXYGEN_VERSION ..."
 # mkdir build
-# cd build && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
+# cd build && cmake -G "Unix Makefiles" && make && sudo make install
+
+echo "Removing instalation files ..."
+cd ..
+rm /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
+rm -r doxygen-$DOXYGEN_FOLDER_NAME
 
 popd
 echo "Finished installing doxygen."
