@@ -1,9 +1,10 @@
 #!/bin/bash
 set -ex # Exit with nonzero exit code if anything fails and show script content
 
-echo "Downloading Doxygen $DOXYGEN_VERSION ..."
 DOXYGEN_FOLDER_NAME=Release_${DOXYGEN_VERSION//./_}
-wget https://github.com/doxygen/doxygen/archive/Release_${DOXYGEN_VERSION//./_}.tar.gz -O /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
+
+echo "Downloading Doxygen $DOXYGEN_VERSION ..."
+wget https://github.com/doxygen/doxygen/archive/$DOXYGEN_FOLDER_NAME.tar.gz -O /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
 
 echo "Uncompresing file ..."
 tar -xvf /tmp/doxygen-$DOXYGEN_FOLDER_NAME.tar.gz
