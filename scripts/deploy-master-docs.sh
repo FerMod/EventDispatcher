@@ -12,7 +12,7 @@ commit_website_files() {
 
     # Use the current tag version that will be used for doxygen, and to set the maven version
     echo "Updating Maven version from git tag ..."
-    export PROJECT_NUMBER="$(git describe --tags --abbrev=0)"
+    PROJECT_NUMBER="$(git describe --tags --abbrev=0)"
     mvn versions:set -DnewVersion=${PROJECT_NUMBER#"v"}
 
     echo "Generating Maven site ..."
