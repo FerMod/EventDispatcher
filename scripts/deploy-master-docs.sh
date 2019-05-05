@@ -32,7 +32,14 @@ commit_website_files() {
 }
 
 upload_files() {
-    git push --quiet --set-upstream origin master
+    
+    # Remove existing "origin"
+    git remote rm origin
+    # Add new "origin" with access token in the git URL for authentication
+    git remote add origin https://FerMod:${GITHUB_TOKEN}@github.com/FerMod/EventDispatcher.git > /dev/null 2>&1
+    git push origin master --quiet
+
+    # git push --quiet --set-upstream origin master
 }
 
 setup_git
