@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-This project requires to have **JDK 1.8**, and **Maven** which will manage all the remaining dependencies. **Doxygen** is required when generating documentation from the annotated sources.
+This project requires to have **JDK 1.8**, and **Maven** which will manage all the remaining dependencies. **Doxygen** is only required when generating documentation from the annotated sources.
 
 ### Installing
 
