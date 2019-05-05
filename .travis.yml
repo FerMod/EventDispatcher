@@ -27,6 +27,7 @@ addons:
     update: true
 
 before_deploy:
+  - ./scripts/deploy-master-docs.sh
   - ./scripts/deploy-docs.sh
 deploy:
   provider: pages
