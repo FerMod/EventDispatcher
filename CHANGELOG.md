@@ -4,6 +4,8 @@
 
 These changes have not been released yet.
 
+## [0.1.5-beta] (2019-05-05)
+
 - Added issue templates:
   - `bug_report.md`
   - `feature_request.md`
@@ -15,7 +17,7 @@ These changes have not been released yet.
 - Added [Travis CI](https://travis-ci.org/FerMod/EventDispatcher) support
 - Added `.gitattributes` and added `.editorconfig` rule to handle scripts line endigs in Unix style
 - Moved scripts to a new folder called `scripts`
-- Improved scripts
+- Improved and fixed scripts
 - Improved `README.md` file
 
 ## [0.1.4-beta.1] (2019-04-16)
@@ -54,7 +56,8 @@ These changes have not been released yet.
 
 - First release
 
-[Unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta.1...HEAD
+[Unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta...HEAD
+[0.1.5-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta.1...v0.1.5-beta
 [0.1.4-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta...v0.1.4-beta.1
 [0.1.4-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.3-beta...v0.1.4-beta
 [0.1.3-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.2-beta.2...v0.1.3-beta
