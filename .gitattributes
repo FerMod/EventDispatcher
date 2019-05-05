@@ -1,0 +1,7 @@
+
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Configure Git on Windows to properly handle line endings
+# See: https://help.github.com/en/articles/dealing-with-line-endings
+*.sh text eol=lf
