@@ -8,7 +8,7 @@ echo "Uncompresing file ..."
 tar -xvf /tmp/doxygen-$DOXYGEN_VERSION.tar.gz
 
 echo "Installing Doxygen $DOXYGEN_VERSION ..."
-pushd doxygen-$DOXYGEN_VERSION && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
+pushd /tmp/doxygen-$DOXYGEN_VERSION && ./configure --prefix=/usr && cmake -G "Unix Makefiles" .. && make && sudo make install
 
 # echo "Cloning Doxygen repository ..."
 # git clone https://github.com/doxygen/doxygen.git doxygen-$DOXYGEN_VERSION
