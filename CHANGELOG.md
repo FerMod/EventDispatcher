@@ -13,6 +13,9 @@ These changes have not been released yet.
   - `CONTRIBUTING.md`
   - `CODE_OF_CONDUCT.md`
 - Added [Travis CI](https://travis-ci.org/FerMod/EventDispatcher) support
+- Added `.gitattributes` and added `.editorconfig` rule to handle scripts line endigs in Unix style
+- Moved scripts to a new folder called `scripts`
+- Improved scripts
 - Improved `README.md` file
 
 ## [0.1.4-beta.1] (2019-04-16)
