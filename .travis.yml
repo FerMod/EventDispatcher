@@ -9,18 +9,13 @@ git:
   depth: false
 env:
   global:
-    - DOXYGEN_PATH=$HOME/doxygen
     - DOXYGEN_VERSION=1.8.15
-    # - DOXYGEN_BINPATH=${DOXYGEN_PATH}/${DOXYGEN_VERSION}/bin
 
 before_script:
+  # Manually install doxygen, because older versions throw errors on markdown code with images inside 
+  # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
   - ./scripts/install-doxygen.sh
 
-install:
-  # Manually install doxygen, because older versions throw errors on markdown code with
-  # images inside links (like the build status in the README) and it's the only way to get a newer
-  # doxygen in Ubuntu
-  - bash ./scripts/install-doxygen.sh
 addons:
   apt:
     packages:
@@ -32,7 +27,7 @@ addons:
     update: true
 
 before_deploy:
-  - bash ./deploy-docs.sh
+  - ./scripts/deploy-docs.sh
 deploy:
   provider: pages
   skip_cleanup: true
