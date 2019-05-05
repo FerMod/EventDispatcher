@@ -17,10 +17,10 @@ mvn clean site
 echo "Generating Doxygen docs ..."
 cd doxygen
 doxygen
-cd ..
+# cd ..
 
-git add pom.xml docs/*
-git commit --message "Update docs"
-git push
+# git add pom.xml docs/*
+# git commit --message "Update docs"
+# git push
 
 echo "Deployed master docs ..."
