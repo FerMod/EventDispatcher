@@ -4,6 +4,9 @@
 
 These changes have not been released yet.
 
+- Added more information tags to `pom.xml`
+- Changed in `Doxyfile` the output path folder and removed the symbolic link
+
 ## [0.1.5-beta] (2019-05-05)
 
 - Added issue templates:
