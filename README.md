@@ -17,12 +17,15 @@ This project requires to have **JDK 1.8**, and **Maven** which will manage all t
 
 ## Running the tests
 
-This project have *JUnit5* tests that are configured to run with maven with the command `mvn test`, the tests can also be run and at the same time can generate a report using the maven `mvn site` command.
+This project have *JUnit5* tests that are configured to run with maven with the command `mvn test`, the tests can also be run and at the same time generate a report using the maven `mvn site` command.
+The repository is configured to use *Travis CI*, that offers continuous integration. It automatically builds and runs tests when pushing to the repository.
 
 ## Built With
 
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [Doxygen](http://www.doxygen.nl/) - The documentation generation from annotated sources tool
+- [Maven](https://maven.apache.org/) - Dependency Management
+- [Doxygen](http://www.doxygen.nl/) - The documentation generation from annotated sources tool
+- [JUnit5](https://junit.org/junit5/) - Unit testing framework for the Java
+- [TravisCI](https://travis-ci.org/) - Continous integration service
 
 ## Contributing
 
