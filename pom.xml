@@ -5,6 +5,7 @@
 	<name>EventDispatcher</name>
 	<description>Project that offers a small library that allows to subscribe and fire events.</description>
 	<url>https://github.com/FerMod/EventDispatcher</url>
+	<inceptionYear>2019</inceptionYear>0.1.5-beta
 
 	<groupId>com.fermod</groupId>
 	<artifactId>event-dispatcher</artifactId>
@@ -22,12 +23,23 @@
 			</roles>
 			<timezone>Europe/Madrid</timezone>
 		</developer>
+		<!-- 
+		<developer>
+			<id></id>
+			<name></name>
+			<email></email>
+			<url></url>
+			<roles>
+				<role></role>
+			</roles>
+			<timezone></timezone>
+		</developer>
+		-->
 	</developers>
 
 	<contributors>
 		<!--
 		<contributor>
-			<id></id>
 			<name></name>
 			<email></email>
 			<url></url>
