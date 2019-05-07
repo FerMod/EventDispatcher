@@ -18,7 +18,7 @@ To install the library is required to follow a few steps:
 
 1. Go to the project [releases](https://github.com/FerMod/EventDispatcher/releases/latest).
 2. Download the `jar` and place it inside your project.
-3. Run the following Maven command command replacing `{PATH_TO_FILE}` with the location of the downloaded `jar`:
+3. Run the following Maven command replacing `{PATH_TO_FILE}` with the location of the downloaded `jar`:
 
     ```bash
     mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file -Dfile={PATH_TO_FILE}
