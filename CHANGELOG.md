@@ -4,8 +4,8 @@
 
 These changes have not been released yet.
 
-- Added more information tags to `pom.xml`
-- Changed in `Doxyfile` the output path folder and removed the symbolic link
+- Added more project information to `pom.xml`
+- Removed the symbolic link and changed Doxygen docs output path, with the one pointed by the symbolic link.
 
 ## [0.1.5-beta] (2019-05-05)
 

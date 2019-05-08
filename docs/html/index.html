@@ -98,6 +98,19 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p>Event Dispatcher is simple library that offers basic event management.</p>
 <p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.</p>
 <p>This project requires to have <b>JDK 1.8</b>, and <b>Maven</b> which will manage all the remaining dependencies. <b>Doxygen</b> is only required when generating documentation from the annotated sources.</p>
+<p>To install the library is required to follow a few steps:</p>
+<ol type="1">
+<li>Go to the project <a href="https://github.com/FerMod/EventDispatcher/releases/latest">releases</a>.</li>
+<li>Download the <code>jar</code> and place it inside your project.</li>
+<li><p class="startli">Run the following Maven command replacing <code>{PATH_TO_FILE}</code> with the location of the downloaded <code>jar</code>:</p>
+<p class="startli">```bash mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file -Dfile={PATH_TO_FILE} ```</p>
+</li>
+<li><p class="startli">Add to your <code>pom.xml</code> file the library dependency. Replace <code>{VERSION}</code> with the current version:</p>
+<p class="startli">```xml &lt;dependency&gt; &lt;groupId&gt;<a class="el" href="namespacecom_1_1fermod.html">com.fermod</a>&lt;/groupId&gt; &lt;artifactId&gt;event-dispatcher&lt;/artifactId&gt; &lt;version&gt;{VERSION}&lt;/version&gt; &lt;/dependency&gt; ```</p>
+<p class="startli">For the version, if the version is <code>v0.1.5-beta</code> the value that should be written is <code>0.1.5beta</code>. Example:</p>
+<p class="startli">```xml &lt;dependency&gt; &lt;groupId&gt;<a class="el" href="namespacecom_1_1fermod.html">com.fermod</a>&lt;/groupId&gt; &lt;artifactId&gt;event-dispatcher&lt;/artifactId&gt; &lt;version&gt;0.1.5-beta&lt;/version&gt; &lt;/dependency&gt; ```</p>
+</li>
+</ol>
 <p>This project have <em>JUnit5</em> tests that are configured to run with maven with the command <code>mvn test</code>, the tests can also be run and at the same time generate a report using the maven <code>mvn site</code> command. The repository is configured to use <em>Travis CI</em>, that offers continuous integration. It automatically builds and runs tests when pushing to the repository.</p>
 <ul>
 <li><a href="https://maven.apache.org/">Maven</a> - Dependency Management</li>

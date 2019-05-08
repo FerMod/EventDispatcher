@@ -14,6 +14,36 @@ This project requires to have **JDK 1.8**, and **Maven** which will manage all t
 
 ### Installing
 
+To install the library is required to follow a few steps:
+
+1. Go to the project [releases](https://github.com/FerMod/EventDispatcher/releases/latest).
+2. Download the `jar` and place it inside your project.
+3. Run the following Maven command replacing `{PATH_TO_FILE}` with the location of the downloaded `jar`:
+
+    ```bash
+    mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file -Dfile={PATH_TO_FILE}
+    ```
+
+4. Add to your `pom.xml` file the library dependency. Replace `{VERSION}` with the current version:
+
+    ```xml
+    <dependency>
+        <groupId>com.fermod</groupId>
+       <artifactId>event-dispatcher</artifactId>
+       <version>{VERSION}</version>
+    </dependency>
+    ```
+
+    For the version, if the version is `v0.1.5-beta` the value that should be written is `0.1.5beta`.
+    Example:
+
+    ```xml
+    <dependency>
+        <groupId>com.fermod</groupId>
+       <artifactId>event-dispatcher</artifactId>
+       <version>0.1.5-beta</version>
+    </dependency>
+    ```
 
 ## Running the tests
 
