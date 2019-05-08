@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails and show script content
 
+echo "Generating docs ..."
 cd ..
 
 # Use the current tag version that will be used for doxygen, and to set the maven version
@@ -23,4 +24,4 @@ doxygen
 # git commit --message "Update docs"
 # git push
 
-echo "Deployed master docs ..."
+echo "Finished docs generation ..."
