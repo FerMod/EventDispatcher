@@ -2,7 +2,7 @@
 set -ex # Exit with nonzero exit code if anything fails and show script content
 
 echo "Deploying docs ..."
-pushd $TRAVIS_BUILD_DIR
+pushd $(git rev-parse --show-toplevel)
 
 # Use the current tag version that will be used for doxygen, and to set the maven version
 echo "Updating Maven version from git tag ..."
