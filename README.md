@@ -49,6 +49,8 @@ To install the library is required to follow a few steps:
 
 > **TO-DO** Add examples and information.
 
+### Examples
+
 ## Running the tests
 
 This project have *JUnit5* tests that are configured to run with maven with the command `mvn test`, the tests can also be run and at the same time generate a report using the maven `mvn site` command.
