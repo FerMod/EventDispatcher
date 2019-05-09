@@ -34,7 +34,7 @@ To install the library is required to follow a few steps:
     </dependency>
     ```
 
-    For the version, if the version is `v0.1.5-beta` the value that should be written is `0.1.5beta`.
+    For the version, if the version is `v0.1.5-beta` the value that should be written is `0.1.5-beta`.
     Example:
 
     ```xml
