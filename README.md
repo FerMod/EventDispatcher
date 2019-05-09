@@ -6,7 +6,7 @@ Event Dispatcher is simple library that offers basic event management.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See the section [Using the Library](#using-the-library) for notes on how to use the library and how to add custom events.
 
 ### Prerequisites
 
@@ -44,6 +44,10 @@ To install the library is required to follow a few steps:
        <version>0.1.5-beta</version>
     </dependency>
     ```
+
+## Using the Library
+
+> **TO-DO** Add examples and information.
 
 ## Running the tests
 

@@ -1,6 +1,7 @@
 > **WIP document**
 
 # Introduction
+
 First off, thank you for considering contributing to this project!
 
 The following is a set of guidelines for contributing, which are hosted on GitHub. These are mostly guidelines, not rules.
