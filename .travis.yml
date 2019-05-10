@@ -40,7 +40,7 @@ before_script:
   # Manually install doxygen, because older versions throw errors on markdown code with images inside 
   # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/install-doxygen.sh; fi
-  - if [ -n "$TRAVIS_TAG" ]; then mvn clean install; fi
+  - mvn clean install
 
 before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
@@ -55,8 +55,6 @@ deploy:
     draft: true
     on:
       tags: false
-      branch: FerMod
-      #tags: true
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
