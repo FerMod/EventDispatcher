@@ -54,7 +54,6 @@ deploy:
     prerelease: true
     draft: true
     on:
-      branch: FerMod
       tags: false
       #branch: master
       #tags: true
