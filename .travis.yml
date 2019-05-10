@@ -25,12 +25,13 @@ cache:
     - .autoconf
     - $HOME/.m2
 
-stages:
-  - name: before_script
-    # require the branch name to be master (note for PRs this is the base branch name)
-    if: branch = master
-  - name: before_deploy
-    if: branch = master
+jobs:
+  include:
+    - name: before_script
+      # require the branch name to be master (note for PRs this is the base branch name)
+      if: branch = master
+    - name: before_deploy
+      if: branch = master
 
 before_script:
   # Manually install doxygen, because older versions throw errors on markdown code with images inside 
