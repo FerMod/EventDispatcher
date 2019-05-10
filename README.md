@@ -1,6 +1,6 @@
 # Event Dispatcher
 
-[![Build Status](https://travis-ci.org/FerMod/EventDispatcher.svg?branch=master)](https://travis-ci.org/FerMod/EventDispatcher)
+[![Build Status](https://travis-ci.org/FerMod/EventDispatcher.svg?branch=master)](https://travis-ci.org/FerMod/EventDispatcher) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.fermod%3Aevent-dispatcher&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher)
 
 Event Dispatcher is simple library that offers basic event management.
 
