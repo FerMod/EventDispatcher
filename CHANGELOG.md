@@ -4,7 +4,7 @@
 
 These changes have not been released yet.
 
-- Add TravisCI automatic jar deployment.
+- Added Travis CI automatic jar release.
 - Added more project information to `pom.xml`
 - Removed the symbolic link and changed Doxygen docs output path, with the one pointed by the symbolic link.
 
