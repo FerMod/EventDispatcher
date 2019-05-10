@@ -7,6 +7,17 @@ env:
   global:
     - DOXYGEN_VERSION=1.8.15
 
+stages:
+  - name: before_script
+    # require the branch name to be master (note for PRs this is the base branch name)
+    if: branch = master
+    script: ./scripts/install-doxygen.sh
+  - name: before_deploy
+    if: branch = master
+    script: ./scripts/deploy-docs.sh
+  - if: tag IS present
+    script: mvn clean install
+
 addons:
   apt:
     packages:
@@ -24,17 +35,6 @@ cache:
   directories:
     - .autoconf
     - $HOME/.m2
-
-stages:
-    - name: before_script
-      # require the branch name to be master (note for PRs this is the base branch name)
-      if: branch = master
-      script: ./scripts/install-doxygen.sh
-    - name: before_deploy
-      if: branch = master
-      script: ./scripts/deploy-docs.sh
-    - if: tag IS present
-      script: mvn clean install
 
 # before_script:
 #   # Manually install doxygen, because older versions throw errors on markdown code with images inside 
