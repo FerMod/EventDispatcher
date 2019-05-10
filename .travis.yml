@@ -7,17 +7,6 @@ env:
   global:
     - DOXYGEN_VERSION=1.8.15
 
-# stages:
-#   - name: before_script
-#     # require the branch name to be master (note for PRs this is the base branch name)
-#     if: branch = master
-#     script: ./scripts/install-doxygen.sh
-#   - name: before_deploy
-#     if: branch = master
-#     script: ./scripts/generate-docs.sh
-#   - if: tag IS present
-#     script: mvn clean install
-
 addons:
   apt:
     packages:
@@ -41,9 +30,6 @@ before_script:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/install-doxygen.sh; fi
 
 before_deploy:
-  - mvn clean install
-  - ls -la target
-  - git describe --tags --abbrev=0
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
   - if [ -n "$TRAVIS_TAG" ]; then mvn clean install; fi
 deploy:
@@ -53,10 +39,9 @@ deploy:
     file: target/event-dispatcher-*.jar
     skip_cleanup: true
     prerelease: true
-    draft: true
     on:
-      tags: false
-      branch: FerMod
+      tags: true
+      branch: master
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
