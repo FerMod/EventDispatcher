@@ -30,7 +30,6 @@ addons:
 
 before_cache:
   - mvn clean
-
 cache:
   directories:
     - .autoconf
@@ -44,9 +43,9 @@ before_script:
 before_deploy:
   - mvn clean install
   - ls -la target
+  - git describe --tags --abbrev=0
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
   - if [ -n "$TRAVIS_TAG" ]; then mvn clean install; fi
-
 deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
