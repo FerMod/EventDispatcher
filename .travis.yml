@@ -54,10 +54,10 @@ deploy:
     prerelease: true
     draft: true
     on:
-      #branch: master
-      #tags: true
       branch: FerMod
       tags: false
+      #branch: master
+      #tags: true
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
