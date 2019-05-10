@@ -26,10 +26,9 @@ before_script:
   - ./scripts/install-doxygen.sh
 
 before_deploy:
-  - ./scripts/deploy-docs.sh
+  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then ./scripts/deploy-docs.sh; fi
 deploy:
-  - deploy:
-    provider: releases
+  - provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
     file: $TRAVIS_BUILD_DIR/target/*.jar
