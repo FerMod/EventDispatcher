@@ -17,8 +17,6 @@ addons:
       #- doxygen-gui
     update: true
 
-before_cache:
-  - mvn clean
 cache:
   directories:
     - .autoconf
