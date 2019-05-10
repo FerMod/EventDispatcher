@@ -1,15 +1,12 @@
 language: java
 jdk:
   - oraclejdk8
-cache:
-  directories:
-    - .autoconf
-    - $HOME/.m2
 git:
   depth: false
 env:
   global:
     - DOXYGEN_VERSION=1.8.15
+
 addons:
   apt:
     packages:
@@ -20,21 +17,39 @@ addons:
       #- doxygen-gui
     update: true
 
+before_cache:
+  - mvn clean
+
+cache:
+  directories:
+    - .autoconf
+    - $HOME/.m2
+
+stages:
+  - name: before_script
+    # require the branch name to be master (note for PRs this is the base branch name)
+    if: branch = master
+  - name: before_deploy
+    if: branch = master
+
 before_script:
   # Manually install doxygen, because older versions throw errors on markdown code with images inside 
   # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
   - ./scripts/install-doxygen.sh
 
 before_deploy:
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then ./scripts/deploy-docs.sh; fi
+  - ./scripts/deploy-docs.sh
+
 deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
-    file: $TRAVIS_BUILD_DIR/target/*.jar
+    file: target/event-dispatcher-*.jar
     skip_cleanup: true
     prerelease: true
+    draft: true
     on:
+      branch: master
       tags: true
   - provider: pages
     skip_cleanup: true
