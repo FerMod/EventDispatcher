@@ -40,7 +40,8 @@ before_script:
   # Manually install doxygen, because older versions throw errors on markdown code with images inside 
   # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/install-doxygen.sh; fi
-  - mvn clean install
+  - if: tag IS blank
+    script: mvn clean install
 
 before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
