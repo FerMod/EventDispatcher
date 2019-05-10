@@ -4,6 +4,8 @@
 
 These changes have not been released yet.
 
+## [0.1.5-beta.1] (2019-05-10)
+
 - Added [SonarCloud](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher) to the repository.
 - Added Travis CI automatic jar release.
 - Added more project information to `pom.xml`
@@ -61,7 +63,8 @@ These changes have not been released yet.
 
 - First release
 
-[Unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta...HEAD
+[Unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta.1...HEAD
+[0.1.5-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta...v0.1.5-beta.1
 [0.1.5-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta.1...v0.1.5-beta
 [0.1.4-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta...v0.1.4-beta.1
 [0.1.4-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.3-beta...v0.1.4-beta
