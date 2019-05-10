@@ -17,8 +17,9 @@ addons:
       #- doxygen-gui
     update: true
   sonarcloud:
-    organization: "com.fermod:event-dispatcher"
-    token: $SONAR_TOKEN
+    organization: "fermod-github"
+    token:
+      secure: "$SONAR_TOKEN"
 
 cache:
   directories:
