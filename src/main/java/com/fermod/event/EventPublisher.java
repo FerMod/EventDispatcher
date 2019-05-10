@@ -14,11 +14,11 @@ import java.util.function.Consumer;
  */
 public abstract class EventPublisher<T> {
 
-	private final transient ReadWriteLock readWriteLock = new ReentrantReadWriteLock(true);
-	protected final transient Lock readLock = readWriteLock.readLock();
-	protected final transient Lock writeLock = readWriteLock.writeLock();
+	private final ReadWriteLock readWriteLock = new ReentrantReadWriteLock(true);
+	protected final Lock readLock = readWriteLock.readLock();
+	protected final Lock writeLock = readWriteLock.writeLock();
 
-	private transient List<T> listeners = new ArrayList<>();
+	private List<T> listeners = new ArrayList<>();
 
 	/**
 	 * Adds the specified listener to the list of registered listeners.

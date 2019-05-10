@@ -1,12 +1,12 @@
 # Event Dispatcher
 
-[![Build Status](https://travis-ci.org/FerMod/EventDispatcher.svg?branch=master)](https://travis-ci.org/FerMod/EventDispatcher)
+[![Build Status](https://travis-ci.org/FerMod/EventDispatcher.svg?branch=master)](https://travis-ci.org/FerMod/EventDispatcher) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.fermod%3Aevent-dispatcher&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher)
 
 Event Dispatcher is simple library that offers basic event management.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See the section [Using the Library](#using-the-library) for notes on how to use the library and how to add custom events.
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ To install the library is required to follow a few steps:
     </dependency>
     ```
 
-    For the version, if the version is `v0.1.5-beta` the value that should be written is `0.1.5beta`.
+    For the version, if the version is `v0.1.5-beta` the value that should be written is `0.1.5-beta`.
     Example:
 
     ```xml
@@ -44,6 +44,12 @@ To install the library is required to follow a few steps:
        <version>0.1.5-beta</version>
     </dependency>
     ```
+
+## Using the Library
+
+> **TO-DO** Add examples and information.
+
+### Examples
 
 ## Running the tests
 

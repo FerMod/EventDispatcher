@@ -1,6 +1,7 @@
 > **WIP document**
 
 # Introduction
+
 First off, thank you for considering contributing to this project!
 
 The following is a set of guidelines for contributing, which are hosted on GitHub. These are mostly guidelines, not rules.
@@ -60,6 +61,8 @@ If you find a security vulnerability, do **NOT** open an issue. Email the projec
 If you find yourself wishing for a feature that doesn't exist in, you are probably not alone and there are high chances that there are others with similar needs. Open an issue on which describes the feature you would like to see, why you need it, and how it should work. But you should check first, if there is already one created.
 There is a template that helps to suggest features or enhancements, use it if it helps you.
 
+When referencing commits, issues, pull request, etc. try tu use [autolinked references](https://help.github.com/en/articles/autolinked-references-and-urls).
+
 ## Code review process
 
 The Pull Request are looked on a regular basis and it will be accepted and incorpored to the project as soon as posible, if the changes are thought to bee good enough.
@@ -68,28 +71,48 @@ The Pull Request are looked on a regular basis and it will be accepted and incor
 
 ### Git Commit Messages
 
+As a general rule, the style and formatting of commit messages should follow the guidelines in [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
+
 #### Use the imperative tense
 
 When displayed on the web, it's often styled as a heading, and in emails, it's typically used as the subject. As such, you should capitalize it and omit any trailing punctuation. Consistent wording makes it easier to mentally process a list of commits.
 
 Examples:
-
 `Add feature` not ~~`Added feature`~~
 `Fix bug` not ~~`Fixed bug`~~ or ~~`Fixes bug`~~
 
 #### Limit the first line to 72 characters or less
 
 The first line of a commit message serves as a summary. When it's not, add a blank line (this is important) followed the rest of the commit message.
-When refering to issues and pull requests try to reference them.
 
-Example:
+#### Issue References
+
+When refering to issues and pull requests you should reference them in the commit.
+
+Any commit that is related to an existing issue should reference the issue. For example, if a commit in a pull request addresses issue #123, it should contain the following at the bottom of the commit message.
+
+```tex
+Issue #123
+```
+
+Or if the commit references more than one issue:
+
+```tex
+Issue #123, #124
+```
+
+If the commit closes the issue it should be referenced using one of the available keyworkds that automates the issue closing once the branch merges with the default branch.
 
 ```tex
 Add feature
 
 Description in more detail of the commit if needed.
-With synxtax like '#3' references issues and pull request and with 'close #3', can autoclose them.
+With synxtax like '#123' references issues and pull request and with 'close #123', can autoclose them.
+
+Fixes #123
 ```
+
+For more info about wich words close issues read [Closing Issues Using Keywords](https://help.github.com/en/articles/closing-issues-using-keywords).
 
 ### Use of labels in issues and pull request
 
