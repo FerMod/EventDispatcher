@@ -56,6 +56,7 @@ deploy:
     draft: true
     on:
       tags: false
+      branch: FerMod
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
