@@ -7,16 +7,16 @@ env:
   global:
     - DOXYGEN_VERSION=1.8.15
 
-stages:
-  - name: before_script
-    # require the branch name to be master (note for PRs this is the base branch name)
-    if: branch = master
-    script: ./scripts/install-doxygen.sh
-  - name: before_deploy
-    if: branch = master
-    script: ./scripts/deploy-docs.sh
-  - if: tag IS present
-    script: mvn clean install
+# stages:
+#   - name: before_script
+#     # require the branch name to be master (note for PRs this is the base branch name)
+#     if: branch = master
+#     script: ./scripts/install-doxygen.sh
+#   - name: before_deploy
+#     if: branch = master
+#     script: ./scripts/generate-docs.sh
+#   - if: tag IS present
+#     script: mvn clean install
 
 addons:
   apt:
@@ -36,13 +36,14 @@ cache:
     - .autoconf
     - $HOME/.m2
 
-# before_script:
-#   # Manually install doxygen, because older versions throw errors on markdown code with images inside 
-#   # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
-#   - ./scripts/install-doxygen.sh
+before_script:
+  # Manually install doxygen, because older versions throw errors on markdown code with images inside 
+  # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
+  - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/install-doxygen.sh; fi
+  - if [ -n "$TRAVIS_TAG" ]; then mvn clean install; fi
 
-# before_deploy:
-#   - ./scripts/deploy-docs.sh
+before_deploy:
+  - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
 
 deploy:
   - provider: releases
