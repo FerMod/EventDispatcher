@@ -30,16 +30,20 @@ jobs:
     - name: before_script
       # require the branch name to be master (note for PRs this is the base branch name)
       if: branch = master
+      script: ./scripts/install-doxygen.sh
     - name: before_deploy
       if: branch = master
+      script: ./scripts/deploy-docs.sh
+    - if: branch = master AND tag IS present
+      script: mvn clean install
 
-before_script:
-  # Manually install doxygen, because older versions throw errors on markdown code with images inside 
-  # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
-  - ./scripts/install-doxygen.sh
+# before_script:
+#   # Manually install doxygen, because older versions throw errors on markdown code with images inside 
+#   # links (like the build status in the README) and it's the only way to get a newer doxygen in Ubuntu
+#   - ./scripts/install-doxygen.sh
 
-before_deploy:
-  - ./scripts/deploy-docs.sh
+# before_deploy:
+#   - ./scripts/deploy-docs.sh
 
 deploy:
   - provider: releases
