@@ -54,6 +54,7 @@ deploy:
     draft: true
     on:
       tags: false
+      branch: FerMod
       #tags: true
   - provider: pages
     skip_cleanup: true
