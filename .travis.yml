@@ -25,8 +25,7 @@ cache:
     - .autoconf
     - $HOME/.m2
 
-jobs:
-  include:
+stages:
     - name: before_script
       # require the branch name to be master (note for PRs this is the base branch name)
       if: branch = master
@@ -34,7 +33,7 @@ jobs:
     - name: before_deploy
       if: branch = master
       script: ./scripts/deploy-docs.sh
-    - if: branch = master AND tag IS present
+    - if: tag IS present
       script: mvn clean install
 
 # before_script:
@@ -55,7 +54,6 @@ deploy:
     draft: true
     on:
       tags: false
-      #branch: master
       #tags: true
   - provider: pages
     skip_cleanup: true
