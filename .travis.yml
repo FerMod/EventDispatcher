@@ -47,9 +47,9 @@ deploy:
     prerelease: true
     draft: true
     name: "$RELEASE_NAME"
-    body: "RELEASE_BODY"
+    body: "$RELEASE_BODY"
     on:
-      tags: true
+      tags: false
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
