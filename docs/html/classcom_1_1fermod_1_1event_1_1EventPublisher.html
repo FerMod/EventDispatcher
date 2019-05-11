@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Event Dispatcher
-   &#160;<span id="projectnumber">v0.1.5-beta</span>
+   &#160;<span id="projectnumber">v0.1.5-beta.1</span>
    </div>
    <div id="projectbrief">Project that offers a small library that allows to subscribe and fire events.</div>
   </td>
@@ -133,17 +133,17 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a5f39b3d68623bb7ccd7e35bdb7c2ce48"><td class="memItemLeft" align="right" valign="top">final transient Lock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1event_1_1EventPublisher.html#a5f39b3d68623bb7ccd7e35bdb7c2ce48">readLock</a> = readWriteLock.readLock()</td></tr>
-<tr class="separator:a5f39b3d68623bb7ccd7e35bdb7c2ce48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2b53d4c5c6e26f5b93cf82e97260d56"><td class="memItemLeft" align="right" valign="top">final transient Lock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1event_1_1EventPublisher.html#ab2b53d4c5c6e26f5b93cf82e97260d56">writeLock</a> = readWriteLock.writeLock()</td></tr>
-<tr class="separator:ab2b53d4c5c6e26f5b93cf82e97260d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff8dbd938ca77d0c4fecb57f2bcd5b5"><td class="memItemLeft" align="right" valign="top">final Lock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1event_1_1EventPublisher.html#abff8dbd938ca77d0c4fecb57f2bcd5b5">readLock</a> = readWriteLock.readLock()</td></tr>
+<tr class="separator:abff8dbd938ca77d0c4fecb57f2bcd5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2adde83fa8277255ffd43be47030e32"><td class="memItemLeft" align="right" valign="top">final Lock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1event_1_1EventPublisher.html#aa2adde83fa8277255ffd43be47030e32">writeLock</a> = readWriteLock.writeLock()</td></tr>
+<tr class="separator:aa2adde83fa8277255ffd43be47030e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa2cdb5ebbdcffbfe0228ed927caf79c0"><td class="memItemLeft" align="right" valign="top">final transient ReadWriteLock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1event_1_1EventPublisher.html#aa2cdb5ebbdcffbfe0228ed927caf79c0">readWriteLock</a> = new ReentrantReadWriteLock(true)</td></tr>
-<tr class="separator:aa2cdb5ebbdcffbfe0228ed927caf79c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2fd4c556302eb7d63d0170194d79b1f"><td class="memItemLeft" align="right" valign="top">transient List&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1event_1_1EventPublisher.html#ac2fd4c556302eb7d63d0170194d79b1f">listeners</a> = new ArrayList&lt;&gt;()</td></tr>
-<tr class="separator:ac2fd4c556302eb7d63d0170194d79b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d3962df2ff83947cd4df91b2b7d287"><td class="memItemLeft" align="right" valign="top">final ReadWriteLock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1event_1_1EventPublisher.html#ab4d3962df2ff83947cd4df91b2b7d287">readWriteLock</a> = new ReentrantReadWriteLock(true)</td></tr>
+<tr class="separator:ab4d3962df2ff83947cd4df91b2b7d287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8049636b4eebe8bbb3484d752a503cc1"><td class="memItemLeft" align="right" valign="top">List&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1fermod_1_1event_1_1EventPublisher.html#a8049636b4eebe8bbb3484d752a503cc1">listeners</a> = new ArrayList&lt;&gt;()</td></tr>
+<tr class="separator:a8049636b4eebe8bbb3484d752a503cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aea38bca080109917ce030546ab464471"></a>
@@ -254,8 +254,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa2cdb5ebbdcffbfe0228ed927caf79c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2cdb5ebbdcffbfe0228ed927caf79c0">&#9670;&nbsp;</a></span>readWriteLock</h2>
+<a id="ab4d3962df2ff83947cd4df91b2b7d287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d3962df2ff83947cd4df91b2b7d287">&#9670;&nbsp;</a></span>readWriteLock</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +264,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final transient ReadWriteLock readWriteLock = new ReentrantReadWriteLock(true)</td>
+          <td class="memname">final ReadWriteLock readWriteLock = new ReentrantReadWriteLock(true)</td>
         </tr>
       </table>
   </td>
@@ -278,8 +278,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5f39b3d68623bb7ccd7e35bdb7c2ce48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f39b3d68623bb7ccd7e35bdb7c2ce48">&#9670;&nbsp;</a></span>readLock</h2>
+<a id="abff8dbd938ca77d0c4fecb57f2bcd5b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff8dbd938ca77d0c4fecb57f2bcd5b5">&#9670;&nbsp;</a></span>readLock</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +288,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final transient Lock readLock = readWriteLock.readLock()</td>
+          <td class="memname">final Lock readLock = readWriteLock.readLock()</td>
         </tr>
       </table>
   </td>
@@ -302,8 +302,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab2b53d4c5c6e26f5b93cf82e97260d56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2b53d4c5c6e26f5b93cf82e97260d56">&#9670;&nbsp;</a></span>writeLock</h2>
+<a id="aa2adde83fa8277255ffd43be47030e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2adde83fa8277255ffd43be47030e32">&#9670;&nbsp;</a></span>writeLock</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,7 +312,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final transient Lock writeLock = readWriteLock.writeLock()</td>
+          <td class="memname">final Lock writeLock = readWriteLock.writeLock()</td>
         </tr>
       </table>
   </td>
@@ -326,8 +326,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2fd4c556302eb7d63d0170194d79b1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2fd4c556302eb7d63d0170194d79b1f">&#9670;&nbsp;</a></span>listeners</h2>
+<a id="a8049636b4eebe8bbb3484d752a503cc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8049636b4eebe8bbb3484d752a503cc1">&#9670;&nbsp;</a></span>listeners</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,7 +336,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">transient List&lt;T&gt; listeners = new ArrayList&lt;&gt;()</td>
+          <td class="memname">List&lt;T&gt; listeners = new ArrayList&lt;&gt;()</td>
         </tr>
       </table>
   </td>

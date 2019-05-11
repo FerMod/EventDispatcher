@@ -60,7 +60,7 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 
 		if(notifyChange) {
 			// Notify the list of registered listeners
-			this.notifyListeners((listener) -> listener.onValueChanged(oldValue, value));	
+			this.notifyListeners(listener -> listener.onValueChanged(oldValue, value));	
 		}
 
 	}
