@@ -47,7 +47,7 @@ deploy:
     prerelease: true
     draft: true
     name: $RELEASE_NAME
-    body: $RELEASE_BODY
+    # body: $RELEASE_BODY
     on:
       tags: true
   - provider: pages
