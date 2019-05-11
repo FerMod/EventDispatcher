@@ -47,8 +47,8 @@ deploy:
     skip_cleanup: true
     prerelease: true
     draft: true
-    name: "$RELEASE_NAME"
-    body: "$RELEASE_BODY"
+    name: "${RELEASE_NAME}"
+    body: "${RELEASE_BODY}"
     on:
       tags: false # SET TO TRUE
   - provider: pages
