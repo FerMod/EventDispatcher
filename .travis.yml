@@ -37,7 +37,7 @@ script:
 
 before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
-  - if [ -n "$TRAVIS_TAG" ]; then mvn clean install; fi
+  - if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
 deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
@@ -45,6 +45,9 @@ deploy:
     file: target/event-dispatcher-*.jar
     skip_cleanup: true
     prerelease: true
+    draft: true
+    name: $RELEASE_NAME
+    body: $RELEASE_BODY
     on:
       tags: true
   - provider: pages
