@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EventPublisher.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EventDispatcher</a> &gt; <a href="index.source.html" class="el_package">com.fermod.event</a> &gt; <span class="el_source">EventPublisher.java</span></div><h1>EventPublisher.java</h1><pre class="source lang-java linenums">package com.fermod.event;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.function.Consumer;
+
+/**
+ * Class that allows to register and notify event listeners.
+ *
+ * @param &lt;T&gt; the listener type that will provide the notification method 
+ */
+<span class="fc" id="L15">public abstract class EventPublisher&lt;T&gt; {</span>
+
+<span class="fc" id="L17">	private final ReadWriteLock readWriteLock = new ReentrantReadWriteLock(true);</span>
+<span class="fc" id="L18">	protected final Lock readLock = readWriteLock.readLock();</span>
+<span class="fc" id="L19">	protected final Lock writeLock = readWriteLock.writeLock();</span>
+
+<span class="fc" id="L21">	private List&lt;T&gt; listeners = new ArrayList&lt;&gt;();</span>
+
+	/**
+	 * Adds the specified listener to the list of registered listeners.
+	 * 
+	 * @param listener the listener that will be called
+	 * @return the registered listener instance
+	 */
+	public T registerListener(T listener) {
+
+		// Lock the list of listeners for writing
+<span class="fc" id="L32">		this.writeLock.lock();</span>
+
+		try {
+			// Add the listener to the list of registered listeners
+<span class="fc" id="L36">			this.listeners.add(listener);</span>
+		} finally {
+			// Unlock the writer lock
+<span class="fc" id="L39">			this.writeLock.unlock();</span>
+		}
+
+<span class="fc" id="L42">		return listener;</span>
+	}
+
+	/**
+	 * Removes the first occurrence of the specified listener from the list of the registered listeners.
+	 * 
+	 * @param listener the listener that should be removed from the list
+	 */
+	public void unregisterListener(T listener) {
+
+		// Lock the list of listeners for writing
+<span class="nc" id="L53">		this.writeLock.lock();</span>
+
+		try {
+			// Remove the listener from the list of the registered listeners
+<span class="nc" id="L57">			this.listeners.remove(listener);</span>
+		} finally {
+			// Unlock the writer lock
+<span class="nc" id="L60">			this.writeLock.unlock();</span>
+		}
+
+<span class="nc" id="L63">	}</span>
+
+	/**
+	 * Removes all the listeners from the list of the registered listeners. The list will be empty after this call returns.
+	 */
+	public void unregisterAllListeners() {
+
+		// Lock the list of listeners for writing
+<span class="nc" id="L71">		this.writeLock.lock();</span>
+
+		try {
+			// Remove all the listeners from the list of the registered listeners
+<span class="nc" id="L75">			this.listeners.clear();</span>
+		} finally {
+			// Unlock the writer lock
+<span class="nc" id="L78">			this.writeLock.unlock();</span>
+		}
+
+<span class="nc" id="L81">	}</span>
+
+	/**
+	 * Notifies and executes on each of the registered listeners the provided function.
+	 * 
+	 * @param action operation that accepts a single input argument and returns no result
+	 */
+	public void notifyListeners(Consumer&lt;? super T&gt; action) {
+
+		// Lock the list of listeners for reading
+<span class="fc" id="L91">		this.readLock.lock();</span>
+
+		try {
+			// Execute some function on each of the listeners
+<span class="fc" id="L95">			this.listeners.forEach(action);</span>
+		} finally {
+			// Unlock the reader lock
+<span class="fc" id="L98">			this.readLock.unlock();</span>
+		}
+
+<span class="fc" id="L101">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
