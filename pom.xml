@@ -308,7 +308,7 @@
 				<version>${maven.jxr.plugin.version}</version>
 			</plugin>
 
-			<!-- Generates code ccode coverage report -->
+			<!-- Generates code code coverage report -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
