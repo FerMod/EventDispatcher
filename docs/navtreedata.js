@@ -24,20 +24,13 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Event Dispatcher", "index.html", [
+    [ "Changelog", "a00356.html", null ],
+    [ "Contributor Covenant Code of Conduct", "a00357.html", null ],
+    [ "CONTRIBUTING", "a00358.html", null ],
+    [ "LICENSE", "a00359.html", null ],
     [ "Project Maven Site", "site/index.html", null ],
     [ "Project Tree", "tree.html", null ],
     [ "Packages", "namespaces.html", [
-      [ "Getting Started", "index.html#autotoc_md1", [
-        [ "Prerequisites", "index.html#autotoc_md2", null ],
-        [ "Installing", "index.html#autotoc_md3", null ]
-      ] ],
-      [ "Running the tests", "index.html#autotoc_md4", null ],
-      [ "Built With", "index.html#autotoc_md5", null ],
-      [ "Contributing", "index.html#autotoc_md6", null ],
-      [ "Versioning", "index.html#autotoc_md7", null ],
-      [ "Authors", "index.html#autotoc_md8", null ],
-      [ "License", "index.html#autotoc_md9", null ],
-      [ "Changelog", "index.html#autotoc_md10", null ],
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -58,7 +51,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"ComparableContract_8java.html"
+"a00005.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

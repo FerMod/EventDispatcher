@@ -1,6 +1,5 @@
 > **WIP document**
-
-# Introduction
+# Contributing
 
 First off, thank you for considering contributing to this project!
 

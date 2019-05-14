@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ObservedValue.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">EventDispatcher</a> &gt; <a href="index.source.html" class="el_package">com.fermod.observer</a> &gt; <span class="el_source">ObservedValue.java</span></div><h1>ObservedValue.java</h1><pre class="source lang-java linenums">package com.fermod.observer;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+import com.fermod.event.EventPublisher;
+import com.fermod.event.ValueChangeListener;
+
+/**
+ * Class that wraps a value and gives the utility of registering listeners that will be called
+ * after any variable value change.
+ *
+ * @param &lt;T&gt; the type of the observed value
+ */
+public class ObservedValue&lt;T&gt; extends EventPublisher&lt;ValueChangeListener&lt;T&gt;&gt; implements Serializable {
+
+	private T value;
+
+	/**
+	 * Default constructor of the class {@code ObservedValue&lt;T&gt;}. The observed value 
+	 * initialization is leaved to the compiler. This default will be {@code zero} or 
+	 * {@code null}, depending on the data type.
+	 */
+<span class="fc" id="L26">	public ObservedValue() { }</span>
+
+	/**
+	 * Constructor of the class {@code ObservedValue&lt;T&gt;} that takes as parameter the value
+	 * that will be initialized the observed value.
+	 * 
+	 * @param value the value that will be initialized to 
+	 */
+<span class="fc" id="L34">	public ObservedValue(T value) {</span>
+<span class="fc" id="L35">		this.value = value;</span>
+<span class="fc" id="L36">	}</span>
+
+	/**
+	 * Changes the value with the new given one, and notifies all the registered listeners of
+	 * the change.
+	 * 
+	 * @param value the new value to assign
+	 */
+	public void set(T value) {
+<span class="fc" id="L45">		set(value, true);</span>
+<span class="fc" id="L46">	}</span>
+
+	/**
+	 * Changes the value with the new given one, and depending if the notification on change
+	 * is enabled or not it will notify all the registered listeners.
+	 * 
+	 * @param value the new value to assign
+	 * @param notifyChange {@code true} if the change should notify all the registered 
+	 *        listeners, {@code false} otherwise
+	 */
+	public void set(T value, boolean notifyChange) {
+
+<span class="fc" id="L58">		T oldValue = this.value;</span>
+<span class="fc" id="L59">		this.value = value;</span>
+
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">		if(notifyChange) {</span>
+			// Notify the list of registered listeners
+<span class="fc" id="L63">			this.notifyListeners(listener -&gt; listener.onValueChanged(oldValue, value));	</span>
+		}
+
+<span class="fc" id="L66">	}</span>
+
+	/**
+	 * Returns the value that is being observed.
+	 * 
+	 * @return the value
+	 */
+	public T get() {
+<span class="fc" id="L74">		return value;</span>
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">		if (obj == null) {</span>
+<span class="nc" id="L81">			return false;</span>
+		}
+
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">		if (!ObservedValue.class.isAssignableFrom(obj.getClass())) {</span>
+<span class="nc" id="L85">			return false;</span>
+		}
+
+		@SuppressWarnings(&quot;unchecked&quot;)
+<span class="fc" id="L89">		final ObservedValue&lt;T&gt; other = (ObservedValue&lt;T&gt;) obj;</span>
+<span class="pc bpc" id="L90" title="3 of 6 branches missed.">		if ((this.value == null) ? (other.value != null) : !this.value.equals(other.value)) {</span>
+<span class="fc" id="L91">			return false;</span>
+		}
+
+<span class="fc" id="L94">		return true;</span>
+	}
+
+	@Override
+	public int hashCode() {
+<span class="fc" id="L99">		int hash = 17;</span>
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">		hash = 31 * hash + (this.value != null ? this.value.hashCode() : 0);</span>
+<span class="fc" id="L101">		return hash;</span>
+	}
+
+	/**
+	 * The &lt;code&gt;writeObject&lt;/code&gt; method is responsible for writing the state of the
+	 * object for its particular class so that the corresponding &lt;code&gt;readObject&lt;/code&gt;
+	 * method can restore it. It may call the default mechanism for saving the Object's 
+	 * fields calling &lt;code&gt;out.defaultWriteObject&lt;/code&gt;.
+	 * 
+	 * &lt;p&gt;The method does not need to concern itself with the state belonging to its 
+	 * superclasses or subclasses. State is saved by writing the individual fields to the
+	 * &lt;code&gt;ObjectOutputStream&lt;/code&gt; using the &lt;code&gt;writeObject&lt;/code&gt; method or by
+	 * using the methods for primitive data types supported by&lt;code&gt; DataOutput&lt;/code&gt;.
+	 *
+	 * @param out writes primitive data types and graphs of Java objects to an OutputStream
+	 * 
+	 * @throws IOException thrown when an I/O exception of some sort has occurred
+	 * 
+	 * @see Serializable
+	 * @see ObjectOutputStream
+	 */
+	private void writeObject(ObjectOutputStream out) throws IOException {
+<span class="fc" id="L123">		out.writeObject(value);</span>
+<span class="fc" id="L124">	}</span>
+
+	/**
+	 * The &lt;code&gt;readObject&lt;/code&gt; method is responsible for reading from the stream and
+	 * restoring the classes fields. It may call &lt;code&gt;in.defaultReadObject&lt;/code&gt; to invoke
+	 * the default mechanism for restoring the object's non-static and non-transient fields
+	 * 
+	 * &lt;p&gt;The &lt;code&gt;defaultReadObject&lt;/code&gt; method uses information in the stream to assign
+	 * the fields of the object saved in the stream with the correspondingly named fields
+	 * in the current object.
+	 * 
+	 * &lt;p&gt;This method handles the cast when the class has evolved to add new fields. The 
+	 * method does not need to concern itself with the state belonging to its superclasses
+	 * or subclasses. State is saved by writing the individual fields to the
+	 * &lt;code&gt;ObjectOutputStream&lt;/code&gt; using the &lt;code&gt;writeObject&lt;/code&gt; method or by 
+	 * using the methods for primitive data types supported by &lt;code&gt;DataOutput&lt;/code&gt;.
+	 * 
+	 * @param in the ObjectInputStream that deserializes primitive data and objects previously
+	 *        written using an ObjectOutputStream
+	 * 
+	 * @throws IOException thrown when an I/O exception of some sort has occurred
+	 * @throws ClassNotFoundException thrown when an application does not found a definition 
+	 *         for the class with the specified name
+	 * 
+	 * @see Serializable
+	 * @see ObjectInputStream
+	 */
+	@SuppressWarnings(&quot;unchecked&quot;)
+	private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+<span class="fc" id="L153">		this.value = (T) in.readObject();</span>
+<span class="fc" id="L154">	}</span>
+
+	/**
+	 * Auto-generated serial version ID.
+	 */
+	private static final long serialVersionUID = 8159940159964193507L;
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

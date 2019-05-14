@@ -65,9 +65,17 @@
 		<url>https://travis-ci.org/FerMod/EventDispatcher</url>
 	</ciManagement>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub FerMod Maven Packages</name>
+			<url>https://maven.pkg.github.com/FerMod</url>
+		</repository>
+	</distributionManagement>
+
 	<scm>
-		<connection>scm:git:git://github.com/FerMod/EventDispatcher.git</connection>
-		<developerConnection>scm:git:git://github.com/FerMod/EventDispatcher.git</developerConnection>
+		<connection>scm:git:git://github.com/FerMod/EventDispatcher</connection>
+		<developerConnection>scm:git:git://github.com/FerMod/EventDispatcher</developerConnection>
 		<tag>master</tag>
 		<url>https://github.com/FerMod/EventDispatcher</url>
 	</scm>
@@ -96,6 +104,7 @@
 		<maven.project.info.reports.plugin.version>3.0.0</maven.project.info.reports.plugin.version>
 		<maven.jxr.plugin.version>3.0.0</maven.jxr.plugin.version>
 		<maven.javadoc.plugin.version>3.1.0</maven.javadoc.plugin.version>
+		<jacoco.maven.plugin.version>0.8.4</jacoco.maven.plugin.version>
 
 	</properties>
 
@@ -156,6 +165,10 @@
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven.surefire.plugin.version}</version>
+				<configuration>
+					<!-- Sets the VM argument line used when unit tests are run -->
+					<argLine>${surefireArgLine}</argLine>
+				</configuration>
 			</plugin>
 
 			<!-- Allows to run integration tests -->
@@ -184,6 +197,78 @@
 					<nohelp>true</nohelp>
 					<show>private</show>
 				</configuration>
+			</plugin>
+
+			<!-- Generates code coverage analysis -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.maven.plugin.version}</version>
+				<executions>
+
+					<!--
+					Prepares the property pointing to the JaCoCo runtime agent which 
+					is passed as VM argument when Maven the Surefire plugin is executed
+					-->
+					<execution>
+						<id>pre-unit-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<!-- Set the path to the file which contains the execution data  -->
+							<destFile>${project.build.directory}/coverage-reports/jacoco.exec</destFile>
+							<!-- Set the name of the property containing the settingsfor JaCoCo runtime agent -->
+							<propertyName>surefireArgLine</propertyName>
+						</configuration>
+					</execution>
+
+					<!--
+						Ensures that the code coverage report for unit tests is created after
+						unit tests have been run
+					-->
+					<execution>
+						<id>post-unit-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<!-- Sets the path to the file which contains the execution data -->
+							<dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
+							<!-- Sets the output directory for the code coverage report -->
+							<outputDirectory>${project.build.directory}/coverage-reports</outputDirectory>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>acoco-check</id>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<!-- Sets the path to the file which contains the execution data -->
+							<dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
+							<haltOnFailure>false</haltOnFailure>
+							<rules>
+								<rule>
+									<element>CLASS</element>
+									<excludes>
+										<exclude>*Test</exclude>
+									</excludes>
+									<limits>
+										<limit>
+											<counter>LINE</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>0.9</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
+					</execution>
+
+				</executions>
 			</plugin>
 
 		</plugins>
@@ -223,7 +308,24 @@
 				<version>${maven.jxr.plugin.version}</version>
 			</plugin>
 
-        </plugins>
+			<!-- Generates code code coverage report -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<inherited>true</inherited>
+						<reports>
+							<report>report</report>
+						</reports>
+						<configuration>
+							<dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
+						</configuration>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+		</plugins>
 	</reporting>
 
 </project>
