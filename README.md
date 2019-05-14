@@ -164,7 +164,7 @@ Executed inline code. Old value: 0 New value: 10
 Executed printValueChange method. Old value: 0 New value: 10
 ```
 
-The full example class can be found [here](https://github.com/FerMod/EventDispatcher/tree/master/src/test/java/com/fermod/example/Example.java).
+The full example class can be found [here](https://github.com/FerMod/EventDispatcher/blob/master/src/test/java/com/fermod/example/Examples.java).
 
 ## Running the tests
 
