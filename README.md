@@ -54,9 +54,7 @@ The class `ObservedValue` extends `EventPublisher` and uses the methods declared
 
 ```java
 public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> implements Serializable {
-
     (...)
-
 }
 ```
 
