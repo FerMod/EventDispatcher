@@ -17,7 +17,7 @@ mvn clean site
 # Generate doxygen docs
 echo "Generating Doxygen docs ..."
 cd doxygen
-doxygen
+doxygen Doxyfile
 
 popd
 echo "Finished deploying docs."
