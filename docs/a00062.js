@@ -1,4 +1,5 @@
 var a00062 =
 [
-    [ "ObservedValue", "a00079.html", "a00079" ]
+    [ "EventPublisher", "a00075.html", "a00075" ],
+    [ "ValueChangeListener", "a00079.html", "a00079" ]
 ];

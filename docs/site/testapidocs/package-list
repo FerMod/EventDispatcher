@@ -1,5 +1,6 @@
 com.fermod
 com.fermod.contract
+com.fermod.example
 com.fermod.extension
 com.fermod.testdata.serializable
 com.fermod.util
