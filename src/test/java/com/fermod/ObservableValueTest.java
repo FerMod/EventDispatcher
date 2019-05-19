@@ -15,6 +15,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Arrays;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,6 +29,8 @@ import org.junit.jupiter.params.provider.CsvSource;
 import com.fermod.extension.TimingExtension;
 import com.fermod.observer.ObservedValue;
 import com.fermod.testdata.serializable.PersonObject;
+import com.fermod.annotations.ArraySource;
+import com.fermod.annotations.ArraySources;
 
 @ExtendWith({TimingExtension.class})
 class ObservableValueTest {
@@ -398,6 +401,41 @@ class ObservableValueTest {
 
 		assertEquals(expectedTestClass, value.get(), "" + observedValue.get().hashCode() + " " + value.hashCode());				
 	}
+
+	
+	@SuppressWarnings("unchecked")
+	@DisplayName("Test Serialization - Array of int")
+	@ParameterizedTest
+    @ArraySources(
+            arrays = {
+                    @ArraySource(array = {1, 2, 3, 4, 5, 6}),
+                    @ArraySource(array = {21, 34, 68}),
+                    @ArraySource(array = {72, 84, 78})
+            }
+    )
+	void testSerialization(int []expected) {
+
+		assumeTrue(tempFile != null);
+		File file = tempFile;
+
+		ObservedValue<int []> observedValue = new ObservedValue<>(expected);
+
+		serialiceToFile(file, observedValue);
+		assumeTrue(file.length() > 0);
+
+		ObservedValue<int[]> value = null;
+		try {
+			FileInputStream fileInputStream = new FileInputStream(file);
+			try(ObjectInputStream objectInputStream	= new ObjectInputStream(fileInputStream)) {
+				value = (ObservedValue<int []>) objectInputStream.readObject();
+			}
+		} catch (Exception e) {
+			assumeNoException(e);
+		}
+
+		assertTrue(Arrays.equals(expected, value.get()));
+	}
+	
 
 	private static <T> void valueChangedTest(T oldValue, T newValue) {
 		eventMethodInvoked = true;
