@@ -58,6 +58,8 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 }
 ```
 
+![diagram](https://raw.githubusercontent.com/FerMod/EventDispatcher/master/src/FosterGun/resources/EventDisp_Diagram.PNG)
+
 When the events need to be fired the class only need to notify the listeners. For example, in the `set` method is notified to the listeners that the value have changed, and the old and new values are passed as parameters, that will obtain the registered listeners.
 
 ```java
