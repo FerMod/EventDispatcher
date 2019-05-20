@@ -4,8 +4,10 @@
 
 These changes have not been released yet.
 
+- Added JUnit tag that allows to use arrays in parametized tests.
 - Fixed documentation generation.
 - Fixed docs missing headers.
+- Improved docs.
 
 ## [0.1.5-beta.1][v0.1.5-beta.1] (2019-05-10)
 
