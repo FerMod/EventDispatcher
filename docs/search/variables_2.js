@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['count',['count',['../a00115.html#ad43c3812e6d13e0518d9f8b8f463ffcf',1,'com::fermod::Log4jExample']]]
+  ['count',['count',['../a00137.html#ad43c3812e6d13e0518d9f8b8f463ffcf',1,'com::fermod::Log4jExample']]]
 ];

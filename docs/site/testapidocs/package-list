@@ -1,4 +1,5 @@
 com.fermod
+com.fermod.annotations
 com.fermod.contract
 com.fermod.example
 com.fermod.extension
