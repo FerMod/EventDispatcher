@@ -1,7 +1,7 @@
 var a00087 =
 [
-    [ "createSmallerValue", "a00087.html#a217c99cff63c6bbc5d6320644683b56a", null ],
-    [ "comparedToItself", "a00087.html#ae63bd5378a4c3f46f92139be798884c1", null ],
-    [ "compareToSmallerValue", "a00087.html#ac60986c5fb0ba78f143868e0ded4196e", null ],
-    [ "compareToLargerValue", "a00087.html#adf6ce3723ba22a44f5f67740dbe43898", null ]
+    [ "createNotEqualValue", "a00087.html#a3d7d4e2d72b9339979ba23583336c86a", null ],
+    [ "equalValueItself", "a00087.html#a4b9a7cfc1dccfb055a34b729a2c72aa5", null ],
+    [ "notEqualNullValue", "a00087.html#a1045490273ab443e581c8b2bc75f94d7", null ],
+    [ "notEqualDifferentValue", "a00087.html#a42fbc53ad0b7e96497dc6096b2fdf4de", null ]
 ];

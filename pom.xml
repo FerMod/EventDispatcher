@@ -38,17 +38,15 @@
 	</developers>
 
 	<contributors>
-		<!--
 		<contributor>
-			<name></name>
-			<email></email>
-			<url></url>
+			<name>FosterGun</name>
+			<email>mblanco040@ikasle.ehu.es</email>
+			<url>https://github.com/FosterGun</url>
 			<roles>
-				<role></role>
+				<role>Developer</role>
 			</roles>
-			<timezone></timezone>
+			<timezone>Europe/Madrid</timezone>
 		</contributor>
-		-->
 	</contributors>
 
 	<licenses>
