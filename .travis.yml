@@ -33,7 +33,7 @@ before_script:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/install-doxygen.sh; fi
 
 script:
-  - git fetch --unshallow --tags
+  - git fetch --tags
   # The following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent org.jacoco:jacoco-maven-plugin:report package sonar:sonar
 
