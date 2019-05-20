@@ -3,16 +3,15 @@ package com.fermod.testdata.serializable;
 import java.io.Serializable;
 import java.util.function.BiConsumer;
 
-import com.fermod.event.ValueChangeListener;
 import com.fermod.observer.ObservedValue;
 
 public class PersonObject implements Serializable {
 
-	private ObservedValue<String> observedName = new ObservedValue<String>();
+	private ObservedValue<String> observedName;
 	private int age; 
 	
 	public PersonObject(String name, int age) {
-		this.observedName.set(name);
+		this.observedName = new ObservedValue<>(name);
 		this.age = age;
 	}
 
@@ -25,8 +24,12 @@ public class PersonObject implements Serializable {
 	}
 	
 	public void onNameChanged(BiConsumer<String, String> consumer) {
-		ValueChangeListener<String> listener = observedName.registerListener((oldValue, newValue) -> consumer.accept(oldValue, newValue));
-		observedName.registerListener(listener);
+		observedName.registerListener(consumer::accept);
+		
+		/* Equivalent to: 
+		observedName.registerListener((oldValue, newValue) -> consumer.accept(oldValue, newValue));
+		*/
+		
 	}
 
 	public int getAge() {
