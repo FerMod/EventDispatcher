@@ -4,6 +4,8 @@ jdk:
 env:
   global:
     - DOXYGEN_VERSION=1.8.15
+git:
+  depth: false
 
 addons:
   apt:
