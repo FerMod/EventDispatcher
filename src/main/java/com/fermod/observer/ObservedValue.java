@@ -19,13 +19,6 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 	private T value;
 
 	/**
-	 * Default constructor of the class {@code ObservedValue<T>}. The observed value 
-	 * initialization is leaved to the compiler. This default will be {@code zero} or 
-	 * {@code null}, depending on the data type.
-	 */
-	public ObservedValue() { }
-
-	/**
 	 * Constructor of the class {@code ObservedValue<T>} that takes as parameter the value
 	 * that will be initialized the observed value.
 	 * 
