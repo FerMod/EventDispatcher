@@ -4,17 +4,19 @@
 
 These changes have not been released yet.
 
-- Added JUnit tag that allows to use arrays in parametized tests.
-- Fixed documentation generation.
-- Fixed docs missing headers.
-- Improved docs.
+- Added JUnit tag that allows to use arrays in parametized tests
+- Fixed documentation generation
+- Fixed docs missing headers
+- Fixed [Issue #27](https://github.com/FerMod/EventDispatcher/issues/27)
+- Increased code coverage
+- Improved docs
 
 ## [0.1.5-beta.1][v0.1.5-beta.1] (2019-05-10)
 
-- Added [SonarCloud](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher) to the repository.
-- Added Travis CI automatic jar release.
+- Added [SonarCloud](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher) to the repository
+- Added Travis CI automatic jar release
 - Added more project information to `pom.xml`
-- Removed the symbolic link and changed Doxygen docs output path, with the one pointed by the symbolic link.
+- Removed the symbolic link and changed Doxygen docs output path, with the one pointed by the symbolic link
 
 ## [0.1.5-beta][v0.1.5-beta] (2019-05-05)
 
