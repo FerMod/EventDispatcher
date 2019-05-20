@@ -1,6 +1,6 @@
 # Event Dispatcher
 
-[![Build Status](https://travis-ci.org/FerMod/EventDispatcher.svg?branch=master)](https://travis-ci.org/FerMod/EventDispatcher) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.fermod%3Aevent-dispatcher&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher)
+[![Build Status](https://travis-ci.org/FerMod/EventDispatcher.svg?branch=master)](https://travis-ci.org/FerMod/EventDispatcher) [![Sonar Quality Gate](https://img.shields.io/sonar/https/sonarcloud.io/com.fermod:event-dispatcher/quality_gate.svg)](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher) [![Sonar Coverage](https://img.shields.io/sonar/https/sonarcloud.io/com.fermod:event-dispatcher/coverage.svg)](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher) [![GitHub release](https://img.shields.io/github/release-pre/FerMod/EventDispatcher.svg)](https://github.com/FerMod/EventDispatcher/releases)
 
 Event Dispatcher is simple library that offers basic event management.
 
@@ -14,6 +14,8 @@ This project requires to have **JDK 1.8**, and **Maven** which will manage all t
 
 ### Installing
 
+
+
 To install the library is required to follow a few steps:
 
 1. Go to the project [releases](https://github.com/FerMod/EventDispatcher/releases/latest).
@@ -24,23 +26,13 @@ To install the library is required to follow a few steps:
     mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file -Dfile=PATH_TO_JAR
     ```
 
-4. Add to your `pom.xml` file the library dependency and replace `VERSION` with the current version:
+4. Add to your `pom.xml` file the library dependency, it should look similar to the example below. Replace `VERSION` with the current version. If the version is `v0.1.5-beta` the value that should be replaced with is `0.1.5-beta`.
 
     ```xml
     <dependency>
         <groupId>com.fermod</groupId>
-       <artifactId>event-dispatcher</artifactId>
-       <version>VERSION</version>
-    </dependency>
-    ```
-
-    For example, if the version is `v0.1.5-beta` the value that should be written in `version` is `0.1.5-beta`.
-
-    ```xml
-    <dependency>
-        <groupId>com.fermod</groupId>
-       <artifactId>event-dispatcher</artifactId>
-       <version>0.1.5-beta</version>
+        <artifactId>event-dispatcher</artifactId>
+        <version>VERSION</version>
     </dependency>
     ```
 
@@ -58,7 +50,7 @@ public class ObservedValue<T> extends EventPublisher<ValueChangeListener<T>> imp
 }
 ```
 
-![diagram](https://raw.githubusercontent.com/FerMod/EventDispatcher/FosterGun/src/main/resources/EventDisp_Diagram.png)
+![Diagram](src/main/resources/EventDisp_Diagram.png)
 
 When the events need to be fired the class only need to notify the listeners. For example, in the `set` method is notified to the listeners that the value have changed, and the old and new values are passed as parameters, that will obtain the registered listeners.
 
@@ -164,7 +156,7 @@ Executed inline code. Old value: 0 New value: 10
 Executed printValueChange method. Old value: 0 New value: 10
 ```
 
-The full example class can be found [here](https://github.com/FerMod/EventDispatcher/blob/master/src/test/java/com/fermod/example/Examples.java).
+The full example class can be found [here](src/test/java/com/fermod/example/Examples.java).
 
 ## Running the tests
 
