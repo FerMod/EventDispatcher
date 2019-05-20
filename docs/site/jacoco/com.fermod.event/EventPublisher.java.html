@@ -50,17 +50,17 @@ import java.util.function.Consumer;
 	public void unregisterListener(T listener) {
 
 		// Lock the list of listeners for writing
-<span class="nc" id="L53">		this.writeLock.lock();</span>
+<span class="fc" id="L53">		this.writeLock.lock();</span>
 
 		try {
 			// Remove the listener from the list of the registered listeners
-<span class="nc" id="L57">			this.listeners.remove(listener);</span>
+<span class="fc" id="L57">			this.listeners.remove(listener);</span>
 		} finally {
 			// Unlock the writer lock
-<span class="nc" id="L60">			this.writeLock.unlock();</span>
+<span class="fc" id="L60">			this.writeLock.unlock();</span>
 		}
 
-<span class="nc" id="L63">	}</span>
+<span class="fc" id="L63">	}</span>
 
 	/**
 	 * Removes all the listeners from the list of the registered listeners. The list will be empty after this call returns.
@@ -68,17 +68,17 @@ import java.util.function.Consumer;
 	public void unregisterAllListeners() {
 
 		// Lock the list of listeners for writing
-<span class="nc" id="L71">		this.writeLock.lock();</span>
+<span class="fc" id="L71">		this.writeLock.lock();</span>
 
 		try {
 			// Remove all the listeners from the list of the registered listeners
-<span class="nc" id="L75">			this.listeners.clear();</span>
+<span class="fc" id="L75">			this.listeners.clear();</span>
 		} finally {
 			// Unlock the writer lock
-<span class="nc" id="L78">			this.writeLock.unlock();</span>
+<span class="fc" id="L78">			this.writeLock.unlock();</span>
 		}
 
-<span class="nc" id="L81">	}</span>
+<span class="fc" id="L81">	}</span>
 
 	/**
 	 * Notifies and executes on each of the registered listeners the provided function.

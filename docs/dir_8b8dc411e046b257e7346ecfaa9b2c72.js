@@ -8,12 +8,13 @@ var dir_8b8dc411e046b257e7346ecfaa9b2c72 =
     [ "util", "dir_f954f922ac5b2ee5f93b3530171ed533.html", "dir_f954f922ac5b2ee5f93b3530171ed533" ],
     [ "EqualsTest.java", "a00032.html", [
       [ "EqualsTest", "a00121.html", "a00121" ],
-      [ "PersonObjectEqualsTest", "a00125.html", "a00125" ]
+      [ "ObservedValueEqualsTest", "a00125.html", "a00125" ],
+      [ "PersonObjectEqualsTest", "a00129.html", "a00129" ]
     ] ],
     [ "Log4jExample.java", "a00041.html", [
-      [ "Log4jExample", "a00137.html", "a00137" ]
+      [ "Log4jExample", "a00141.html", "a00141" ]
     ] ],
     [ "ObservableValueTest.java", "a00044.html", [
-      [ "ObservableValueTest", "a00141.html", "a00141" ]
+      [ "ObservableValueTest", "a00145.html", "a00145" ]
     ] ]
 ];

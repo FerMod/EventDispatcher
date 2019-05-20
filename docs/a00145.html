@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Event Dispatcher: PersonObject</title>
+<title>Event Dispatcher: ObservableValueTest</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,66 +90,650 @@ $(document).ready(function(){initNavTree('a00145.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pac-methods">Package Functions</a> &#124;
+<a href="#pac-static-attribs">Static Package Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="a00142.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">PersonObject</div>  </div>
+<div class="title">ObservableValueTest</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00009">9</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-</div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for PersonObject:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
- <div class="center">
-  <img src="a00145.png" alt=""/>
- </div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a101a11c6083ffca3e85ba6f401f2147f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a101a11c6083ffca3e85ba6f401f2147f">PersonObject</a> (String name, int <a class="el" href="a00145.html#a91d98a856bbd96810b40af3ca5cc901a">age</a>)</td></tr>
-<tr class="separator:a101a11c6083ffca3e85ba6f401f2147f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78ee178b6a73658d65ca60da4d1e6683"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a78ee178b6a73658d65ca60da4d1e6683">getName</a> ()</td></tr>
-<tr class="separator:a78ee178b6a73658d65ca60da4d1e6683"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad737b36b74be994e0d8420797ed72f78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#ad737b36b74be994e0d8420797ed72f78">setName</a> (String name)</td></tr>
-<tr class="separator:ad737b36b74be994e0d8420797ed72f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac535b338f559ac69335ca2e91f35236e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#ac535b338f559ac69335ca2e91f35236e">onNameChanged</a> (BiConsumer&lt; String, String &gt; consumer)</td></tr>
-<tr class="separator:ac535b338f559ac69335ca2e91f35236e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44a88871339022e9a268d613b55f39a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a44a88871339022e9a268d613b55f39a1">getAge</a> ()</td></tr>
-<tr class="separator:a44a88871339022e9a268d613b55f39a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23e901febda7a2f14791b3557c247df0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a23e901febda7a2f14791b3557c247df0">setAge</a> (int <a class="el" href="a00145.html#a91d98a856bbd96810b40af3ca5cc901a">age</a>)</td></tr>
-<tr class="separator:a23e901febda7a2f14791b3557c247df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3ce8ca5a04e8966a9d2158aeeecfc16"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#ae3ce8ca5a04e8966a9d2158aeeecfc16">equals</a> (Object obj)</td></tr>
-<tr class="separator:ae3ce8ca5a04e8966a9d2158aeeecfc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a077e18fe97323c7194e2665ffc766399"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a077e18fe97323c7194e2665ffc766399">hashCode</a> ()</td></tr>
-<tr class="separator:a077e18fe97323c7194e2665ffc766399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00038">38</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-methods"></a>
+Package Functions</h2></td></tr>
+<tr class="memitem:aaccb4a9b46faa203aed8e8a13f13f643"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#aaccb4a9b46faa203aed8e8a13f13f643">beforeEach</a> ()</td></tr>
+<tr class="separator:aaccb4a9b46faa203aed8e8a13f13f643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de518f301ef3efbd1848dc59ec42961"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a7de518f301ef3efbd1848dc59ec42961">testUnregisterEvent</a> (int value, TestInfo testInfo)</td></tr>
+<tr class="separator:a7de518f301ef3efbd1848dc59ec42961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935fca846311afb36cdb49e8b9ae31bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a935fca846311afb36cdb49e8b9ae31bc">testUnregisterAllEvents</a> (int value, TestInfo testInfo)</td></tr>
+<tr class="separator:a935fca846311afb36cdb49e8b9ae31bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a021de3bdc3c57e48a2633bb590d11a71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a021de3bdc3c57e48a2633bb590d11a71">testEventMethodInvocation</a> (int expected, int value, TestInfo testInfo)</td></tr>
+<tr class="separator:a021de3bdc3c57e48a2633bb590d11a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c6827a373ddd94ea7662185bc365238"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a8c6827a373ddd94ea7662185bc365238">testEventMethodInvocation</a> (String name, String newName, int age)</td></tr>
+<tr class="separator:a8c6827a373ddd94ea7662185bc365238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed6dc968edb2dc51181bdea4050f649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a4ed6dc968edb2dc51181bdea4050f649">testEventMethodValueChange</a> (String name, String newName, int age)</td></tr>
+<tr class="separator:a4ed6dc968edb2dc51181bdea4050f649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8ac198fe9318db213984e89a1933f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#afa8ac198fe9318db213984e89a1933f7">testEventMethodNotInvoqued</a> (int value, TestInfo testInfo)</td></tr>
+<tr class="separator:afa8ac198fe9318db213984e89a1933f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd4d2f387e7b771029dcfdbd4c0ca15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#abcd4d2f387e7b771029dcfdbd4c0ca15">testSerialization</a> (boolean expected)</td></tr>
+<tr class="separator:abcd4d2f387e7b771029dcfdbd4c0ca15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e00c2a04bc72cd9bf00926c9c097458"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a3e00c2a04bc72cd9bf00926c9c097458">testSerialization</a> (byte expected)</td></tr>
+<tr class="separator:a3e00c2a04bc72cd9bf00926c9c097458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb93e16efdc093f5374d0fe9eb9b29c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a1cb93e16efdc093f5374d0fe9eb9b29c">testSerialization</a> (char expected)</td></tr>
+<tr class="separator:a1cb93e16efdc093f5374d0fe9eb9b29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1200800b6dde72c6e9f04546fd0a03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a8f1200800b6dde72c6e9f04546fd0a03">testSerialization</a> (short expected)</td></tr>
+<tr class="separator:a8f1200800b6dde72c6e9f04546fd0a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83659fe80f1d1150727cfde0115664a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a83659fe80f1d1150727cfde0115664a9">testSerialization</a> (int expected)</td></tr>
+<tr class="separator:a83659fe80f1d1150727cfde0115664a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d9d247eaa8168d5fce3504e92bf55b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#ac8d9d247eaa8168d5fce3504e92bf55b">testSerialization</a> (long expected)</td></tr>
+<tr class="separator:ac8d9d247eaa8168d5fce3504e92bf55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc7fc8a407b1fb669659728899d4691"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#afbc7fc8a407b1fb669659728899d4691">testSerialization</a> (float expected)</td></tr>
+<tr class="separator:afbc7fc8a407b1fb669659728899d4691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725725f926d9a092b203cece489ce33b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a725725f926d9a092b203cece489ce33b">testSerialization</a> (double expected)</td></tr>
+<tr class="separator:a725725f926d9a092b203cece489ce33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8ba757cbac0eea35a5b36bba08f5e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a9e8ba757cbac0eea35a5b36bba08f5e7">testSerialization</a> (String expected)</td></tr>
+<tr class="separator:a9e8ba757cbac0eea35a5b36bba08f5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e513163b71e4b58c64f73cfceff4169"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a1e513163b71e4b58c64f73cfceff4169">testSerialization</a> (String name, int age)</td></tr>
+<tr class="separator:a1e513163b71e4b58c64f73cfceff4169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c43a546b738ebb7573eb8b9ad6db981"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a1c43a546b738ebb7573eb8b9ad6db981">testSerialization</a> (int[] expected)</td></tr>
+<tr class="separator:a1c43a546b738ebb7573eb8b9ad6db981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ee1294e5cbefc61c0a06db34391d01"><td class="memItemLeft" align="right" valign="top">private&lt; T &gt; void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a76ee1294e5cbefc61c0a06db34391d01">serialiceToFile</a> (File file, T value)</td></tr>
+<tr class="separator:a76ee1294e5cbefc61c0a06db34391d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a7f994813c8d087c5093e6c703cae6378"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00093.html">ObservedValue</a>&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a7f994813c8d087c5093e6c703cae6378">observedName</a> = new <a class="el" href="a00093.html">ObservedValue</a>&lt;String&gt;()</td></tr>
-<tr class="separator:a7f994813c8d087c5093e6c703cae6378"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91d98a856bbd96810b40af3ca5cc901a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a91d98a856bbd96810b40af3ca5cc901a">age</a></td></tr>
-<tr class="separator:a91d98a856bbd96810b40af3ca5cc901a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-static-attribs"></a>
+Static Package Attributes</h2></td></tr>
+<tr class="memitem:aa13ae4b6acac5b1562c46c62e2936b4d"><td class="memItemLeft" align="right" valign="top">static File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#aa13ae4b6acac5b1562c46c62e2936b4d">tempFile</a></td></tr>
+<tr class="separator:aa13ae4b6acac5b1562c46c62e2936b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa75782532aeec76247d5dfaa5bef766e"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#aa75782532aeec76247d5dfaa5bef766e">eventMethodInvoked</a></td></tr>
+<tr class="separator:aa75782532aeec76247d5dfaa5bef766e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee9eaabd25ddaa05529a39ed7079685a"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#aee9eaabd25ddaa05529a39ed7079685a">listenerMethodInvoked</a></td></tr>
+<tr class="separator:aee9eaabd25ddaa05529a39ed7079685a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8f65c8aabcc8ac63bd06e221b660ee50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a8f65c8aabcc8ac63bd06e221b660ee50">initTempFile</a> (String fileName)</td></tr>
+<tr class="separator:a8f65c8aabcc8ac63bd06e221b660ee50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a1a7179bb1d41b3c449603464cb9a0bba"><td class="memItemLeft" align="right" valign="top">static&lt; T &gt; void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a1a7179bb1d41b3c449603464cb9a0bba">valueChangedTest</a> (T oldValue, T newValue)</td></tr>
+<tr class="separator:a1a7179bb1d41b3c449603464cb9a0bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a3238d314ecdee14d2966760945d00c3b"><td class="memItemLeft" align="right" valign="top">static final long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a3238d314ecdee14d2966760945d00c3b">serialVersionUID</a> = -8858049414160214232L</td></tr>
-<tr class="separator:a3238d314ecdee14d2966760945d00c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1d069f56091df4f6436f8c713ab2f39"><td class="memItemLeft" align="right" valign="top">static final Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#ab1d069f56091df4f6436f8c713ab2f39">LOGGER</a> = LogManager.getLogger(ObservableValueTest.class)</td></tr>
+<tr class="separator:ab1d069f56091df4f6436f8c713ab2f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a101a11c6083ffca3e85ba6f401f2147f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a101a11c6083ffca3e85ba6f401f2147f">&#9670;&nbsp;</a></span>PersonObject()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaccb4a9b46faa203aed8e8a13f13f643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaccb4a9b46faa203aed8e8a13f13f643">&#9670;&nbsp;</a></span>beforeEach()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00145.html">PersonObject</a> </td>
+          <td class="memname">void beforeEach </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00047">47</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a8f65c8aabcc8ac63bd06e221b660ee50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f65c8aabcc8ac63bd06e221b660ee50">&#9670;&nbsp;</a></span>initTempFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initTempFile </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00053">53</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a7de518f301ef3efbd1848dc59ec42961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7de518f301ef3efbd1848dc59ec42961">&#9670;&nbsp;</a></span>testUnregisterEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testUnregisterEvent </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TestInfo&#160;</td>
+          <td class="paramname"><em>testInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00069">69</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a935fca846311afb36cdb49e8b9ae31bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935fca846311afb36cdb49e8b9ae31bc">&#9670;&nbsp;</a></span>testUnregisterAllEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testUnregisterAllEvents </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TestInfo&#160;</td>
+          <td class="paramname"><em>testInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00095">95</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a021de3bdc3c57e48a2633bb590d11a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a021de3bdc3c57e48a2633bb590d11a71">&#9670;&nbsp;</a></span>testEventMethodInvocation() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testEventMethodInvocation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TestInfo&#160;</td>
+          <td class="paramname"><em>testInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00125">125</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a8c6827a373ddd94ea7662185bc365238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c6827a373ddd94ea7662185bc365238">&#9670;&nbsp;</a></span>testEventMethodInvocation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testEventMethodInvocation </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>newName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>age</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00148">148</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a4ed6dc968edb2dc51181bdea4050f649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed6dc968edb2dc51181bdea4050f649">&#9670;&nbsp;</a></span>testEventMethodValueChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testEventMethodValueChange </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>newName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>age</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00167">167</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="afa8ac198fe9318db213984e89a1933f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8ac198fe9318db213984e89a1933f7">&#9670;&nbsp;</a></span>testEventMethodNotInvoqued()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testEventMethodNotInvoqued </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TestInfo&#160;</td>
+          <td class="paramname"><em>testInfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00188">188</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="abcd4d2f387e7b771029dcfdbd4c0ca15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd4d2f387e7b771029dcfdbd4c0ca15">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[1/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00207">207</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a3e00c2a04bc72cd9bf00926c9c097458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e00c2a04bc72cd9bf00926c9c097458">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[2/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00235">235</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a1cb93e16efdc093f5374d0fe9eb9b29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb93e16efdc093f5374d0fe9eb9b29c">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[3/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00263">263</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a8f1200800b6dde72c6e9f04546fd0a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1200800b6dde72c6e9f04546fd0a03">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[4/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">short&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00291">291</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a83659fe80f1d1150727cfde0115664a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83659fe80f1d1150727cfde0115664a9">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[5/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00319">319</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="ac8d9d247eaa8168d5fce3504e92bf55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d9d247eaa8168d5fce3504e92bf55b">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[6/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00347">347</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="afbc7fc8a407b1fb669659728899d4691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc7fc8a407b1fb669659728899d4691">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[7/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00375">375</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a725725f926d9a092b203cece489ce33b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725725f926d9a092b203cece489ce33b">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[8/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00403">403</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a9e8ba757cbac0eea35a5b36bba08f5e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e8ba757cbac0eea35a5b36bba08f5e7">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[9/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00431">431</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a1e513163b71e4b58c64f73cfceff4169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e513163b71e4b58c64f73cfceff4169">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[10/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSerialization </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -166,177 +750,19 @@ Static Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00014">14</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a78ee178b6a73658d65ca60da4d1e6683"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78ee178b6a73658d65ca60da4d1e6683">&#9670;&nbsp;</a></span>getName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">String getName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00019">19</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-
-</div>
-</div>
-<a id="ad737b36b74be994e0d8420797ed72f78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad737b36b74be994e0d8420797ed72f78">&#9670;&nbsp;</a></span>setName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setName </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00023">23</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-
-</div>
-</div>
-<a id="ac535b338f559ac69335ca2e91f35236e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac535b338f559ac69335ca2e91f35236e">&#9670;&nbsp;</a></span>onNameChanged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void onNameChanged </td>
-          <td>(</td>
-          <td class="paramtype">BiConsumer&lt; String, String &gt;&#160;</td>
-          <td class="paramname"><em>consumer</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00027">27</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-
-</div>
-</div>
-<a id="a44a88871339022e9a268d613b55f39a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44a88871339022e9a268d613b55f39a1">&#9670;&nbsp;</a></span>getAge()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int getAge </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00032">32</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-
-</div>
-</div>
-<a id="a23e901febda7a2f14791b3557c247df0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23e901febda7a2f14791b3557c247df0">&#9670;&nbsp;</a></span>setAge()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setAge </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>age</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00036">36</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-
-</div>
-</div>
-<a id="ae3ce8ca5a04e8966a9d2158aeeecfc16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3ce8ca5a04e8966a9d2158aeeecfc16">&#9670;&nbsp;</a></span>equals()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean equals </td>
-          <td>(</td>
-          <td class="paramtype">Object&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00041">41</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-
-</div>
-</div>
-<a id="a077e18fe97323c7194e2665ffc766399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a077e18fe97323c7194e2665ffc766399">&#9670;&nbsp;</a></span>hashCode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hashCode </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00064">64</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7f994813c8d087c5093e6c703cae6378"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f994813c8d087c5093e6c703cae6378">&#9670;&nbsp;</a></span>observedName</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00093.html">ObservedValue</a>&lt;String&gt; observedName = new <a class="el" href="a00093.html">ObservedValue</a>&lt;String&gt;()</td>
-        </tr>
-      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00011">11</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00459">459</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
-<a id="a91d98a856bbd96810b40af3ca5cc901a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91d98a856bbd96810b40af3ca5cc901a">&#9670;&nbsp;</a></span>age</h2>
+<a id="a1c43a546b738ebb7573eb8b9ad6db981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c43a546b738ebb7573eb8b9ad6db981">&#9670;&nbsp;</a></span>testSerialization() <span class="overload">[11/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,22 +771,26 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int age</td>
+          <td class="memname">void testSerialization </td>
+          <td>(</td>
+          <td class="paramtype">int []&#160;</td>
+          <td class="paramname"><em>expected</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00012">12</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00492">492</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
-<a id="a3238d314ecdee14d2966760945d00c3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3238d314ecdee14d2966760945d00c3b">&#9670;&nbsp;</a></span>serialVersionUID</h2>
+<a id="a1a7179bb1d41b3c449603464cb9a0bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7179bb1d41b3c449603464cb9a0bba">&#9670;&nbsp;</a></span>valueChangedTest()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,7 +799,21 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final long serialVersionUID = -8858049414160214232L</td>
+          <td class="memname">static &lt;T&gt; void valueChangedTest </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>oldValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>newValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -379,7 +823,142 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00071">71</a> of file <a class="el" href="a00047_source.html">PersonObject.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00515">515</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="a76ee1294e5cbefc61c0a06db34391d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ee1294e5cbefc61c0a06db34391d01">&#9670;&nbsp;</a></span>serialiceToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">private&lt;T&gt; void serialiceToFile </td>
+          <td>(</td>
+          <td class="paramtype">File&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00520">520</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab1d069f56091df4f6436f8c713ab2f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d069f56091df4f6436f8c713ab2f39">&#9670;&nbsp;</a></span>LOGGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Logger LOGGER = LogManager.getLogger(ObservableValueTest.class)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00040">40</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="aa13ae4b6acac5b1562c46c62e2936b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13ae4b6acac5b1562c46c62e2936b4d">&#9670;&nbsp;</a></span>tempFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">File tempFile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00042">42</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="aa75782532aeec76247d5dfaa5bef766e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa75782532aeec76247d5dfaa5bef766e">&#9670;&nbsp;</a></span>eventMethodInvoked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean eventMethodInvoked</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00043">43</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+
+</div>
+</div>
+<a id="aee9eaabd25ddaa05529a39ed7079685a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee9eaabd25ddaa05529a39ed7079685a">&#9670;&nbsp;</a></span>listenerMethodInvoked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean listenerMethodInvoked</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00044">44</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -389,7 +968,7 @@ Static Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00072.html">com</a></li><li class="navelem"><a class="el" href="a00073.html">fermod</a></li><li class="navelem"><a class="el" href="a00080.html">testdata</a></li><li class="navelem"><a class="el" href="a00079.html">serializable</a></li><li class="navelem"><a class="el" href="a00145.html">PersonObject</a></li>
+    <li class="navelem"><a class="el" href="a00072.html">com</a></li><li class="navelem"><a class="el" href="a00073.html">fermod</a></li><li class="navelem"><a class="el" href="a00145.html">ObservableValueTest</a></li>
     <!-- <li class="footer">
       Generated by<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 
     </li> -->
