@@ -4,6 +4,10 @@
 
 These changes have not been released yet.
 
+- 
+
+## [0.1.6-beta][v0.1.6-beta] (2019-05-22)
+
 - Added JUnit tag that allows to use arrays in parametized tests
 - Fixed documentation generation
 - Fixed docs missing headers
@@ -70,7 +74,8 @@ These changes have not been released yet.
 
 - First release
 
-[unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta.1...HEAD
+[unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.6-beta...HEAD
+[v0.1.6-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta.1...v0.1.6-beta
 [v0.1.5-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta...v0.1.5-beta.1
 [v0.1.5-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta.1...v0.1.5-beta
 [v0.1.4-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta...v0.1.4-beta.1
