@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['license',['LICENSE',['../a00056.html',1,'']]],
-  ['log4jexample_2ejava',['Log4jExample.java',['../a00029.html',1,'']]]
+  ['equalscontract_2ejava',['EqualsContract.java',['../a00026.html',1,'']]],
+  ['equalstest_2ejava',['EqualsTest.java',['../a00032.html',1,'']]],
+  ['eventpublisher_2ejava',['EventPublisher.java',['../a00005.html',1,'']]],
+  ['examples_2ejava',['Examples.java',['../a00035.html',1,'']]]
 ];

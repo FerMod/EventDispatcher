@@ -2,7 +2,7 @@
 set -ex # Exit with nonzero exit code if anything fails and show script content
 
 echo "Generating release ..."
-pushd $(git rev-parse --show-toplevel)
+pushd "$(git rev-parse --show-toplevel)"
 
 echo "Updating Maven version from git tag ..."
 export PROJECT_VERSION="$(git describe --tags --abbrev=0)"

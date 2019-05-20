@@ -24,10 +24,10 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Event Dispatcher", "index.html", [
-    [ "Changelog", "a00348.html", null ],
-    [ "Contributor Covenant Code of Conduct", "a00349.html", null ],
-    [ "CONTRIBUTING", "a00350.html", null ],
-    [ "LICENSE", "a00351.html", null ],
+    [ "Changelog", "a00430.html", null ],
+    [ "Contributor Covenant Code of Conduct", "a00431.html", null ],
+    [ "CONTRIBUTING", "a00432.html", null ],
+    [ "LICENSE", "a00433.html", null ],
     [ "Project Maven Site", "site/index.html", null ],
     [ "Project Tree", "tree.html", null ],
     [ "Packages", "namespaces.html", [
