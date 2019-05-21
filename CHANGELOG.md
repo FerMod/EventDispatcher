@@ -4,17 +4,23 @@
 
 These changes have not been released yet.
 
-- Added JUnit tag that allows to use arrays in parametized tests.
-- Fixed documentation generation.
-- Fixed docs missing headers.
-- Improved docs.
+- 
+
+## [0.1.6-beta][v0.1.6-beta] (2019-05-21)
+
+- Added JUnit tag that allows to use arrays in parametized tests
+- Fixed documentation generation
+- Fixed docs missing headers
+- Fixed `NullPointerException` when using the default `ObservedValue` constructor
+- Increased code coverage
+- Improved docs
 
 ## [0.1.5-beta.1][v0.1.5-beta.1] (2019-05-10)
 
-- Added [SonarCloud](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher) to the repository.
-- Added Travis CI automatic jar release.
+- Added [SonarCloud](https://sonarcloud.io/dashboard?id=com.fermod%3Aevent-dispatcher) to the repository
+- Added Travis CI automatic jar release
 - Added more project information to `pom.xml`
-- Removed the symbolic link and changed Doxygen docs output path, with the one pointed by the symbolic link.
+- Removed the symbolic link and changed Doxygen docs output path, with the one pointed by the symbolic link
 
 ## [0.1.5-beta][v0.1.5-beta] (2019-05-05)
 
@@ -68,7 +74,8 @@ These changes have not been released yet.
 
 - First release
 
-[unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta.1...HEAD
+[unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.6-beta...HEAD
+[v0.1.6-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta.1...v0.1.6-beta
 [v0.1.5-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta...v0.1.5-beta.1
 [v0.1.5-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta.1...v0.1.5-beta
 [v0.1.4-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta...v0.1.4-beta.1

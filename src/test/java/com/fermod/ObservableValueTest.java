@@ -25,25 +25,29 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import com.fermod.extension.TimingExtension;
 import com.fermod.observer.ObservedValue;
 import com.fermod.testdata.serializable.PersonObject;
 import com.fermod.annotations.ArraySource;
 import com.fermod.annotations.ArraySources;
+import com.fermod.event.ValueChangeListener;
 
 @ExtendWith({TimingExtension.class})
 class ObservableValueTest {
 
 	private static final Logger LOGGER = LogManager.getLogger(ObservableValueTest.class);
-	
+
 	static File tempFile;
 	static boolean eventMethodInvoked;
+	static boolean listenerMethodInvoked;
 
 	@BeforeEach
 	void beforeEach() {
 		initTempFile("SerializedObjectTest");
 		eventMethodInvoked = false;
+		listenerMethodInvoked = false;
 	}
 
 	private void initTempFile(String fileName) {
@@ -59,18 +63,74 @@ class ObservableValueTest {
 		}
 	}
 
-	@DisplayName("Test Event - Method Invocation")
+	@DisplayName("Test Event - Unregister event")
+	@ParameterizedTest
+	@ValueSource(ints = { 10, 0, -4 })
+	void testUnregisterEvent(int value, TestInfo testInfo) {
+
+		ObservedValue<Integer> observedValue = new ObservedValue<>(value);
+
+		ValueChangeListener<Integer> valueChangeListener = new ValueChangeListener<Integer>() {
+			@Override
+			public void onValueChanged(Integer oldValue, Integer value) {
+				listenerMethodInvoked = true;
+			}
+		};
+		observedValue.registerListener(valueChangeListener);
+
+		try {
+			assumeFalse(listenerMethodInvoked, () -> "Listener method already invoked");
+			observedValue.unregisterListener(valueChangeListener);
+			observedValue.set(value);
+			assertFalse(listenerMethodInvoked, () -> "Listener method invoked");
+		} catch (Exception e) {
+			fail("Unexpected exception thrown in " + testInfo.getTestMethod().get().getName() + "\n\tCase: " + testInfo.getDisplayName(), e);
+		}
+
+	}
+
+	@DisplayName("Test Event - Unregister all events")
+	@ParameterizedTest
+	@ValueSource(ints = { 10, 0, -4 })
+	void testUnregisterAllEvents(int value, TestInfo testInfo) {
+
+		ObservedValue<Integer> observedValue = new ObservedValue<>(value);
+
+		ValueChangeListener<Integer> valueChangeListener = new ValueChangeListener<Integer>() {
+			@Override
+			public void onValueChanged(Integer oldValue, Integer value) {
+				listenerMethodInvoked = true;
+			}
+		};
+		observedValue.registerListener(valueChangeListener);
+
+		observedValue.registerListener(ObservableValueTest::valueChangedTest);
+
+		try {
+			assumeFalse(eventMethodInvoked, () -> "Event method already invoked");
+			assumeFalse(listenerMethodInvoked, () -> "Listener method already invoked");
+			observedValue.unregisterAllListeners();
+			observedValue.set(value);
+			assertFalse(eventMethodInvoked, () -> "Event method invoked");
+			assertFalse(listenerMethodInvoked, () -> "Listener method invoked");
+		} catch (Exception e) {
+			fail("Unexpected exception thrown in " + testInfo.getTestMethod().get().getName() + "\n\tCase: " + testInfo.getDisplayName(), e);
+		}
+
+	}
+
+	@DisplayName("Test Event - Inline method invocation")
 	@ParameterizedTest
 	@CsvSource({"30, 10", "-2, 10", "11, 10"})
 	void testEventMethodInvocation(int expected, int value, TestInfo testInfo) {
 
 		try {
-			ObservedValue<Integer> observedValue = new ObservedValue<>(10);
+			ObservedValue<Integer> observedValue = new ObservedValue<>(value);
 			observedValue.registerListener((oldVAlue, newValue) -> {
 				eventMethodInvoked = true;
 				assertAll("EventValues",
-					() -> assertEquals(oldVAlue, (Integer)value, () -> "New value missmatch in event invocation."),
-					() -> assertEquals(newValue, (Integer)expected, () -> "Old value missmatch in event invocation.")
+					() -> assertEquals(oldVAlue, value, () -> "New value missmatch in event invocation."),
+					() -> assertEquals(newValue, expected, () -> "Old value missmatch in event invocation.")
 				);
 			});
 
@@ -78,11 +138,11 @@ class ObservableValueTest {
 
 			assertTrue(eventMethodInvoked, () -> "Event method not invoked.");
 		} catch (Exception e) {
-			fail("Unexpected exception thrown in " + testInfo.getClass().getSimpleName() + "\n\tCase: " + testInfo.getDisplayName(), e);
+			fail("Unexpected exception thrown in " + testInfo.getTestMethod().get().getName() + "\n\tCase: " + testInfo.getDisplayName(), e);
 		}
 	}
-	
-	@DisplayName("Test Event - Object Metod Invocation")
+
+	@DisplayName("Test Event - Referenced method invocation")
 	@ParameterizedTest
 	@CsvSource({"Paco, NewPaco, 44", "Lola, NewLola, 41"})
 	void testEventMethodInvocation(String name, String newName, int age) {
@@ -95,13 +155,13 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assertFalse(eventMethodInvoked, () -> "Event method not invoked");
+		assertFalse(eventMethodInvoked, () -> "Event method already invoked");
 		personTest.setName(newName);
-		assertTrue(eventMethodInvoked, () -> "Event method invoked");
-		
+		assertTrue(eventMethodInvoked, () -> "Event method not invoked");
+
 	}
-	
-	@DisplayName("Test Event - Object Metod Invocation")
+
+	@DisplayName("Test Event - Referenced method invocation")
 	@ParameterizedTest
 	@CsvSource({"Paco, NewPaco, 44", "Lola, NewLola, 41"})
 	void testEventMethodValueChange(String name, String newName, int age) {
@@ -114,14 +174,32 @@ class ObservableValueTest {
 			assumeNoException(e);
 		}
 
-		assumeFalse(eventMethodInvoked, () -> "Event method not invoked");
+		assumeFalse(eventMethodInvoked, () -> "Event method already invoked");
 		personTest.setName(newName);
-		assumeTrue(eventMethodInvoked, () -> "Event method invoked");
-		
+		assumeTrue(eventMethodInvoked, () -> "Event method not invoked");
+
 		assertEquals(newName, personTest.getName(), () -> "Obtained value is the new value");
-		
+
 	}
-	
+
+	@DisplayName("Test Event - Event not fired")
+	@ParameterizedTest
+	@ValueSource(ints = { 10, 0, -4 })
+	void testEventMethodNotInvoqued(int value, TestInfo testInfo) {
+
+		ObservedValue<Integer> observedValue = new ObservedValue<>(value);
+		observedValue.registerListener(ObservableValueTest::valueChangedTest);
+
+		try {
+			assertFalse(eventMethodInvoked, () -> "Event method already invoked");
+			observedValue.set(value);
+			assertFalse(eventMethodInvoked, () -> "Event method invoked");
+		} catch (Exception e) {
+			fail("Unexpected exception thrown in " + testInfo.getTestMethod().get().getName() + "\n\tCase: " + testInfo.getDisplayName(), e);
+		}
+
+	}
+
 	@SuppressWarnings("unchecked")
 	@DisplayName("Test Serialization - Boolean")
 	@ParameterizedTest
@@ -402,23 +480,21 @@ class ObservableValueTest {
 		assertEquals(expectedTestClass, value.get(), "" + observedValue.get().hashCode() + " " + value.hashCode());				
 	}
 
-	
+
 	@SuppressWarnings("unchecked")
 	@DisplayName("Test Serialization - Array of int")
 	@ParameterizedTest
-    @ArraySources(
-            arrays = {
-                    @ArraySource(array = {1, 2, 3, 4, 5, 6}),
-                    @ArraySource(array = {21, 34, 68}),
-                    @ArraySource(array = {72, 84, 78})
-            }
-    )
-	void testSerialization(int []expected) {
+	@ArraySources(arrays = {
+		@ArraySource(array = {1, 2, 3, 4, 5, 6}),
+		@ArraySource(array = {21, 34, 68}),
+		@ArraySource(array = {72, 84, 78})
+	})
+	void testSerialization(int[] expected) {
 
 		assumeTrue(tempFile != null);
 		File file = tempFile;
 
-		ObservedValue<int []> observedValue = new ObservedValue<>(expected);
+		ObservedValue<int[]> observedValue = new ObservedValue<>(expected);
 
 		serialiceToFile(file, observedValue);
 		assumeTrue(file.length() > 0);
@@ -435,7 +511,6 @@ class ObservableValueTest {
 
 		assertTrue(Arrays.equals(expected, value.get()));
 	}
-	
 
 	private static <T> void valueChangedTest(T oldValue, T newValue) {
 		eventMethodInvoked = true;
