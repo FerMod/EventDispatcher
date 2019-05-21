@@ -6,12 +6,12 @@ These changes have not been released yet.
 
 - 
 
-## [0.1.6-beta][v0.1.6-beta] (2019-05-22)
+## [0.1.6-beta][v0.1.6-beta] (2019-05-21)
 
 - Added JUnit tag that allows to use arrays in parametized tests
 - Fixed documentation generation
 - Fixed docs missing headers
-- Fixed [Issue #27](https://github.com/FerMod/EventDispatcher/issues/27)
+- Fixed `NullPointerException` when using the default `ObservedValue` constructor
 - Increased code coverage
 - Improved docs
 
