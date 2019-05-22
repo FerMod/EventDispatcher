@@ -101,8 +101,9 @@ $(document).ready(function(){initNavTree('a00145.html','');});
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00041">41</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<div class="textblock"><p>Class to test the correct behavior of the <a class="el" href="">ObservedValue</a> class. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00045">45</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-methods"></a>
 Package Functions</h2></td></tr>
@@ -144,10 +145,10 @@ Package Functions</h2></td></tr>
 <tr class="separator:aa453fb528fb4db565296cdeef4a5a7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a807b88e51d238286031cf17ecda04452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a807b88e51d238286031cf17ecda04452">testSerialization</a> (int[] expected, @TempDir Path tempDir)</td></tr>
 <tr class="separator:a807b88e51d238286031cf17ecda04452"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84a65073e06feb0f6c86c3d8b8a1b18a"><td class="memItemLeft" align="right" valign="top">private&lt; T extends Serializable &gt; void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a84a65073e06feb0f6c86c3d8b8a1b18a">serialiceToTempFile</a> (T value, String <a class="el" href="a00145.html#a3a5f56162810aa1e371620c4c18cc82a">fileName</a>, Path tempDir)</td></tr>
-<tr class="separator:a84a65073e06feb0f6c86c3d8b8a1b18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1499c5f7350a0501b85dc47beae566d9"><td class="memItemLeft" align="right" valign="top">private&lt; T &gt; T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a1499c5f7350a0501b85dc47beae566d9">deserialiceFromTempFile</a> (Class&lt; T &gt; cls, String <a class="el" href="a00145.html#a3a5f56162810aa1e371620c4c18cc82a">fileName</a>, Path tempDir)</td></tr>
-<tr class="separator:a1499c5f7350a0501b85dc47beae566d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438704b02045e8d88d28f02b96d9dd18"><td class="memItemLeft" align="right" valign="top">private&lt; T extends Serializable &gt; void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#a438704b02045e8d88d28f02b96d9dd18">serialiceToFile</a> (T value, String <a class="el" href="a00145.html#a3a5f56162810aa1e371620c4c18cc82a">fileName</a>, Path dirPath)</td></tr>
+<tr class="separator:a438704b02045e8d88d28f02b96d9dd18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb3b89a47749d38b03577126de57a4c"><td class="memItemLeft" align="right" valign="top">private&lt; T extends Serializable &gt; T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#aaeb3b89a47749d38b03577126de57a4c">deserialiceFromFile</a> (Class&lt; T &gt; cls, String <a class="el" href="a00145.html#a3a5f56162810aa1e371620c4c18cc82a">fileName</a>, Path dirPath)</td></tr>
+<tr class="separator:aaeb3b89a47749d38b03577126de57a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb9efc5d5248adfa62ddc5bb278932cf"><td class="memItemLeft" align="right" valign="top">private&lt; T &gt; T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00145.html#afb9efc5d5248adfa62ddc5bb278932cf">convertInstanceOfObject</a> (Object obj, Class&lt; T &gt; cls)</td></tr>
 <tr class="separator:afb9efc5d5248adfa62ddc5bb278932cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -199,7 +200,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00050">50</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00057">57</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -226,7 +227,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00055">55</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00062">62</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -264,16 +265,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test for a unregister event. </p>
+<p>Test that unregisters correctly a listener. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>A integer number. </td></tr>
-    <tr><td class="paramname">testInfo</td><td>The info of the test. </td></tr>
+    <tr><td class="paramname">value</td><td>a value to test that unregisters correctly </td></tr>
+    <tr><td class="paramname">testInfo</td><td>the instance of TestInfo that JUnit supplies that corresponds to the current test or container</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TestInfo </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00069">69</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00078">78</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -311,16 +313,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test for a unregister all events. </p>
+<p>Test that unregisters all the previously registered listeners. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>A integer number. </td></tr>
-    <tr><td class="paramname">testInfo</td><td>The info of the test. </td></tr>
+    <tr><td class="paramname">value</td><td>a value to test that unregisters correctly </td></tr>
+    <tr><td class="paramname">testInfo</td><td>the instance of TestInfo that JUnit supplies that corresponds to the current test or container</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TestInfo </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00105">105</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00116">116</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -364,17 +367,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test for notify a change in the input integer value. </p>
+<p>Test the correct invocation of a inline method when a change of the observed variable happens. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The expected value. </td></tr>
-    <tr><td class="paramname">value</td><td>A integer number. </td></tr>
-    <tr><td class="paramname">testInfo</td><td>The info of the test. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected value </td></tr>
+    <tr><td class="paramname">value</td><td>the new value </td></tr>
+    <tr><td class="paramname">testInfo</td><td>the instance of TestInfo that JUnit supplies that corresponds to the current test or container</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TestInfo </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00148">148</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00162">162</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -418,17 +422,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test for notify a change in the name of the input person object. </p>
+<p>Test the correct invocation of a referenced method when a change of observed variable happens. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the object person. </td></tr>
-    <tr><td class="paramname">newName</td><td>The expected new name. </td></tr>
-    <tr><td class="paramname">age</td><td>The age of the object person. </td></tr>
+    <tr><td class="paramname">name</td><td>the name of the person </td></tr>
+    <tr><td class="paramname">newName</td><td>the new name of the person </td></tr>
+    <tr><td class="paramname">age</td><td>the age of the person </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00178">178</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00192">192</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -472,17 +476,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test for notify a change in the name of the input person object. </p>
+<p>Test the equality of the objects of the original and the one given by the listener method. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the object person. </td></tr>
-    <tr><td class="paramname">newName</td><td>The expected new name. </td></tr>
-    <tr><td class="paramname">age</td><td>The age of the object person. </td></tr>
+    <tr><td class="paramname">name</td><td>the name of the person </td></tr>
+    <tr><td class="paramname">newName</td><td>the new name of the person </td></tr>
+    <tr><td class="paramname">age</td><td>the age of the person </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00204">204</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00218">218</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -520,16 +524,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test for a event not fired. </p>
+<p>Test the events not firing when the new value is the same as the old value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>A integer number. </td></tr>
-    <tr><td class="paramname">testInfo</td><td>The info of the test. </td></tr>
+    <tr><td class="paramname">value</td><td>the new value of the observed value </td></tr>
+    <tr><td class="paramname">testInfo</td><td>the instance of TestInfo that JUnit supplies that corresponds to the current test or container</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TestInfo </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00231">231</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00247">247</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -567,16 +572,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of enable/disable of value change notification. </p>
+<p>Test the correct behavior when enabling/disabling the notification when changing the variable value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">notifyChange</td><td>Boolean value for change notification. </td></tr>
-    <tr><td class="paramname">testInfo</td><td>The info of the test. </td></tr>
+    <tr><td class="paramname">notifyChange</td><td>a boolean that enables or disables the firing of the event </td></tr>
+    <tr><td class="paramname">testInfo</td><td>the instance of TestInfo that JUnit supplies that corresponds to the current test or container</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TestInfo </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00255">255</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00273">273</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -614,16 +620,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a boolean. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">Boolean </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The boolean expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00279">279</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00299">299</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -661,16 +669,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a byte. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">Byte </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The byte expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00300">300</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00322">322</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -708,16 +718,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a char. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">Character </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The char expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00320">320</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00344">344</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -755,16 +767,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a short. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">Short </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The short expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00341">341</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00367">367</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -802,16 +816,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a int. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">Integer </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The int expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00362">362</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00390">390</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -849,16 +865,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a long. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">Long </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The long expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00383">383</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00413">413</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -896,16 +914,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a float. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">Float </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The float expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00404">404</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00436">436</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -943,16 +963,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a double. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">Double </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The double expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00425">425</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00459">459</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -990,16 +1012,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a string. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds a. </p>
+<div class="fragment"><div class="line">String </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The string expected. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00446">446</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00483">483</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -1043,17 +1067,19 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a object. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds an. </p>
+<div class="fragment"><div class="line">Object </div></div><!-- fragment --><p> type value.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name data of the expected object. </td></tr>
-    <tr><td class="paramname">age</td><td>The age data of the expected object. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">name</td><td>the name of the person </td></tr>
+    <tr><td class="paramname">age</td><td>the age of the person </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00468">468</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00508">508</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -1091,16 +1117,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Test of the serialization of a array of integers. </p>
+<p>Test the serialization of <a class="el" href="">ObservedValue</a> that holds an array of integer values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expected</td><td>The expected array of integers. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">expected</td><td>the expected result of the test </td></tr>
+    <tr><td class="paramname">tempDir</td><td>the path of the temporal directory that is resolved by JUnit</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd>TempDir </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00494">494</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00536">536</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -1138,21 +1165,23 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Method for values changes. </p>
+<p>Prints a log a message, with the old and the current value. </p>
+<p>This method is used in the tests, that is called by making references to it.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">oldValue</td><td>The old value. </td></tr>
-    <tr><td class="paramname">newValue</td><td>The new value of the change. </td></tr>
+    <tr><td class="paramname">&lt;T&gt;</td><td>the type of the value </td></tr>
+    <tr><td class="paramname">oldValue</td><td>the value before the change </td></tr>
+    <tr><td class="paramname">newValue</td><td>the current value </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00512">512</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00556">556</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
-<a id="a84a65073e06feb0f6c86c3d8b8a1b18a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84a65073e06feb0f6c86c3d8b8a1b18a">&#9670;&nbsp;</a></span>serialiceToTempFile()</h2>
+<a id="a438704b02045e8d88d28f02b96d9dd18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438704b02045e8d88d28f02b96d9dd18">&#9670;&nbsp;</a></span>serialiceToFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1161,7 +1190,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">private&lt;T extends Serializable&gt; void serialiceToTempFile </td>
+          <td class="memname">private&lt;T extends Serializable&gt; void serialiceToFile </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -1176,7 +1205,7 @@ Static Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Path&#160;</td>
-          <td class="paramname"><em>tempDir</em>&#160;</td>
+          <td class="paramname"><em>dirPath</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1191,22 +1220,23 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Method for serialization to temp file. </p>
+<p>Serializes and stores a object in a file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The value to serialization. </td></tr>
-    <tr><td class="paramname">fileName</td><td>The temp file. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">&lt;T&gt;</td><td>the serializable object </td></tr>
+    <tr><td class="paramname">value</td><td>the object that will be serialized and stored in the file </td></tr>
+    <tr><td class="paramname">fileName</td><td>the file name, where the object will be stored </td></tr>
+    <tr><td class="paramname">dirPath</td><td>the path to the directory containing the file </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00524">524</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00569">569</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
-<a id="a1499c5f7350a0501b85dc47beae566d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1499c5f7350a0501b85dc47beae566d9">&#9670;&nbsp;</a></span>deserialiceFromTempFile()</h2>
+<a id="aaeb3b89a47749d38b03577126de57a4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeb3b89a47749d38b03577126de57a4c">&#9670;&nbsp;</a></span>deserialiceFromFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1215,7 +1245,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">private&lt;T&gt; T deserialiceFromTempFile </td>
+          <td class="memname">private&lt;T extends Serializable&gt; T deserialiceFromFile </td>
           <td>(</td>
           <td class="paramtype">Class&lt; T &gt;&#160;</td>
           <td class="paramname"><em>cls</em>, </td>
@@ -1230,7 +1260,7 @@ Static Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Path&#160;</td>
-          <td class="paramname"><em>tempDir</em>&#160;</td>
+          <td class="paramname"><em>dirPath</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1245,18 +1275,19 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Method for deserialization from a temp file. </p>
+<p>Deserializes and returns an object stored in a file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cls</td><td>The class deserializated. </td></tr>
-    <tr><td class="paramname">fileName</td><td>The temp file. </td></tr>
-    <tr><td class="paramname">tempDir</td><td>Temporal dir of JUnit. </td></tr>
+    <tr><td class="paramname">&lt;T&gt;</td><td>the serializable object </td></tr>
+    <tr><td class="paramname">cls</td><td>the<div class="fragment"><div class="line">Class </div></div><!-- fragment --> object that represents the class or interface the instance </td></tr>
+    <tr><td class="paramname">fileName</td><td>the file name, where the object will be stored in </td></tr>
+    <tr><td class="paramname">dirPath</td><td>the path to the directory containing the file </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The deserializated object. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the object after being deserialized, that was stored in the file </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00550">550</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00596">596</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -1294,17 +1325,18 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Method for convert a instance of a object. </p>
+<p>Returns a instance by casting the passed object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>The object to instance. </td></tr>
-    <tr><td class="paramname">cls</td><td>The class for instance. </td></tr>
+    <tr><td class="paramname">&lt;T&gt;</td><td>the class instance </td></tr>
+    <tr><td class="paramname">obj</td><td>the object to be cast </td></tr>
+    <tr><td class="paramname">cls</td><td>the<div class="fragment"><div class="line">Class </div></div><!-- fragment --> object that represents the class or interface the instance </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The object instanced. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the instance of the object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00576">576</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00623">623</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -1329,7 +1361,9 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00043">43</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p>Logger to print log messages to the console or to a file. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00050">50</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -1353,7 +1387,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00045">45</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00052">52</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -1377,7 +1411,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00046">46</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00053">53</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
@@ -1401,7 +1435,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00047">47</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00044_source.html#l00054">54</a> of file <a class="el" href="a00044_source.html">ObservableValueTest.java</a>.</p>
 
 </div>
 </div>
