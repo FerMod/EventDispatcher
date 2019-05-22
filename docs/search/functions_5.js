@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['hashcode',['hashCode',['../a00093.html#a077e18fe97323c7194e2665ffc766399',1,'com.fermod.observer.ObservedValue.hashCode()'],['../a00149.html#a077e18fe97323c7194e2665ffc766399',1,'com.fermod.testdata.serializable.PersonObject.hashCode()']]]
+  ['get',['get',['../a00093.html#af6ea056c8af82f08af9fd0d857967f9b',1,'com::fermod::observer::ObservedValue']]],
+  ['getage',['getAge',['../a00149.html#a44a88871339022e9a268d613b55f39a1',1,'com::fermod::testdata::serializable::PersonObject']]],
+  ['getfailmessage',['getFailMessage',['../a00157.html#a2c412780ec1dce21933de34070ab9c5f',1,'com::fermod::util::TestUtilities']]],
+  ['getname',['getName',['../a00149.html#a78ee178b6a73658d65ca60da4d1e6683',1,'com::fermod::testdata::serializable::PersonObject']]],
+  ['getstore',['getStore',['../a00137.html#afb3a63dbc7da9fae1aa059ba637ce297',1,'com::fermod::extension::TimingExtension']]]
 ];

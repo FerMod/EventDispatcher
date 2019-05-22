@@ -14,8 +14,6 @@ This project requires to have **JDK 1.8**, and **Maven** which will manage all t
 
 ### Installing
 
-
-
 To install the library is required to follow a few steps:
 
 1. Go to the project [releases](https://github.com/FerMod/EventDispatcher/releases/latest).
@@ -37,8 +35,6 @@ To install the library is required to follow a few steps:
     ```
 
 ## Using the Library
-
-> **WIP** section
 
 The events can be added using the class `EventPublisher`, this class needs to be extended in order to use the methods that allow to register and fire the events. The class `ObservedValue` shows a simple implementation and is a class ready to use. 
 
@@ -160,8 +156,10 @@ The full example class can be found [here](src/test/java/com/fermod/example/Exam
 
 ## Running the tests
 
-This project have *JUnit5* tests that are configured to run with maven with the command `mvn test`, the tests can also be run and at the same time generate a report using the maven `mvn site` command.
-The repository is configured to use *Travis CI*, that offers continuous integration. It automatically builds and runs tests when pushing to the repository.
+This project uses JUnit5 tests and they are configured to run automatically in the `test` life cycle of Maven. They can also be run with the command `mvn test`. 
+Along with the code unit test, the code coverage is also measured. The test and code coverage reports generate in the `site` life cycle of Maven, or when using the `mvn site` command.
+
+This repository is configured to use Travis CI, that offers continuous integration, and it automatically builds and runs tests when pushing to the repository.
 
 ## Built With
 

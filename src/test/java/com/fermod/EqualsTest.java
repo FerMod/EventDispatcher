@@ -7,9 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.TestInstance;
@@ -30,14 +28,6 @@ import com.fermod.util.RandomString;
 class EqualsTest {
 
 	private static final Logger LOGGER = LogManager.getLogger(EqualsTest.class);
-	
-	@AfterAll
-	static void afterAll() {
-	}
-
-	@BeforeEach
-	void beforeEach() {
-	}
 	
 	@Nested
 	@DisplayName("ObservedValue Equals Test")

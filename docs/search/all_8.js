@@ -7,5 +7,5 @@ var searchData=
   ['log4jexample_2ejava',['Log4jExample.java',['../a00041.html',1,'']]],
   ['logger',['LOGGER',['../a00121.html#ab1d069f56091df4f6436f8c713ab2f39',1,'com.fermod.EqualsTest.LOGGER()'],['../a00137.html#ab1d069f56091df4f6436f8c713ab2f39',1,'com.fermod.extension.TimingExtension.LOGGER()'],['../a00141.html#ab1d069f56091df4f6436f8c713ab2f39',1,'com.fermod.Log4jExample.LOGGER()'],['../a00145.html#ab1d069f56091df4f6436f8c713ab2f39',1,'com.fermod.ObservableValueTest.LOGGER()']]],
   ['lower',['LOWER',['../a00153.html#ad8c63cc68721c04e8066d269d792a369',1,'com::fermod::util::RandomString']]],
-  ['license',['LICENSE',['../a00453.html',1,'']]]
+  ['license',['LICENSE',['../a00457.html',1,'']]]
 ];
