@@ -41,6 +41,7 @@ before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
   - if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
   - ./scripts/generate-release.sh # REMOVE
+  - TRAVIS_TAG="$(git describe --tags --abbrev=0)"
 deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
