@@ -4,7 +4,7 @@
 
 These changes have not been released yet.
 
-- 
+- Fixed automatic release name generation based on the tag name
 
 ## [0.1.6-beta.1][v0.1.6-beta.1] (2019-05-22)
 
