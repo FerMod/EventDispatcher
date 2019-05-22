@@ -37,9 +37,16 @@ import com.fermod.extension.TimingExtension;
 import com.fermod.observer.ObservedValue;
 import com.fermod.testdata.serializable.PersonObject;
 
+/**
+ * Class to test the correct behavior of the {@link ObservedValue} class.
+ * 
+ */
 @ExtendWith({TimingExtension.class})
 class ObservableValueTest {
 
+	/** 
+	 * Logger to print log messages to the console or to a file. 
+	 */
 	private static final Logger LOGGER = LogManager.getLogger(ObservableValueTest.class);
 
 	static String fileName;
@@ -58,10 +65,12 @@ class ObservableValueTest {
 	}
 
 	/**
-	 * Test for a unregister event.
+	 * Test that unregisters correctly a listener.
 	 * 
-	 * @param value A integer number.
-	 * @param testInfo The info of the test.
+	 * @param value a value to test that unregisters correctly
+	 * @param testInfo the instance of TestInfo that JUnit supplies that corresponds to the current test or container
+	 * 
+	 * @see TestInfo
 	 */
 	@DisplayName("Test Event - Unregister event")
 	@ParameterizedTest
@@ -94,10 +103,12 @@ class ObservableValueTest {
 	}
 
 	/**
-	 * Test for a unregister all events.
+	 * Test that unregisters all the previously registered listeners.
 	 * 
-	 * @param value A integer number.
-	 * @param testInfo The info of the test.
+	 * @param value a value to test that unregisters correctly
+	 * @param testInfo the instance of TestInfo that JUnit supplies that corresponds to the current test or container
+	 * 
+	 * @see TestInfo
 	 */
 	@DisplayName("Test Event - Unregister all events")
 	@ParameterizedTest
@@ -135,12 +146,15 @@ class ObservableValueTest {
 
 	}
 	
+
 	/**
-	 * Test for notify a change in the input integer value.
+	 * Test the correct invocation of a inline method when a change of the observed variable happens.
 	 * 
-	 * @param expected The expected value.
-	 * @param value A integer number.
-	 * @param testInfo The info of the test.
+	 * @param expected the expected value
+	 * @param value the new value
+	 * @param testInfo the instance of TestInfo that JUnit supplies that corresponds to the current test or container
+	 * 
+	 * @see TestInfo
 	 */
 	@DisplayName("Test Event - Inline method invocation")
 	@ParameterizedTest
@@ -166,11 +180,11 @@ class ObservableValueTest {
 	}
 
 	/**
-	 * Test for notify a change in the name of the input person object.
+	 * Test the correct invocation of a referenced method when a change of  observed variable happens.
 	 * 
-	 * @param name The name of the object person.
-	 * @param newName The expected new name.
-	 * @param age The age of the object person.
+	 * @param name the name of the person
+	 * @param newName the new name of the person
+	 * @param age the age of the person
 	 */
 	@DisplayName("Test Event - Referenced method invocation")
 	@ParameterizedTest
@@ -192,11 +206,11 @@ class ObservableValueTest {
 	}
 	
 	/**
-	 * Test for notify a change in the name of the input person object.
+	 * Test the equality of the objects of the original and the one given by the listener method.  
 	 * 
-	 * @param name The name of the object person.
-	 * @param newName The expected new name.
-	 * @param age The age of the object person.
+	 * @param name the name of the person
+	 * @param newName the new name of the person
+	 * @param age the age of the person
 	 */
 	@DisplayName("Test Event - Referenced method invocation")
 	@ParameterizedTest
@@ -220,10 +234,12 @@ class ObservableValueTest {
 	}
 
 	/**
-	 * Test for a event not fired.
+	 * Test the events not firing when the new value is the same as the old value. 
 	 * 
-	 * @param value A integer number.
-	 * @param testInfo The info of the test.
+	 * @param value the new value of the observed value
+	 * @param testInfo the instance of TestInfo that JUnit supplies that corresponds to the current test or container
+	 * 
+	 * @see TestInfo
 	 */
 	@DisplayName("Test Event - Event not fired")
 	@ParameterizedTest
@@ -244,10 +260,12 @@ class ObservableValueTest {
 	}
 
 	/**
-	 * Test of enable/disable of value change notification.
+	 * Test the correct behavior when enabling/disabling the notification when changing the variable value.
 	 * 
-	 * @param notifyChange Boolean value for change notification.
-	 * @param testInfo The info of the test.
+	 * @param notifyChange a boolean that enables or disables the firing of the event 
+	 * @param testInfo the instance of TestInfo that JUnit supplies that corresponds to the current test or container
+	 * 
+	 * @see TestInfo
 	 */
 	@DisplayName("Test Event - Enable/Disable value change notification")
 	@ParameterizedTest
@@ -268,10 +286,12 @@ class ObservableValueTest {
 	}
 
 	/**
-	 * Test of the serialization of a boolean.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code Boolean} type value.
 	 * 
-	 * @param expected The boolean expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Boolean")
 	@ParameterizedTest
@@ -279,20 +299,22 @@ class ObservableValueTest {
 	void testSerialization(boolean expected, @TempDir Path tempDir) {
 
 		ObservedValue<Boolean> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<Boolean> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<Boolean> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 		
 		assertEquals(expected, value.get());
 
 	}
 
 	/**
-	 * Test of the serialization of a byte.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code Byte} type value.
 	 * 
-	 * @param expected The byte expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Byte")
 	@ParameterizedTest
@@ -300,19 +322,21 @@ class ObservableValueTest {
 	void testSerialization(byte expected, @TempDir Path tempDir) {
 
 		ObservedValue<Byte> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<Byte> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<Byte> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 		
 		assertEquals(expected, value.get());
 	}
 
 	/**
-	 * Test of the serialization of a char.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code Character} type value.
 	 * 
-	 * @param expected The char expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Char")
 	@ParameterizedTest
@@ -320,20 +344,22 @@ class ObservableValueTest {
 	void testSerialization(char expected, @TempDir Path tempDir) {
 
 		ObservedValue<Character> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<Character> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<Character> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 		
 		assertEquals(expected, value.get());
 
 	}
 
 	/**
-	 * Test of the serialization of a short.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code Short} type value.
 	 * 
-	 * @param expected The short expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Short")
 	@ParameterizedTest
@@ -341,20 +367,22 @@ class ObservableValueTest {
 	void testSerialization(short expected, @TempDir Path tempDir) {
 
 		ObservedValue<Short> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<Short> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<Short> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 		
 		assertEquals(expected, value.get());
 
 	}
 
 	/**
-	 * Test of the serialization of a int.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code Integer} type value.
 	 * 
-	 * @param expected The int expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Int")
 	@ParameterizedTest
@@ -362,20 +390,22 @@ class ObservableValueTest {
 	void testSerialization(int expected, @TempDir Path tempDir) {
 
 		ObservedValue<Integer> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<Integer> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<Integer> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 		
 		assertEquals(expected, value.get());
 
 	}
 	
 	/**
-	 * Test of the serialization of a long.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code Long} type value.
 	 * 
-	 * @param expected The long expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Long")
 	@ParameterizedTest
@@ -383,20 +413,22 @@ class ObservableValueTest {
 	void testSerialization(long expected, @TempDir Path tempDir) {
 
 		ObservedValue<Long> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<Long> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<Long> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 		
 		assertEquals(expected, value.get());
 
 	}
 
 	/**
-	 * Test of the serialization of a float.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code Float} type value.
 	 * 
-	 * @param expected The float expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Float")
 	@ParameterizedTest
@@ -404,20 +436,22 @@ class ObservableValueTest {
 	void testSerialization(float expected, @TempDir Path tempDir) {
 
 		ObservedValue<Float> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<Float> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<Float> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 		
 		assertEquals(expected, value.get());
 
 	}
 	
 	/**
-	 * Test of the serialization of a double.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code Double} type value.
 	 * 
-	 * @param expected The double expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Double")
 	@ParameterizedTest
@@ -425,20 +459,23 @@ class ObservableValueTest {
 	void testSerialization(double expected, @TempDir Path tempDir) {
 
 		ObservedValue<Double> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<Double> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<Double> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 
 		assertEquals(expected, value.get());
 
 	}
 
+
 	/**
-	 * Test of the serialization of a string.
+	 * Test the serialization of {@link ObservedValue} that holds a {@code String} type value.
 	 * 
-	 * @param expected The string expected.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - String")
 	@ParameterizedTest
@@ -446,21 +483,24 @@ class ObservableValueTest {
 	void testSerialization(String expected, @TempDir Path tempDir) {
 
 		ObservedValue<String> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<String> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<String> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 
 		assertEquals(expected, value.get());
 
 	}
 
+
 	/**
-	 * Test of the serialization of a object.
+	 * Test the serialization of {@link ObservedValue} that holds an {@code Object} type value.
 	 * 
-	 * @param name The name data of the expected object.
-	 * @param age The age data of the expected object.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param name the name of the person
+	 * @param age the age of the person
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Object")
 	@ParameterizedTest
@@ -469,20 +509,22 @@ class ObservableValueTest {
 
 		PersonObject expectedTestClass = new PersonObject(name, age);
 		ObservedValue<PersonObject> observedValue = new ObservedValue<>(expectedTestClass);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<PersonObject> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<PersonObject> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 
 		assertEquals(expectedTestClass, value.get());
 		
 	}
 
 	/**
-	 * Test of the serialization of a array of integers.
+	 * Test the serialization of {@link ObservedValue} that holds an array of integer values.
 	 * 
-	 * @param expected The expected array of integers.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param expected the expected result of the test
+	 * @param tempDir the path of the temporal directory that is resolved by JUnit
+	 * 
+	 * @see TempDir
 	 */
 	@DisplayName("Test Serialization - Array of int")
 	@ParameterizedTest
@@ -494,20 +536,22 @@ class ObservableValueTest {
 	void testSerialization(int[] expected, @TempDir Path tempDir) {
 
 		ObservedValue<int[]> observedValue = new ObservedValue<>(expected);
-		serialiceToTempFile(observedValue, fileName, tempDir);
+		serialiceToFile(observedValue, fileName, tempDir);
 		
 		@SuppressWarnings("unchecked")
-		ObservedValue<int[]> value = deserialiceFromTempFile(ObservedValue.class, fileName, tempDir);
+		ObservedValue<int[]> value = deserialiceFromFile(ObservedValue.class, fileName, tempDir);
 
 		assertTrue(Arrays.equals(expected, value.get()));
 		
 	}
 
 	/**
-	 * Method for values changes.
+	 * Prints a log a message, with the old and the current value. This method is used in the tests, that 
+	 * is called by making references to it.
 	 * 
-	 * @param oldValue The old value.
-	 * @param newValue The new value of the change.
+	 * @param <T> the type of the value
+	 * @param oldValue the value before the change
+	 * @param newValue the current value
 	 */
 	private static <T> void valueChangedTest(T oldValue, T newValue) {
 		eventMethodInvoked = true;
@@ -515,18 +559,19 @@ class ObservableValueTest {
 	}
 
 	/**
-	 * Method for serialization to temp file.
+	 * Serializes and stores a object in a file.
 	 * 
-	 * @param value The value to serialization.
-	 * @param fileName The temp file.
-	 * @param tempDir Temporal dir of JUnit.
+	 * @param <T> the serializable object
+	 * @param value the object that will be serialized and stored in the file
+	 * @param fileName the file name, where the object will be stored
+	 * @param dirPath the path to the directory containing the file
 	 */
-	private <T extends Serializable> void serialiceToTempFile(T value, String fileName, Path tempDir) {
+	private <T extends Serializable> void serialiceToFile(T value, String fileName, Path dirPath) {
 		
-		assumeTrue(tempDir != null);
+		assumeTrue(dirPath != null);
 		assumeTrue(fileName != null && !fileName.trim().isEmpty());
 		
-		File file = tempDir.resolve(fileName).toFile();
+		File file = dirPath.resolve(fileName).toFile();
 		try {
 			FileOutputStream fileOutputStream = new FileOutputStream(file);
 			try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
@@ -540,19 +585,20 @@ class ObservableValueTest {
 	}
 
 	/**
-	 * Method for deserialization from a temp file.
+	 * Deserializes and returns an object stored in a file.
 	 * 
-	 * @param cls The class deserializated.
-	 * @param fileName The temp file.
-	 * @param tempDir Temporal dir of JUnit.
-	 * @return The deserializated object.
+	 * @param <T> the serializable object
+	 * @param cls the {@code Class} object that represents the class or interface the instance
+	 * @param fileName the file name, where the object will be stored in
+	 * @param dirPath the path to the directory containing the file
+	 * @return the object after being deserialized, that was stored in the file
 	 */
-	private <T> T deserialiceFromTempFile(Class<T> cls, String fileName, Path tempDir) {
+	private <T extends Serializable> T deserialiceFromFile(Class<T> cls, String fileName, Path dirPath) {
 		
-		assumeTrue(tempDir != null);
+		assumeTrue(dirPath != null);
 		assumeTrue(fileName != null && !fileName.trim().isEmpty());
 		
-		File file = tempDir.resolve(fileName).toFile();
+		File file = dirPath.resolve(fileName).toFile();
 		T value = null;
 		try {
 			FileInputStream fileInputStream = new FileInputStream(file);
@@ -567,11 +613,12 @@ class ObservableValueTest {
 	}
 	
 	/**
-	 * Method for convert a instance of a object.
+	 * Returns a instance by casting the passed object.
 	 * 
-	 * @param obj The object to instance.
-	 * @param cls The class for instance.
-	 * @return The object instanced.
+	 * @param <T> the class instance
+	 * @param obj the object to be cast 
+	 * @param cls the {@code Class} object that represents the class or interface the instance
+	 * @return the instance of the object
 	 */
 	private <T> T convertInstanceOfObject(Object obj, Class<T> cls) {
 	    try {
