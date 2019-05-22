@@ -4,6 +4,7 @@ jdk:
 env:
   global:
     - DOXYGEN_VERSION=1.8.15
+    - RELEASE_NAME=""
 git:
   depth: false
 
@@ -33,7 +34,6 @@ before_script:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/install-doxygen.sh; fi
 
 script:
-  - git fetch --tags
   # The following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent org.jacoco:jacoco-maven-plugin:report package sonar:sonar
 
@@ -50,8 +50,7 @@ deploy:
     prerelease: true
     overwrite: true
     draft: true
-    name: \"$RELEASE_NAME\"
-    # body: "$RELEASE_BODY"
+    name: "$RELEASE_NAME"
     on:
       tags: false
       branch: FerMod-patch-1-1
