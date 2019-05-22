@@ -6,6 +6,11 @@ These changes have not been released yet.
 
 - 
 
+## [0.1.6-beta.1][v0.1.6-beta.1] (2019-05-22)
+
+- Improved docs
+- Refactored unit tests
+
 ## [0.1.6-beta][v0.1.6-beta] (2019-05-21)
 
 - Added JUnit tag that allows to use arrays in parametized tests
@@ -74,7 +79,8 @@ These changes have not been released yet.
 
 - First release
 
-[unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.6-beta...HEAD
+[unreleased]: https://github.com/FerMod/EventDispatcher/compare/v0.1.6-beta.1...HEAD
+[v0.1.6-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.6-beta...v0.1.6-beta.1
 [v0.1.6-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta.1...v0.1.6-beta
 [v0.1.5-beta.1]: https://github.com/FerMod/EventDispatcher/compare/v0.1.5-beta...v0.1.5-beta.1
 [v0.1.5-beta]: https://github.com/FerMod/EventDispatcher/compare/v0.1.4-beta.1...v0.1.5-beta
