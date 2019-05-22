@@ -39,7 +39,11 @@ script:
 
 before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
-  - if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
+  - if [ -n "$TRAVIS_TAG" ]; then 
+      ./scripts/generate-release.sh;
+      export RELEASE_NAME="$(git describe --tags --abbrev=0)";
+      export RELEASE_BODY="";
+    fi
 deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
@@ -50,7 +54,7 @@ deploy:
     overwrite: true
     draft: true
     name: "$RELEASE_NAME"
-    # body: $RELEASE_BODY
+    body: "$RELEASE_BODY"
     on:
       tags: true
   - provider: pages
