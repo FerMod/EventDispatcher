@@ -41,7 +41,7 @@ before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
   - if [ -n "$TRAVIS_TAG" ]; then 
       ./scripts/generate-release.sh;
-      export RELEASE_NAME="$(git describe --tags --abbrev=0)";
+      # export RELEASE_NAME="$(git describe --tags --abbrev=0)";
       # export RELEASE_BODY="";
     fi
 deploy:
@@ -53,7 +53,7 @@ deploy:
     prerelease: true
     overwrite: true
     draft: true
-    name: "$RELEASE_NAME"
+    # name: "$RELEASE_NAME"
     # body: "$RELEASE_BODY"
     on:
       tags: true
