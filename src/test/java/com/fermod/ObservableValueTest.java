@@ -93,42 +93,6 @@ class ObservableValueTest {
 
 	}
 
-	@DisplayName("Test Event - Unregister all events")
-	@ParameterizedTest
-	@ValueSource(ints = { 10, 0, -4 })
-	void testUnregisterAllEvents(int value, TestInfo testInfo) {
-
-		ObservedValue<Integer> observedValue = new ObservedValue<>(value);
-
-		ValueChangeListener<Integer> valueChangeListener = new ValueChangeListener<Integer>() {
-			@Override
-			public void onValueChanged(Integer oldValue, Integer value) {
-				listenerMethodInvoked = true;
-			}
-		};
-		observedValue.registerListener(valueChangeListener);
-
-		observedValue.registerListener(ObservableValueTest::valueChangedTest);
-
-		try {
-			
-			assumeFalse(eventMethodInvoked, () -> "Event method already invoked.");
-			assumeFalse(listenerMethodInvoked, () -> "Listener method already invoked.");
-			
-			observedValue.unregisterAllListeners();
-			observedValue.set(value);
-			
-			assertAll("EventValues",
-				() -> assertFalse(eventMethodInvoked, () -> "Event method invoked."),
-				() -> assertFalse(listenerMethodInvoked, () -> "Listener method invoked.")
-			);
-			
-		} catch (Exception e) {
-			fail("Unexpected exception thrown in " + testInfo.getTestMethod().get().getName() + "\n\tCase: " + testInfo.getDisplayName(), e);
-		}
-
-	}
-
 	/**
 	 * Test for a unregister all events.
 	 * 
