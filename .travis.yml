@@ -39,11 +39,8 @@ script:
 
 before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
-  - if [ -n "$TRAVIS_TAG" ]; then 
-      ./scripts/generate-release.sh;
-      # export RELEASE_NAME="$(git describe --tags --abbrev=0)";
-      # export RELEASE_BODY="";
-    fi
+  - if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
+  - ./scripts/generate-release.sh # REMOVE
 deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
@@ -53,10 +50,11 @@ deploy:
     prerelease: true
     overwrite: true
     draft: true
-    # name: "$RELEASE_NAME"
+    name: \"$RELEASE_NAME\"
     # body: "$RELEASE_BODY"
     on:
-      tags: true
+      tags: false
+      #tags: true
   - provider: pages
     skip_cleanup: true
     github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
