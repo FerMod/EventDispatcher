@@ -54,6 +54,7 @@ deploy:
     # body: "$RELEASE_BODY"
     on:
       tags: false
+      branch: FerMod-patch-1-1
       #tags: true
   - provider: pages
     skip_cleanup: true
