@@ -71,7 +71,7 @@ import com.fermod.observer.ObservedValue;
 When registering the listeners, it can be done inline or by passing a reference to the method.
 
 ```java
-ObservedValue<Integer> observedValue = new ObservedValue<>();
+ObservedValue<Integer> observedValue = new ObservedValue<>(0);
 
 // Inline listener registration using lambda
 observedValue.registerListener((oldVAlue, newValue) -> {
@@ -131,7 +131,7 @@ public class Examples {
         // Register a mothod using method references
         observedValue.registerListener(Examples::printValueChange);
 
-        System.out.println("Change value to 10.");
+        System.out.println("Change value to 10");
         observedValue.set(10);
 
     }
