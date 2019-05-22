@@ -42,7 +42,7 @@ before_deploy:
   - if [ -n "$TRAVIS_TAG" ]; then 
       ./scripts/generate-release.sh;
       export RELEASE_NAME="$(git describe --tags --abbrev=0)";
-      export RELEASE_BODY="";
+      # export RELEASE_BODY="";
     fi
 deploy:
   - provider: releases
@@ -54,7 +54,7 @@ deploy:
     overwrite: true
     draft: true
     name: "$RELEASE_NAME"
-    body: "$RELEASE_BODY"
+    # body: "$RELEASE_BODY"
     on:
       tags: true
   - provider: pages
