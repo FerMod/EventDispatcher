@@ -11,7 +11,7 @@ mvn versions:set -DnewVersion=${PROJECT_VERSION#"v"}
 echo "Generating jar binaries ..."
 mvn clean install
 
-export RELEASE_NAME="$PROJECT_VERSION"
+export RELEASE_NAME=$PROJECT_VERSION
 export RELEASE_BODY=""
 printf "Name: %s\nBody: %s\n" $RELEASE_NAME $RELEASE_BODY
 
