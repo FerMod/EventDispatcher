@@ -39,7 +39,8 @@ script:
 
 before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
-  - if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
+  #- if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
+  - ./scripts/generate-release.sh;
 deploy:
   - provider: script
     script: ./scripts/deploy.sh
