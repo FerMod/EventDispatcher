@@ -39,11 +39,10 @@ script:
 
 before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
-  #- if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
-  - ./scripts/generate-release.sh;
+  - if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
 deploy:
   - provider: script
-    script: ./scripts/deploy.sh
+    script: mvn deploy -Dregistry=https://maven.pkg.github.com/FerMod -Dtoken=$GITHUB_TOKEN # ./scripts/deploy.sh
     on:
       tags: false
       branch: FerMod
