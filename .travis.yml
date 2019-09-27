@@ -44,8 +44,7 @@ deploy:
   - provider: script
     script: ./scripts/deploy.sh
     on:
-      tags: false
-      branch: FerMod
+      tags: true
   - provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
