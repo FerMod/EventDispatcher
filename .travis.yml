@@ -44,7 +44,6 @@ before_deploy:
 deploy:
   - provider: script
     script: ./scripts/deploy.sh
-    name: "$TRAVIS_TAG"
     on:
       tags: false
       branch: FerMod
