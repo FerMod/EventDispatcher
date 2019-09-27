@@ -42,7 +42,7 @@ before_deploy:
   - if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
 deploy:
   - provider: script
-    script: mvn deploy
+    script: ./scripts/deploy.sh
     on:
       tags: false
       branch: FerMod
