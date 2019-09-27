@@ -44,8 +44,8 @@ deploy:
   - provider: script
     script: ./scripts/deploy.sh
     name: "$TRAVIS_TAG"
-    on:
-      tags: true
+    # on:
+      # tags: true
   - provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
