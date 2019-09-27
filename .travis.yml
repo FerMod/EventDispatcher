@@ -40,6 +40,11 @@ before_deploy:
   - if [ "$TRAVIS_BRANCH" = master ]; then ./scripts/generate-docs.sh; fi
   - if [ -n "$TRAVIS_TAG" ]; then ./scripts/generate-release.sh; fi
 deploy:
+  - provider: script
+    script: ./scripts/deploy.sh
+    name: "$TRAVIS_TAG"
+    on:
+      tags: true
   - provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
