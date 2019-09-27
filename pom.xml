@@ -67,7 +67,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub FerMod Maven Packages</name>
-			<url>https://maven.pkg.github.com/FerMod</url>
+			<url>https://maven.pkg.github.com/FerMod/EventDispatcher</url>
 		</repository>
 	</distributionManagement>
 
